@@ -1,0 +1,808 @@
+Scientific,SpecID,IOCOrder,BLFamilyLatin,BLFamilyEnglish,BLFamSequID,Taxo,Species,English,GS,Corneal.Diameter..mm.,Transverse.Diameter..mm.,Axial.Diameter..mm.,C.T,Source,Material,ScleroticRingOuterDiameter.mm,CollectionNumber,Notes
+Phalaropus lobatus,4146,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Phalaropus_lobatus,Red-necked Phalarope,Phalaropus_lobatus,3.92,8.335,NA,0.470305939,CaliforniaAcademyofSciences,skeleton,6.08,156151,CaliforniaAcademyofSciences
+Pluvialis squatarola,4234,Charadriiformes,Charadriidae,Plovers,54,BL3,Pluvialis_squatarola,Grey Plover,Pluvialis_squatarola,10.47,20.13,NA,0.520119225,CaliforniaAcademyofSciences,skeleton,15.12,24579,CaliforniaAcademyofSciences
+Recurvirostra americana,4224,Charadriiformes,Recurvirostridae,Stilts and avocets,53,BL3,Recurvirostra_americana,American Avocet,Recurvirostra_americana,7.12,14.765,NA,0.48222147,CaliforniaAcademyofSciences,skeleton,10.875,156152,CaliforniaAcademyofSciences
+Anas platyrhynchos,679,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_platyrhynchos,Mallard,Anas_platyrhynchos,8.960588235,25.68294118,NA,0.349547078,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Aphelocoma californica,7983,Passeriformes,Corvidae,Crows and jays,147,BL3,Aphelocoma_californica,Western Scrub-jay,Aphelocoma_californica,7.21,14.78,NA,0.488036183,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Aquila chrysaetos,4864,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Aquila_chrysaetos,Golden Eagle,Aquila_chrysaetos,19.405,36.885,NA,0.52631113,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Branta canadensis,613,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Branta_canadensis,Canada Goose,Branta_canadensis,11.67333333,31.785,NA,0.367274741,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Bubulcus ibis,5243,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Bubulcus_ibis,Cattle Egret,Bubulcus_ibis,8.763333333,16.14,NA,0.543133239,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Buteo jamaicensis,4824,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Buteo_jamaicensis,Red-tailed Hawk,Buteo_jamaicensis,15.83588235,29.98882353,NA,0.528252708,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Buteo swainsoni,4814,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Buteo_swainsoni,Swainson's Hawk,Buteo_swainsoni,13.2,25.99,NA,0.507887649,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Casmerodius albus,5230,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Casmerodius_albus,Great Egret,Casmerodius_albus,10.22,18.39,NA,0.555527923,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Catoptrophorus semipalmatus,4107,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Catoptrophorus_semipalmatus,Willet,Catoptrophorus_semipalmatus,7.74,16.5,NA,0.4690884,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Charadrius vociferus,4241,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_vociferus,Killdeer,Charadrius_vociferus,7.422105263,14.92684211,NA,0.4975991,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Circus cyaneus,4696,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Circus_cyaneus,Northern Harrier,Circus_cyaneus,11.68,23.13,NA,0.504971898,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Columba livia,3315,Columbiformes,Columbidae,Doves and pigeons,65,BL3,Columba_livia,Rock Pigeon,Columba_livia,7.252777778,15.04583333,NA,0.482466665,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Corvus brachyrhynchos,8093,Passeriformes,Corvidae,Crows and jays,147,BL3,Corvus_brachyrhynchos,American Crow,Corvus_brachyrhynchos,9.37173913,19.27695652,NA,0.486231744,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Corvus corax,8124,Passeriformes,Corvidae,Crows and jays,147,BL3,Corvus_corax,Common Raven,Corvus_corax,10.954,23.586,NA,0.464551071,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Corvus ossifragus,8094,Passeriformes,Corvidae,Crows and jays,147,BL3,Corvus_ossifragus,Fish Crow,Corvus_ossifragus,8.04,16.89,NA,0.476021314,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Egretta caerulea,5196,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Egretta_caerulea,Little Blue Heron,Egretta_caerulea,9.5,17.16,NA,0.553613054,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Egretta thula,5205,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Egretta_thula,Snowy Egret,Egretta_thula,9.33,16.86,NA,0.553380783,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Icteria virens,12799,Passeriformes,Parulidae,New World warblers,171,BL3,Icteria_virens,Yellow-breasted Chat,Icteria_virens,4.93,9.98,NA,0.493987976,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Larus occidentalis,4388,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_occidentalis,Western Gull,Larus_occidentalis,10.62833333,24.78666667,NA,0.429412277,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Numenius americanus,4088,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Numenius_americanus,Long-billed Curlew,Numenius_americanus,9.84,20.88,NA,0.471264368,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Podilymbus podiceps,5005,Podicipediformes,Podicipedidae,Grebes,21,BL3,Podilymbus_podiceps,Pied-billed Grebe,Podilymbus_podiceps,8.51,16.82,NA,0.505945303,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Salpinctes obsoletus,9687,Passeriformes,Troglodytidae,Wrens,162,BL3,Salpinctes_obsoletus,Rock Wren,Salpinctes_obsoletus,4.133333333,8.763333333,NA,0.471644622,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Steganopus tricolor,4145,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Steganopus_tricolor,Wilson's Phalarope,Steganopus_tricolor,4.18,9.29,NA,0.449946179,This study (see SEELabEyeMeasurements.csv),skeleton,NA,see SEELabEyeMeasurements.csv,"Values reflect averages across multiple specimens. See SEELabEyeMeasurements.csv for raw values, collection number, and source"
+Accipiter tachiro,4713,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Accipiter_tachiro,African Goshawk,Accipiter_tachiro,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Accipiter virgatus,4745,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Accipiter_virgatus,Besra,Accipiter_virgatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Acridotheres tristis,9523,Passeriformes,Sturnidae,Starlings,177,BL3,Acridotheres_tristis,Common Myna,Acridotheres_tristis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Acrocephalus arundinaceus,10802,Passeriformes,Sylviidae,Old World warblers,161,BL3,Acrocephalus_arundinaceus,Great Reed-warbler,Acrocephalus_arundinaceus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Acrocephalus gracilirostris,10825,Passeriformes,Sylviidae,Old World warblers,161,BL3,Acrocephalus_gracilirostris,Lesser Swamp-warbler,Acrocephalus_gracilirostris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Acrocephalus newtoni,10826,Passeriformes,Sylviidae,Old World warblers,161,BL3,Acrocephalus_newtoni,Madagascar Swamp-warbler,Acrocephalus_newtoni,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Acrocephalus paludicola,10789,Passeriformes,Sylviidae,Old World warblers,161,BL3,Acrocephalus_paludicola,Aquatic Warbler,Acrocephalus_paludicola,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Acrocephalus palustris,10801,Passeriformes,Sylviidae,Old World warblers,161,BL3,Acrocephalus_palustris,Marsh Warbler,Acrocephalus_palustris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Acrocephalus scirpaceus,10797,Passeriformes,Sylviidae,Old World warblers,161,BL3,Acrocephalus_scirpaceus,Eurasian Reed-warbler,Acrocephalus_scirpaceus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Acrocephalus stentoreus,10804,Passeriformes,Sylviidae,Old World warblers,161,BL3,Acrocephalus_stentoreus,Clamorous Reed-warbler,Acrocephalus_stentoreus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Actitis hypoleucos,4103,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Actitis_hypoleucos,Common Sandpiper,Actitis_hypoleucos,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Actitis macularius,4104,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Actitis_macularius,Spotted Sandpiper,Actitis_macularius,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Actophilornis africanus,4157,Charadriiformes,Jacanidae,Jacanas,56,BL3,Actophilornis_africanus,African Jacana,Actophilornis_africanus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aechmophorus clarkii,5026,Podicipediformes,Podicipedidae,Grebes,21,BL3,Aechmophorus_clarkii,Clark's Grebe,Aechmophorus_clarkii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aechmophorus occidentalis,5024,Podicipediformes,Podicipedidae,Grebes,21,BL3,Aechmophorus_occidentalis,Western Grebe,Aechmophorus_occidentalis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Alcedo cyanopectus,1553,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Alcedo_cyanopectus,Indigo-banded Kingfisher,Alcedo_cyanopectus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Alcedo pusilla,1561,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Alcedo_pusilla,Little Kingfisher,Alcedo_pusilla,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Alcedo vintsioides,1556,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Alcedo_vintsioides,Madagascar Kingfisher,Alcedo_vintsioides,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Amaurornis flavirostra,3881,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Amaurornis_flavirostra,Black Crake,Amaurornis_flavirostra,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Amaurornis moluccana,3879,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Amaurornis_moluccana,Rufous-tailed Waterhen,Amaurornis_moluccana,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Amazilia edward,2636,Apodiformes,Trochilidae,Hummingbirds,79,BL3,Amazilia_edward,Snowy-breasted Hummingbird,Amazilia_edward,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Amazonetta brasiliensis,667,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Amazonetta_brasiliensis,Brazilian Teal,Amazonetta_brasiliensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ammodramus caudacutus,12550,Passeriformes,Emberizidae,"Buntings, American sparrows and allies",192,BL3,Ammodramus_caudacutus,Saltmarsh Sparrow,Ammodramus_caudacutus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ammodramus maritimus,12542,Passeriformes,Emberizidae,"Buntings, American sparrows and allies",192,BL3,Ammodramus_maritimus,Seaside Sparrow,Ammodramus_maritimus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anarhynchus frontalis,4280,Charadriiformes,Charadriidae,Plovers,54,BL3,Anarhynchus_frontalis,Wrybill,Anarhynchus_frontalis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas acuta,708,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_acuta,Northern Pintail,Anas_acuta,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas andium,19820,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_andium,Andean Teal,Anas_andium,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas bahamensis,703,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_bahamensis,White-cheeked Pintail,Anas_bahamensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas capensis,670,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_capensis,Cape Teal,Anas_capensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas castanea,700,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_castanea,Chestnut Teal,Anas_castanea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas chlorotis,19819,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_chlorotis,Brown Teal,Anas_chlorotis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas crecca,714,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_crecca,Common Teal,Anas_crecca,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas cyanoptera,691,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_cyanoptera,Cinnamon Teal,Anas_cyanoptera,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas erythrorhyncha,704,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_erythrorhyncha,Red-billed Duck,Anas_erythrorhyncha,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas falcata,672,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_falcata,Falcated Duck,Anas_falcata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas flavirostris,705,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_flavirostris,Yellow-billed Teal,Anas_flavirostris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas fulvigula,19816,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_fulvigula,Mottled Duck,Anas_fulvigula,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas georgica,711,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_georgica,Yellow-billed Pintail,Anas_georgica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas gibberifrons,698,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_gibberifrons,Sunda Teal,Anas_gibberifrons,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas gracilis,19817,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_gracilis,Grey Teal,Anas_gracilis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas hottentota,719,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_hottentota,Hottentot Teal,Anas_hottentota,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas melleri,689,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_melleri,Meller's Duck,Anas_melleri,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas penelope,673,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_penelope,Eurasian Wigeon,Anas_penelope,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas platalea,693,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_platalea,Red Shoveler,Anas_platalea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas poecilorhyncha,685,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_poecilorhyncha,Spot-billed Duck,Anas_poecilorhyncha,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas querquedula,712,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_querquedula,Garganey,Anas_querquedula,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas rhynchotis,694,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_rhynchotis,Australasian Shoveler,Anas_rhynchotis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas rubripes,677,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_rubripes,American Black Duck,Anas_rubripes,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas sibilatrix,675,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_sibilatrix,Chiloe Wigeon,Anas_sibilatrix,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas smithii,692,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_smithii,Cape Shoveler,Anas_smithii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas sparsa,676,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_sparsa,African Black Duck,Anas_sparsa,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas superciliosa,686,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_superciliosa,Pacific Black Duck,Anas_superciliosa,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas undulata,688,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_undulata,Yellow-billed Duck,Anas_undulata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anas versicolor,718,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_versicolor,Silver Teal,Anas_versicolor,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anhinga melanogaster,5071,Suliformes,Anhingidae,Anhingas,33,BL3,Anhinga_melanogaster,Oriental Darter,Anhinga_melanogaster,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anhinga novaehollandiae,19918,Suliformes,Anhingidae,Anhingas,33,BL3,Anhinga_novaehollandiae,Australian Darter,Anhinga_novaehollandiae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anous stolidus,4490,Charadriiformes,Laridae,Gulls and terns,61,BL3,Anous_stolidus,Brown Noddy,Anous_stolidus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anser albifrons,603,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anser_albifrons,Greater White-fronted Goose,Anser_albifrons,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anser anser,607,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anser_anser,Greylag Goose,Anser_anser,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anser brachyrhynchus,599,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anser_brachyrhynchus,Pink-footed Goose,Anser_brachyrhynchus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anser cygnoides,598,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anser_cygnoides,Swan Goose,Anser_cygnoides,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anser indicus,608,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anser_indicus,Bar-headed Goose,Anser_indicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Anthus petrosus,11882,Passeriformes,Motacillidae,Wagtails and pipits,170,BL3,Anthus_petrosus,Rock Pipit,Anthus_petrosus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aphriza virgata,4116,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Aphriza_virgata,Surfbird,Aphriza_virgata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aquila clanga,4854,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Aquila_clanga,Greater Spotted Eagle,Aquila_clanga,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aquila rapax,4855,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Aquila_rapax,Tawny Eagle,Aquila_rapax,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aramides cajanea,3868,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Aramides_cajanea,Grey-necked Wood-rail,Aramides_cajanea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ardea cocoi,5217,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardea_cocoi,Cocoi Heron,Ardea_cocoi,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ardea goliath,5221,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardea_goliath,Goliath Heron,Ardea_goliath,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ardea pacifica,5218,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardea_pacifica,White-necked Heron,Ardea_pacifica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ardea picata,5229,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardea_picata,Pied Heron,Ardea_picata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ardea purpurea,5224,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardea_purpurea,Purple Heron,Ardea_purpurea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ardea sumatrana,5223,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardea_sumatrana,Great-billed Heron,Ardea_sumatrana,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ardeola bacchus,5251,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardeola_bacchus,Chinese Pond-heron,Ardeola_bacchus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ardeola grayii,5250,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardeola_grayii,Indian Pond-heron,Ardeola_grayii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ardeola idae,5253,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardeola_idae,Madagascar Pond-heron,Ardeola_idae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Arenaria interpres,4110,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Arenaria_interpres,Ruddy Turnstone,Arenaria_interpres,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Arenaria melanocephala,4111,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Arenaria_melanocephala,Black Turnstone,Arenaria_melanocephala,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aviceda jerdoni,4580,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Aviceda_jerdoni,Jerdon's Baza,Aviceda_jerdoni,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aviceda leuphotes,4582,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Aviceda_leuphotes,Black Baza,Aviceda_leuphotes,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aviceda subcristata,4581,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Aviceda_subcristata,Pacific Baza,Aviceda_subcristata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aythya australis,735,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Aythya_australis,Hardhead,Aythya_australis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aythya collaris,730,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Aythya_collaris,Ring-necked Duck,Aythya_collaris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aythya ferina,727,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Aythya_ferina,Common Pochard,Aythya_ferina,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aythya fuligula,736,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Aythya_fuligula,Tufted Duck,Aythya_fuligula,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aythya novaeseelandiae,737,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Aythya_novaeseelandiae,New Zealand Scaup,Aythya_novaeseelandiae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aythya nyroca,731,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Aythya_nyroca,Ferruginous Duck,Aythya_nyroca,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Balearica regulorum,3734,Gruiformes,Gruidae,Cranes,45,BL3,Balearica_regulorum,Grey Crowned-crane,Balearica_regulorum,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Bostrychia carunculata,5300,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Bostrychia_carunculata,Wattled Ibis,Bostrychia_carunculata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Botaurus pinnatus,5173,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Botaurus_pinnatus,Pinnated Bittern,Botaurus_pinnatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Bradypterus baboecala,10721,Passeriformes,Sylviidae,Old World warblers,161,BL3,Bradypterus_baboecala,African Bush-warbler,Bradypterus_baboecala,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Branta hutchinsii,19813,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Branta_hutchinsii,Cackling Goose,Branta_hutchinsii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Branta leucopsis,615,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Branta_leucopsis,Barnacle Goose,Branta_leucopsis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Branta sandvicensis,612,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Branta_sandvicensis,Hawaiian Goose,Branta_sandvicensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Bubo scandiaca,2982,Strigiformes,Strigidae,Owls,71,BL3,Bubo_scandiaca,Snowy Owl,Bubo_scandiaca,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Bucephala islandica,759,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Bucephala_islandica,Barrow's Goldeneye,Bucephala_islandica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Bulweria bulwerii,5522,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Bulweria_bulwerii,Bulwer's Petrel,Bulweria_bulwerii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Burhinus bistriatus,4183,Charadriiformes,Burhinidae,Thick-knees,48,BL3,Burhinus_bistriatus,Double-striped Thick-knee,Burhinus_bistriatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Burhinus capensis,4182,Charadriiformes,Burhinidae,Thick-knees,48,BL3,Burhinus_capensis,Spotted Thick-knee,Burhinus_capensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Burhinus grallarius,4185,Charadriiformes,Burhinidae,Thick-knees,48,BL3,Burhinus_grallarius,Bush Thick-knee,Burhinus_grallarius,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Burhinus oedicnemus,4179,Charadriiformes,Burhinidae,Thick-knees,48,BL3,Burhinus_oedicnemus,Eurasian Thick-knee,Burhinus_oedicnemus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Burhinus senegalensis,4180,Charadriiformes,Burhinidae,Thick-knees,48,BL3,Burhinus_senegalensis,Senegal Thick-knee,Burhinus_senegalensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Burhinus superciliaris,4184,Charadriiformes,Burhinidae,Thick-knees,48,BL3,Burhinus_superciliaris,Peruvian Thick-knee,Burhinus_superciliaris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Burhinus vermiculatus,4181,Charadriiformes,Burhinidae,Thick-knees,48,BL3,Burhinus_vermiculatus,Water Thick-knee,Burhinus_vermiculatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Busarellus nigricollis,4801,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Busarellus_nigricollis,Black-collared Hawk,Busarellus_nigricollis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Butastur indicus,4778,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Butastur_indicus,Grey-faced Buzzard,Butastur_indicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Buteo albonotatus,4822,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Buteo_albonotatus,Zone-tailed Hawk,Buteo_albonotatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Buteo brachyurus,4812,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Buteo_brachyurus,Short-tailed Hawk,Buteo_brachyurus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Buteo lagopus,4840,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Buteo_lagopus,Rough-legged Hawk,Buteo_lagopus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Buteo polyosoma,4817,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Buteo_polyosoma,Red-backed Hawk,Buteo_polyosoma,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Buteo rufinus,4836,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Buteo_rufinus,Long-legged Buzzard,Buteo_rufinus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Buteogallus aequinoctialis,4793,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Buteogallus_aequinoctialis,Rufous Crab-hawk,Buteogallus_aequinoctialis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Buteogallus anthracinus,4794,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Buteogallus_anthracinus,Common Black-hawk,Buteogallus_anthracinus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Buteogallus meridionalis,4799,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Buteogallus_meridionalis,Savanna Hawk,Buteogallus_meridionalis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Buteogallus urubitinga,4798,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Buteogallus_urubitinga,Great Black-hawk,Buteogallus_urubitinga,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Butorides striata,5255,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Butorides_striata,Striated Heron,Butorides_striata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cacomantis variolosus,1761,Cuculiformes,Cuculidae,Cuckoos,67,BL3,Cacomantis_variolosus,Brush Cuckoo,Cacomantis_variolosus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calandrella raytal,11502,Passeriformes,Alaudidae,Larks,158,BL3,Calandrella_raytal,Indian Short-toed Lark,Calandrella_raytal,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calcarius lapponicus,12505,Passeriformes,Emberizidae,"Buntings, American sparrows and allies",192,BL3,Calcarius_lapponicus,Lapland Longspur,Calcarius_lapponicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calcarius mccownii,12504,Passeriformes,Emberizidae,"Buntings, American sparrows and allies",192,BL3,Calcarius_mccownii,McCown's Longspur,Calcarius_mccownii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calcarius ornatus,12507,Passeriformes,Emberizidae,"Buntings, American sparrows and allies",192,BL3,Calcarius_ornatus,Chestnut-collared Longspur,Calcarius_ornatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calcarius pictus,12506,Passeriformes,Emberizidae,"Buntings, American sparrows and allies",192,BL3,Calcarius_pictus,Smith's Longspur,Calcarius_pictus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris acuminata,4132,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_acuminata,Sharp-tailed Sandpiper,Calidris_acuminata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris alba,4120,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_alba,Sanderling,Calidris_alba,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris alpina,4135,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_alpina,Dunlin,Calidris_alpina,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris bairdii,4129,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_bairdii,Baird's Sandpiper,Calidris_bairdii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris canutus,4118,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_canutus,Red Knot,Calidris_canutus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris ferruginea,4138,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_ferruginea,Curlew Sandpiper,Calidris_ferruginea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris fuscicollis,4128,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_fuscicollis,White-rumped Sandpiper,Calidris_fuscicollis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris himantopus,4139,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_himantopus,Stilt Sandpiper,Calidris_himantopus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris maritima,4133,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_maritima,Purple Sandpiper,Calidris_maritima,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris mauri,4122,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_mauri,Western Sandpiper,Calidris_mauri,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris melanotos,4130,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_melanotos,Pectoral Sandpiper,Calidris_melanotos,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris minuta,4123,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_minuta,Little Stint,Calidris_minuta,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris minutilla,4127,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_minutilla,Least Sandpiper,Calidris_minutilla,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris pusilla,4121,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_pusilla,Semipalmated Sandpiper,Calidris_pusilla,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris ruficollis,4124,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_ruficollis,Red-necked Stint,Calidris_ruficollis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris subminuta,4126,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_subminuta,Long-toed Stint,Calidris_subminuta,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris temminckii,4125,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_temminckii,Temminck's Stint,Calidris_temminckii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calidris tenuirostris,4117,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Calidris_tenuirostris,Great Knot,Calidris_tenuirostris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calliphlox evelynae,2795,Apodiformes,Trochilidae,Hummingbirds,79,BL3,Calliphlox_evelynae,Bahama Woodstar,Calliphlox_evelynae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Callonetta leucophrys,665,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Callonetta_leucophrys,Ringed Teal,Callonetta_leucophrys,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calonectris diomedea,5528,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Calonectris_diomedea,Cory's Shearwater,Calonectris_diomedea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Calonectris leucomelas,5531,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Calonectris_leucomelas,Streaked Shearwater,Calonectris_leucomelas,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Caprimulgus vociferus,3235,Caprimulgiformes,Caprimulgidae,Nightjars,75,BL3,Caprimulgus_vociferus,Whip-poor-will,Caprimulgus_vociferus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Caracara plancus,4925,Falconiformes,Falconidae,Falcons and caracaras,35,BL3,Caracara_plancus,Southern Caracara,Caracara_plancus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Catharacta chilensis,4352,Charadriiformes,Stercorariidae,Skuas and jaegers,62,BL3,Catharacta_chilensis,Chilean Skua,Catharacta_chilensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Catharacta skua,4350,Charadriiformes,Stercorariidae,Skuas and jaegers,62,BL3,Catharacta_skua,Great Skua,Catharacta_skua,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cathartes burrovianus,5350,Accipitriformes,Cathartidae,New World vultures,34,BL3,Cathartes_burrovianus,Lesser Yellow-headed Vulture,Cathartes_burrovianus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cathartes melambrotus,5351,Accipitriformes,Cathartidae,New World vultures,34,BL3,Cathartes_melambrotus,Greater Yellow-headed Vulture,Cathartes_melambrotus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ceyx pictus,1569,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Ceyx_pictus,African Pygmy-kingfisher,Ceyx_pictus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ceyx rufidorsa,19845,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Ceyx_rufidorsa,Rufous-backed Kingfisher,Ceyx_rufidorsa,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chalcophaps indica,3417,Columbiformes,Columbidae,Doves and pigeons,65,BL3,Chalcophaps_indica,Emerald Dove,Chalcophaps_indica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius alexandrinus,4250,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_alexandrinus,Kentish Plover,Charadrius_alexandrinus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius bicinctus,4260,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_bicinctus,Double-banded Plover,Charadrius_bicinctus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius collaris,4259,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_collaris,Collared Plover,Charadrius_collaris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius dubius,4239,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_dubius,Little Ringed Plover,Charadrius_dubius,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius falklandicus,4261,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_falklandicus,Two-banded Plover,Charadrius_falklandicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius hiaticula,4236,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_hiaticula,Common Ringed Plover,Charadrius_hiaticula,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius leschenaultii,4267,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_leschenaultii,Greater Sand Plover,Charadrius_leschenaultii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius marginatus,4255,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_marginatus,White-fronted Plover,Charadrius_marginatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius melodus,4247,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_melodus,Piping Plover,Charadrius_melodus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius modestus,4271,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_modestus,Rufous-chested Plover,Charadrius_modestus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius mongolus,4263,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_mongolus,Lesser Sand Plover,Charadrius_mongolus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius obscurus,4235,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_obscurus,New Zealand Dotterel,Charadrius_obscurus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius pecuarius,4244,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_pecuarius,Kittlitz's Plover,Charadrius_pecuarius,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius peronii,4257,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_peronii,Malaysian Plover,Charadrius_peronii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius placidus,4238,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_placidus,Long-billed Plover,Charadrius_placidus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius ruficapillus,4256,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_ruficapillus,Red-capped Plover,Charadrius_ruficapillus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius semipalmatus,4237,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_semipalmatus,Semipalmated Plover,Charadrius_semipalmatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius tricollaris,4245,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_tricollaris,Three-banded Plover,Charadrius_tricollaris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius veredus,4269,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_veredus,Oriental Plover,Charadrius_veredus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Charadrius wilsonia,4240,Charadriiformes,Charadriidae,Plovers,54,BL3,Charadrius_wilsonia,Wilson's Plover,Charadrius_wilsonia,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chen caerulescens,609,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Chen_caerulescens,Snow Goose,Chen_caerulescens,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chen rossii,610,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Chen_rossii,Ross's Goose,Chen_rossii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chlidonias hybrida,4486,Charadriiformes,Laridae,Gulls and terns,61,BL3,Chlidonias_hybrida,Whiskered Tern,Chlidonias_hybrida,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chlidonias leucopterus,4487,Charadriiformes,Laridae,Gulls and terns,61,BL3,Chlidonias_leucopterus,White-winged Tern,Chlidonias_leucopterus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chloephaga hybrida,641,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Chloephaga_hybrida,Kelp Goose,Chloephaga_hybrida,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chloephaga melanoptera,639,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Chloephaga_melanoptera,Andean Goose,Chloephaga_melanoptera,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chloephaga picta,640,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Chloephaga_picta,Upland Goose,Chloephaga_picta,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chloephaga poliocephala,642,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Chloephaga_poliocephala,Ashy-headed Goose,Chloephaga_poliocephala,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chloephaga rubidiceps,643,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Chloephaga_rubidiceps,Ruddy-headed Goose,Chloephaga_rubidiceps,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Chondrohierax uncinatus,4585,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Chondrohierax_uncinatus,Hook-billed Kite,Chondrohierax_uncinatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ciconia boyciana,5370,Ciconiiformes,Ciconiidae,Storks,23,BL3,Ciconia_boyciana,Oriental Stork,Ciconia_boyciana,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ciconia maguari,5368,Ciconiiformes,Ciconiidae,Storks,23,BL3,Ciconia_maguari,Maguari Stork,Ciconia_maguari,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cinclodes taczanowskii,6653,Passeriformes,Furnariidae,Ovenbirds,110,BL3,Cinclodes_taczanowskii,Surf Cinclodes,Cinclodes_taczanowskii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cinclus cinclus,8772,Passeriformes,Cinclidae,Dippers,179,BL3,Cinclus_cinclus,White-throated Dipper,Cinclus_cinclus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cinclus mexicanus,8774,Passeriformes,Cinclidae,Dippers,179,BL3,Cinclus_mexicanus,American Dipper,Cinclus_mexicanus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Circaetus gallicus,4659,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Circaetus_gallicus,Short-toed Snake-eagle,Circaetus_gallicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Circus aeruginosus,4685,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Circus_aeruginosus,Western Marsh-harrier,Circus_aeruginosus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Circus approximans,4690,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Circus_approximans,Swamp Harrier,Circus_approximans,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Circus assimilis,4694,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Circus_assimilis,Spotted Harrier,Circus_assimilis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Circus cinereus,4699,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Circus_cinereus,Cinereous Harrier,Circus_cinereus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Circus maurus,4695,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Circus_maurus,Black Harrier,Circus_maurus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Circus spilonotus,4689,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Circus_spilonotus,Eastern Marsh-harrier,Circus_spilonotus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cistothorus palustris,9708,Passeriformes,Troglodytidae,Wrens,162,BL3,Cistothorus_palustris,Marsh Wren,Cistothorus_palustris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cistothorus platensis,9703,Passeriformes,Troglodytidae,Wrens,162,BL3,Cistothorus_platensis,Sedge Wren,Cistothorus_platensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cladorhynchus leucocephalus,4222,Charadriiformes,Recurvirostridae,Stilts and avocets,53,BL3,Cladorhynchus_leucocephalus,Banded Stilt,Cladorhynchus_leucocephalus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Corvus albus,8121,Passeriformes,Corvidae,Crows and jays,147,BL3,Corvus_albus,Pied Crow,Corvus_albus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Corvus caurinus,8092,Passeriformes,Corvidae,Crows and jays,147,BL3,Corvus_caurinus,North-western Crow,Corvus_caurinus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Corvus corone,8101,Passeriformes,Corvidae,Crows and jays,147,BL3,Corvus_corone,Carrion Crow,Corvus_corone,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Corvus splendens,8076,Passeriformes,Corvidae,Crows and jays,147,BL3,Corvus_splendens,House Crow,Corvus_splendens,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cossypha caffra,9241,Passeriformes,Muscicapidae,Chats and Old World flycatchers,167,BL3,Cossypha_caffra,Cape Robin-chat,Cossypha_caffra,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cygnus buccinator,590,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Cygnus_buccinator,Trumpeter Swan,Cygnus_buccinator,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cygnus columbianus,591,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Cygnus_columbianus,Tundra Swan,Cygnus_columbianus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cygnus melancoryphus,588,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Cygnus_melancoryphus,Black-necked Swan,Cygnus_melancoryphus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cyornis rufigastra,9175,Passeriformes,Muscicapidae,Chats and Old World flycatchers,167,BL3,Cyornis_rufigastra,Mangrove Blue-flycatcher,Cyornis_rufigastra,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Cypsiurus balasiensis,2418,Apodiformes,Apodidae,Swifts,77,BL3,Cypsiurus_balasiensis,Asian Palm-swift,Cypsiurus_balasiensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Daptrius ater,4918,Falconiformes,Falconidae,Falcons and caracaras,35,BL3,Daptrius_ater,Black Caracara,Daptrius_ater,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Delichon dasypus,10138,Passeriformes,Hirundinidae,Swallows and martins,156,BL3,Delichon_dasypus,Asian House-martin,Delichon_dasypus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Dendrocygna arborea,566,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Dendrocygna_arborea,West Indian Whistling-duck,Dendrocygna_arborea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Dendrocygna arcuata,563,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Dendrocygna_arcuata,Wandering Whistling-duck,Dendrocygna_arcuata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Dendroica castanea,12712,Passeriformes,Parulidae,New World warblers,171,BL3,Dendroica_castanea,Bay-breasted Warbler,Dendroica_castanea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Dendroica palmarum,12711,Passeriformes,Parulidae,New World warblers,171,BL3,Dendroica_palmarum,Palm Warbler,Dendroica_palmarum,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Dendroica tigrina,12690,Passeriformes,Parulidae,New World warblers,171,BL3,Dendroica_tigrina,Cape May Warbler,Dendroica_tigrina,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Dives warszewiczi,13434,Passeriformes,Icteridae,New World blackbirds,190,BL3,Dives_warszewiczi,Scrub Blackbird,Dives_warszewiczi,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Dromas ardeola,4316,Charadriiformes,Dromadidae,Crab Plover,51,BL3,Dromas_ardeola,Crab Plover,Dromas_ardeola,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Drymodes brunneopygia,7669,Passeriformes,Petroicidae,Australasian robins,150,BL3,Drymodes_brunneopygia,Southern Scrub-robin,Drymodes_brunneopygia,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Dryolimnas cuvieri,3859,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Dryolimnas_cuvieri,White-throated Rail,Dryolimnas_cuvieri,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Egretta ardesiaca,5193,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Egretta_ardesiaca,Black Heron,Egretta_ardesiaca,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Egretta eulophotes,5206,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Egretta_eulophotes,Chinese Egret,Egretta_eulophotes,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Egretta gularis,19920,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Egretta_gularis,Western Reef-egret,Egretta_gularis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Egretta novaehollandiae,5195,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Egretta_novaehollandiae,White-faced Heron,Egretta_novaehollandiae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Egretta rufescens,5191,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Egretta_rufescens,Reddish Egret,Egretta_rufescens,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Egretta tricolor,5194,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Egretta_tricolor,Tricoloured Heron,Egretta_tricolor,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Elanoides forficatus,4603,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Elanoides_forficatus,American Swallow-tailed Kite,Elanoides_forficatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Elanus axillaris,4609,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Elanus_axillaris,Black-shouldered Kite,Elanus_axillaris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Elseyornis melanops,4282,Charadriiformes,Charadriidae,Plovers,54,BL3,Elseyornis_melanops,Black-fronted Dotterel,Elseyornis_melanops,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eopsaltria pulverulenta,7654,Passeriformes,Petroicidae,Australasian robins,150,BL3,Eopsaltria_pulverulenta,Mangrove Robin,Eopsaltria_pulverulenta,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Erithacus rubecula,9206,Passeriformes,Muscicapidae,Chats and Old World flycatchers,167,BL3,Erithacus_rubecula,European Robin,Erithacus_rubecula,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Erythrogonys cinctus,4276,Charadriiformes,Charadriidae,Plovers,54,BL3,Erythrogonys_cinctus,Red-kneed Dotterel,Erythrogonys_cinctus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Erythropygia coryphaeus,9270,Passeriformes,Muscicapidae,Chats and Old World flycatchers,167,BL3,Erythropygia_coryphaeus,Karoo Scrub-robin,Erythropygia_coryphaeus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Esacus giganteus,4187,Charadriiformes,Burhinidae,Thick-knees,48,BL3,Esacus_giganteus,Beach Thick-knee,Esacus_giganteus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eudocimus ruber,5286,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Eudocimus_ruber,Scarlet Ibis,Eudocimus_ruber,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eudyptula minor,5428,Sphenisciformes,Spheniscidae,Penguins,15,BL3,Eudyptula_minor,Little Penguin,Eudyptula_minor,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eulabeornis castaneoventris,3909,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Eulabeornis_castaneoventris,Chestnut Rail,Eulabeornis_castaneoventris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Eurynorhynchus pygmeus,4141,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Eurynorhynchus_pygmeus,Spoon-billed Sandpiper,Eurynorhynchus_pygmeus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Falco amurensis,4958,Falconiformes,Falconidae,Falcons and caracaras,35,BL3,Falco_amurensis,Amur Falcon,Falco_amurensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Falco cenchroides,4949,Falconiformes,Falconidae,Falcons and caracaras,35,BL3,Falco_cenchroides,Nankeen Kestrel,Falco_cenchroides,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Falco chicquera,4956,Falconiformes,Falconidae,Falcons and caracaras,35,BL3,Falco_chicquera,Red-necked Falcon,Falco_chicquera,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Falco femoralis,4962,Falconiformes,Falconidae,Falcons and caracaras,35,BL3,Falco_femoralis,Aplomado Falcon,Falco_femoralis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Falco longipennis,4970,Falconiformes,Falconidae,Falcons and caracaras,35,BL3,Falco_longipennis,Australian Hobby,Falco_longipennis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Falco peregrinus,4980,Falconiformes,Falconidae,Falcons and caracaras,35,BL3,Falco_peregrinus,Peregrine Falcon,Falco_peregrinus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Falco tinnunculus,4941,Falconiformes,Falconidae,Falcons and caracaras,35,BL3,Falco_tinnunculus,Common Kestrel,Falco_tinnunculus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fratercula arctica,4532,Charadriiformes,Alcidae,Auks,63,BL3,Fratercula_arctica,Atlantic Puffin,Fratercula_arctica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fulica alai,3940,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Fulica_alai,Hawaiian Coot,Fulica_alai,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fulica ardesiaca,3945,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Fulica_ardesiaca,Slate-coloured Coot,Fulica_ardesiaca,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fulica armillata,3946,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Fulica_armillata,Red-gartered Coot,Fulica_armillata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fulica rufifrons,3947,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Fulica_rufifrons,Red-fronted Coot,Fulica_rufifrons,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fulmarus glacialis,5462,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Fulmarus_glacialis,Northern Fulmar,Fulmarus_glacialis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Fulmarus glacialoides,5463,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Fulmarus_glacialoides,Southern Fulmar,Fulmarus_glacialoides,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gallinago gallinago,4051,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Gallinago_gallinago,Common Snipe,Gallinago_gallinago,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gallinago hardwickii,4045,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Gallinago_hardwickii,Latham's Snipe,Gallinago_hardwickii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gallinago nigripennis,4055,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Gallinago_nigripennis,African Snipe,Gallinago_nigripennis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gallinago nobilis,4061,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Gallinago_nobilis,Noble Snipe,Gallinago_nobilis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gallinago paraguaiae,4057,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Gallinago_paraguaiae,South American Snipe,Gallinago_paraguaiae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gallinago stenura,4048,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Gallinago_stenura,Pintail Snipe,Gallinago_stenura,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gallinula chloropus,3931,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Gallinula_chloropus,Common Moorhen,Gallinula_chloropus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gallinula melanops,3935,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Gallinula_melanops,Spot-flanked Gallinule,Gallinula_melanops,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gallinula tenebrosa,3933,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Gallinula_tenebrosa,Dusky Moorhen,Gallinula_tenebrosa,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gallinula ventralis,3936,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Gallinula_ventralis,Black-tailed Native-hen,Gallinula_ventralis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gallirallus okinawae,3829,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Gallirallus_okinawae,Okinawa Rail,Gallirallus_okinawae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gallirallus striatus,3841,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Gallirallus_striatus,Slaty-breasted Rail,Gallirallus_striatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gavia arctica,5442,Gaviiformes,Gaviidae,Loons or divers,16,BL3,Gavia_arctica,Arctic Loon,Gavia_arctica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gavia immer,5446,Gaviiformes,Gaviidae,Loons or divers,16,BL3,Gavia_immer,Common Loon,Gavia_immer,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gavia pacifica,19927,Gaviiformes,Gaviidae,Loons or divers,16,BL3,Gavia_pacifica,Pacific Loon,Gavia_pacifica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gavia stellata,5440,Gaviiformes,Gaviidae,Loons or divers,16,BL3,Gavia_stellata,Red-throated Loon,Gavia_stellata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Geositta peruviana,6628,Passeriformes,Furnariidae,Ovenbirds,110,BL3,Geositta_peruviana,Coastal Miner,Geositta_peruviana,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Geranospiza caerulescens,4779,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Geranospiza_caerulescens,Crane Hawk,Geranospiza_caerulescens,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gerygone levigaster,7591,Passeriformes,Acanthizidae,Thornbills and gerygones,120,BL3,Gerygone_levigaster,Mangrove Gerygone,Gerygone_levigaster,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gorsachius melanolophus,5189,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Gorsachius_melanolophus,Malaysian Night-heron,Gorsachius_melanolophus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Grus americana,3747,Gruiformes,Gruidae,Cranes,45,BL3,Grus_americana,Whooping Crane,Grus_americana,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Grus leucogeranus,3737,Gruiformes,Gruidae,Cranes,45,BL3,Grus_leucogeranus,Siberian Crane,Grus_leucogeranus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Grus paradisea,3743,Gruiformes,Gruidae,Cranes,45,BL3,Grus_paradisea,Blue Crane,Grus_paradisea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Grus rubicunda,3739,Gruiformes,Gruidae,Cranes,45,BL3,Grus_rubicunda,Brolga,Grus_rubicunda,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gymnogyps californianus,5352,Accipitriformes,Cathartidae,New World vultures,34,BL3,Gymnogyps_californianus,California Condor,Gymnogyps_californianus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Gypohierax angolensis,4641,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Gypohierax_angolensis,Palm-nut Vulture,Gypohierax_angolensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haematopus ater,4205,Charadriiformes,Haematopodidae,Oystercatchers,50,BL3,Haematopus_ater,Blackish Oystercatcher,Haematopus_ater,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haematopus bachmani,4199,Charadriiformes,Haematopodidae,Oystercatchers,50,BL3,Haematopus_bachmani,Black Oystercatcher,Haematopus_bachmani,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haematopus finschi,19900,Charadriiformes,Haematopodidae,Oystercatchers,50,BL3,Haematopus_finschi,South Island Oystercatcher,Haematopus_finschi,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haematopus fuliginosus,4204,Charadriiformes,Haematopodidae,Oystercatchers,50,BL3,Haematopus_fuliginosus,Sooty Oystercatcher,Haematopus_fuliginosus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haematopus leucopodus,4206,Charadriiformes,Haematopodidae,Oystercatchers,50,BL3,Haematopus_leucopodus,Magellanic Oystercatcher,Haematopus_leucopodus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haematopus longirostris,4201,Charadriiformes,Haematopodidae,Oystercatchers,50,BL3,Haematopus_longirostris,Pied Oystercatcher,Haematopus_longirostris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haematopus moquini,4197,Charadriiformes,Haematopodidae,Oystercatchers,50,BL3,Haematopus_moquini,African Oystercatcher,Haematopus_moquini,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haematopus ostralegus,4195,Charadriiformes,Haematopodidae,Oystercatchers,50,BL3,Haematopus_ostralegus,Eurasian Oystercatcher,Haematopus_ostralegus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haematopus palliatus,4200,Charadriiformes,Haematopodidae,Oystercatchers,50,BL3,Haematopus_palliatus,American Oystercatcher,Haematopus_palliatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haematopus unicolor,4202,Charadriiformes,Haematopodidae,Oystercatchers,50,BL3,Haematopus_unicolor,Variable Oystercatcher,Haematopus_unicolor,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haliaeetus albicilla,4636,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Haliaeetus_albicilla,White-tailed Eagle,Haliaeetus_albicilla,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haliaeetus leucocephalus,4637,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Haliaeetus_leucocephalus,Bald Eagle,Haliaeetus_leucocephalus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haliaeetus leucogaster,4630,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Haliaeetus_leucogaster,White-bellied Sea-eagle,Haliaeetus_leucogaster,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haliaeetus vocifer,4633,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Haliaeetus_vocifer,African Fish-eagle,Haliaeetus_vocifer,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haliastur indus,4628,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Haliastur_indus,Brahminy Kite,Haliastur_indus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Haliastur sphenurus,4627,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Haliastur_sphenurus,Whistling Kite,Haliastur_sphenurus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Helmitheros vermivorum,12722,Passeriformes,Parulidae,New World warblers,171,BL3,Helmitheros_vermivorum,Worm-eating Warbler,Helmitheros_vermivorum,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Heteroscelus brevipes,4105,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Heteroscelus_brevipes,Grey-tailed Tattler,Heteroscelus_brevipes,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Heteroscelus incanus,4106,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Heteroscelus_incanus,Wandering Tattler,Heteroscelus_incanus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Himantopus himantopus,4213,Charadriiformes,Recurvirostridae,Stilts and avocets,53,BL3,Himantopus_himantopus,Black-winged Stilt,Himantopus_himantopus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Himantopus leucocephalus,19901,Charadriiformes,Recurvirostridae,Stilts and avocets,53,BL3,Himantopus_leucocephalus,White-headed Stilt,Himantopus_leucocephalus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Himantopus mexicanus,19902,Charadriiformes,Recurvirostridae,Stilts and avocets,53,BL3,Himantopus_mexicanus,Black-necked Stilt,Himantopus_mexicanus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Himantopus novaezelandiae,4217,Charadriiformes,Recurvirostridae,Stilts and avocets,53,BL3,Himantopus_novaezelandiae,Black Stilt,Himantopus_novaezelandiae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Hirundo fuligula,10069,Passeriformes,Hirundinidae,Swallows and martins,156,BL3,Hirundo_fuligula,Rock Martin,Hirundo_fuligula,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Hydrophasianus chirurgus,4161,Charadriiformes,Jacanidae,Jacanas,56,BL3,Hydrophasianus_chirurgus,Pheasant-tailed Jacana,Hydrophasianus_chirurgus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ichthyophaga ichthyaetus,4640,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Ichthyophaga_ichthyaetus,Grey-headed Fish-eagle,Ichthyophaga_ichthyaetus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Icterus dominicensis,13386,Passeriformes,Icteridae,New World blackbirds,190,BL3,Icterus_dominicensis,Greater Antillean Oriole,Icterus_dominicensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Irediparra gallinacea,4160,Charadriiformes,Jacanidae,Jacanas,56,BL3,Irediparra_gallinacea,Comb-crested Jacana,Irediparra_gallinacea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ixobrychus involucris,5161,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ixobrychus_involucris,Stripe-backed Bittern,Ixobrychus_involucris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Jacana jacana,4164,Charadriiformes,Jacanidae,Jacanas,56,BL3,Jacana_jacana,Wattled Jacana,Jacana_jacana,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Jacana spinosa,4163,Charadriiformes,Jacanidae,Jacanas,56,BL3,Jacana_spinosa,Northern Jacana,Jacana_spinosa,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ketupa ketupu,2981,Strigiformes,Strigidae,Owls,71,BL3,Ketupa_ketupu,Buffy Fish-owl,Ketupa_ketupu,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus armenicus,4410,Charadriiformes,Laridae,Gulls and terns,61,IOC27,Larus_armenicus,Armenian Gull,Larus_armenicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus audouinii,4382,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_audouinii,Audouin's Gull,Larus_audouinii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus belcheri,4369,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_belcheri,Band-tailed Gull,Larus_belcheri,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus brunnicephalus,4417,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_brunnicephalus,Brown-headed Gull,Larus_brunnicephalus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus bulleri,4422,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_bulleri,Black-billed Gull,Larus_bulleri,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus cachinnans,4404,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_cachinnans,Caspian Gull,Larus_cachinnans,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus californicus,4383,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_californicus,California Gull,Larus_californicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus canus,4376,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_canus,Mew Gull,Larus_canus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus cirrocephalus,4418,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_cirrocephalus,Grey-headed Gull,Larus_cirrocephalus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus crassirostris,4371,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_crassirostris,Black-tailed Gull,Larus_crassirostris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus dominicanus,4385,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_dominicanus,Kelp Gull,Larus_dominicanus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus genei,4425,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_genei,Slender-billed Gull,Larus_genei,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus glaucescens,4386,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_glaucescens,Glaucous-winged Gull,Larus_glaucescens,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus glaucoides,4391,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_glaucoides,Iceland Gull,Larus_glaucoides,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus hartlaubii,4419,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_hartlaubii,King Gull,Larus_hartlaubii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus heermanni,4373,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_heermanni,Heermann's Gull,Larus_heermanni,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus hemprichii,4375,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_hemprichii,Sooty Gull,Larus_hemprichii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus ichthyaetus,4416,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_ichthyaetus,Pallas's Gull,Larus_ichthyaetus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus maculipennis,4423,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_maculipennis,Brown-hooded Gull,Larus_maculipennis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus melanocephalus,4429,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_melanocephalus,Mediterranean Gull,Larus_melanocephalus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus michahellis,19905,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_michahellis,Yellow-legged Gull,Larus_michahellis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus modestus,4372,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_modestus,Grey Gull,Larus_modestus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus novaehollandiae,4420,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_novaehollandiae,Silver Gull,Larus_novaehollandiae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus pacificus,4368,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_pacificus,Pacific Gull,Larus_pacificus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus philadelphia,4426,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_philadelphia,Bonaparte's Gull,Larus_philadelphia,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus ridibundus,4424,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_ridibundus,Black-headed Gull,Larus_ridibundus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus saundersi,4427,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_saundersi,Saunders's Gull,Larus_saundersi,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus schistisagus,4403,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_schistisagus,Slaty-backed Gull,Larus_schistisagus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Larus serranus,4428,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_serranus,Andean Gull,Larus_serranus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Laterallus jamaicensis,3818,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Laterallus_jamaicensis,Black Rail,Laterallus_jamaicensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Laterallus melanophaius,3813,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Laterallus_melanophaius,Rufous-sided Crake,Laterallus_melanophaius,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Laterallus ruber,3815,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Laterallus_ruber,Ruddy Crake,Laterallus_ruber,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Leucophaeus scoresbii,4367,Charadriiformes,Laridae,Gulls and terns,61,BL3,Leucophaeus_scoresbii,Dolphin Gull,Leucophaeus_scoresbii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Leucopternis albicollis,4790,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Leucopternis_albicollis,White Hawk,Leucopternis_albicollis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Leucopternis schistaceus,4784,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Leucopternis_schistaceus,Slate-coloured Hawk,Leucopternis_schistaceus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Lichenostomus fasciogularis,7375,Passeriformes,Meliphagidae,Honeyeaters,117,BL3,Lichenostomus_fasciogularis,Mangrove Honeyeater,Lichenostomus_fasciogularis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Limicola falcinellus,4142,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Limicola_falcinellus,Broad-billed Sandpiper,Limicola_falcinellus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Limnodromus griseus,4112,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Limnodromus_griseus,Short-billed Dowitcher,Limnodromus_griseus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Limnodromus scolopaceus,4113,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Limnodromus_scolopaceus,Long-billed Dowitcher,Limnodromus_scolopaceus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Limnodromus semipalmatus,4115,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Limnodromus_semipalmatus,Asian Dowitcher,Limnodromus_semipalmatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Limosa fedoa,4077,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Limosa_fedoa,Marbled Godwit,Limosa_fedoa,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Limosa haemastica,4075,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Limosa_haemastica,Hudsonian Godwit,Limosa_haemastica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Limosa lapponica,4076,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Limosa_lapponica,Bar-tailed Godwit,Limosa_lapponica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Limosa limosa,4074,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Limosa_limosa,Black-tailed Godwit,Limosa_limosa,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Lophaetus occipitalis,4878,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Lophaetus_occipitalis,Long-crested Eagle,Lophaetus_occipitalis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Lophonetta specularioides,661,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Lophonetta_specularioides,Crested Duck,Lophonetta_specularioides,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Lymnocryptes minimus,4066,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Lymnocryptes_minimus,Jack Snipe,Lymnocryptes_minimus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Macronectes giganteus,5460,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Macronectes_giganteus,Southern Giant-petrel,Macronectes_giganteus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Megaceryle alcyon,1641,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Megaceryle_alcyon,Belted Kingfisher,Megaceryle_alcyon,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Megaceryle maxima,1639,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Megaceryle_maxima,Giant Kingfisher,Megaceryle_maxima,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Megaceryle torquata,1642,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Megaceryle_torquata,Ringed Kingfisher,Megaceryle_torquata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Megascops cooperi,2936,Strigiformes,Strigidae,Owls,71,BL3,Megascops_cooperi,Pacific Screech-owl,Megascops_cooperi,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Melanitta fusca,753,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Melanitta_fusca,White-winged Scoter,Melanitta_fusca,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Melanitta perspicillata,752,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Melanitta_perspicillata,Surf Scoter,Melanitta_perspicillata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Melospiza georgiana,12521,Passeriformes,Emberizidae,"Buntings, American sparrows and allies",192,BL3,Melospiza_georgiana,Swamp Sparrow,Melospiza_georgiana,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Mergellus albellus,761,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Mergellus_albellus,Smew,Mergellus_albellus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Mesembrinibis cayennensis,5298,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Mesembrinibis_cayennensis,Green Ibis,Mesembrinibis_cayennensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Mesophoyx intermedia,5237,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Mesophoyx_intermedia,Intermediate Egret,Mesophoyx_intermedia,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Metopidius indicus,4162,Charadriiformes,Jacanidae,Jacanas,56,BL3,Metopidius_indicus,Bronze-winged Jacana,Metopidius_indicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Micrastur ruficollis,4910,Falconiformes,Falconidae,Falcons and caracaras,35,BL3,Micrastur_ruficollis,Barred Forest-falcon,Micrastur_ruficollis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Micrastur semitorquatus,4914,Falconiformes,Falconidae,Falcons and caracaras,35,BL3,Micrastur_semitorquatus,Collared Forest-falcon,Micrastur_semitorquatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Milvus migrans,4622,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Milvus_migrans,Black Kite,Milvus_migrans,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Mimus gilvus,9565,Passeriformes,Mimidae,Mockingbirds and thrashers,175,BL3,Mimus_gilvus,Tropical Mockingbird,Mimus_gilvus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Mimus gundlachii,9566,Passeriformes,Mimidae,Mockingbirds and thrashers,175,BL3,Mimus_gundlachii,Bahama Mockingbird,Mimus_gundlachii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Monticola rupestris,8797,Passeriformes,Muscicapidae,Chats and Old World flycatchers,167,BL3,Monticola_rupestris,Cape Rock-thrush,Monticola_rupestris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Monticola solitarius,8807,Passeriformes,Muscicapidae,Chats and Old World flycatchers,167,BL3,Monticola_solitarius,Blue Rock-thrush,Monticola_solitarius,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Morus capensis,5055,Suliformes,Sulidae,Gannets and boobies,31,BL3,Morus_capensis,Cape Gannet,Morus_capensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Morus serrator,5056,Suliformes,Sulidae,Gannets and boobies,31,BL3,Morus_serrator,Australasian Gannet,Morus_serrator,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Motacilla capensis,11812,Passeriformes,Motacillidae,Wagtails and pipits,170,BL3,Motacilla_capensis,Cape Wagtail,Motacilla_capensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Mycteria americana,5358,Ciconiiformes,Ciconiidae,Storks,23,BL3,Mycteria_americana,Wood Stork,Mycteria_americana,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Mycteria cinerea,5359,Ciconiiformes,Ciconiidae,Storks,23,BL3,Mycteria_cinerea,Milky Stork,Mycteria_cinerea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Mycteria ibis,5360,Ciconiiformes,Ciconiidae,Storks,23,BL3,Mycteria_ibis,Yellow-billed Stork,Mycteria_ibis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Necrosyrtes monachus,4644,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Necrosyrtes_monachus,Hooded Vulture,Necrosyrtes_monachus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Neophema petrophila,2084,Psittaciformes,Psittacidae,Parrots,68,BL3,Neophema_petrophila,Rock Parrot,Neophema_petrophila,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Neophron percnopterus,4643,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Neophron_percnopterus,Egyptian Vulture,Neophron_percnopterus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Nesillas typica,10761,Passeriformes,Sylviidae,Old World warblers,161,BL3,Nesillas_typica,Madagascar Brush-warbler,Nesillas_typica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Netta erythrophthalma,724,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Netta_erythrophthalma,Southern Pochard,Netta_erythrophthalma,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Netta rufina,722,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Netta_rufina,Red-crested Pochard,Netta_rufina,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Nomonyx dominicus,572,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Nomonyx_dominicus,Masked Duck,Nomonyx_dominicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Numenius arquata,4087,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Numenius_arquata,Eurasian Curlew,Numenius_arquata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Numenius madagascariensis,4089,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Numenius_madagascariensis,Far Eastern Curlew,Numenius_madagascariensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Numenius minutus,4078,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Numenius_minutus,Little Curlew,Numenius_minutus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Numenius phaeopus,4080,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Numenius_phaeopus,Whimbrel,Numenius_phaeopus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Numenius tahitiensis,4085,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Numenius_tahitiensis,Bristle-thighed Curlew,Numenius_tahitiensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Nyctanassa violacea,5181,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Nyctanassa_violacea,Yellow-crowned Night-heron,Nyctanassa_violacea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Origma solitaria,7523,Passeriformes,Acanthizidae,Thornbills and gerygones,120,BL3,Origma_solitaria,Rockwarbler,Origma_solitaria,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Oxyura australis,578,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Oxyura_australis,Blue-billed Duck,Oxyura_australis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Oxyura vittata,577,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Oxyura_vittata,Lake Duck,Oxyura_vittata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pachycephala grisola,7897,Passeriformes,Pachycephalidae,Whistlers,139,BL3,Pachycephala_grisola,Mangrove Whistler,Pachycephala_grisola,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pandion haliaetus,4562,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Pandion_haliaetus,Osprey,Pandion_haliaetus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pardirallus nigricans,3907,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Pardirallus_nigricans,Blackish Rail,Pardirallus_nigricans,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pardirallus sanguinolentus,3908,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Pardirallus_sanguinolentus,Plumbeous Rail,Pardirallus_sanguinolentus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Parula pitiayumi,12680,Passeriformes,Parulidae,New World warblers,171,BL3,Parula_pitiayumi,Tropical Parula,Parula_pitiayumi,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Passer melanurus,11769,Passeriformes,Passeridae,"Sparrows, snowfinches and allies",183,BL3,Passer_melanurus,Cape Sparrow,Passer_melanurus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pelecanus conspicillatus,5338,Pelecaniformes,Pelecanidae,Pelicans,30,BL3,Pelecanus_conspicillatus,Australian Pelican,Pelecanus_conspicillatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pelecanus philippensis,5337,Pelecaniformes,Pelecanidae,Pelicans,30,BL3,Pelecanus_philippensis,Spot-billed Pelican,Pelecanus_philippensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pelecanus thagus,19925,Pelecaniformes,Pelecanidae,Pelicans,30,BL3,Pelecanus_thagus,Peruvian Pelican,Pelecanus_thagus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phaenicophilus palmarum,12873,Passeriformes,Thraupidae,Tanagers,193,BL3,Phaenicophilus_palmarum,Black-crowned Palm-tanager,Phaenicophilus_palmarum,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax africanus,5077,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_africanus,Reed Cormorant,Phalacrocorax_africanus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax aristotelis,5117,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_aristotelis,European Shag,Phalacrocorax_aristotelis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax brasilianus,5089,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_brasilianus,Neotropic Cormorant,Phalacrocorax_brasilianus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax capensis,5099,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_capensis,Cape Cormorant,Phalacrocorax_capensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax capillatus,5097,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_capillatus,Japanese Cormorant,Phalacrocorax_capillatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax coronatus,5078,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_coronatus,Crowned Cormorant,Phalacrocorax_coronatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax fuscescens,5088,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_fuscescens,Black-faced Cormorant,Phalacrocorax_fuscescens,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax fuscicollis,5091,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_fuscicollis,Indian Cormorant,Phalacrocorax_fuscicollis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax neglectus,5087,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_neglectus,Bank Cormorant,Phalacrocorax_neglectus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax niger,5080,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_niger,Little Cormorant,Phalacrocorax_niger,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax nigrogularis,5098,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_nigrogularis,Socotra Cormorant,Phalacrocorax_nigrogularis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax penicillatus,5085,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_penicillatus,Brandt's Cormorant,Phalacrocorax_penicillatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phalacrocorax punctatus,5119,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_punctatus,Spotted Shag,Phalacrocorax_punctatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phaps elegans,3424,Columbiformes,Columbidae,Doves and pigeons,65,BL3,Phaps_elegans,Brush Bronzewing,Phaps_elegans,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phegornis mitchellii,4281,Charadriiformes,Charadriidae,Plovers,54,BL3,Phegornis_mitchellii,Diademed Sandpiper-plover,Phegornis_mitchellii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Philesturnus carunculatus,8736,Passeriformes,Callaeatidae,Wattled crows,125,BL3,Philesturnus_carunculatus,Saddleback,Philesturnus_carunculatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Philomachus pugnax,4143,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Philomachus_pugnax,Ruff,Philomachus_pugnax,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phimosus infuscatus,5287,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Phimosus_infuscatus,Bare-faced Ibis,Phimosus_infuscatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phoebastria immutabilis,5582,Procellariiformes,Diomedeidae,Albatrosses,17,BL3,Phoebastria_immutabilis,Laysan Albatross,Phoebastria_immutabilis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phoeniconaias minor,5277,Phoenicopteriformes,Phoenicopteridae,Flamingos,22,BL3,Phoeniconaias_minor,Lesser Flamingo,Phoeniconaias_minor,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phoenicopterus roseus,19922,Phoenicopteriformes,Phoenicopteridae,Flamingos,22,BL3,Phoenicopterus_roseus,Greater Flamingo,Phoenicopterus_roseus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Phylloscopus borealis,10958,Passeriformes,Sylviidae,Old World warblers,161,BL3,Phylloscopus_borealis,Arctic Warbler,Phylloscopus_borealis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pilherodius pileatus,5208,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Pilherodius_pileatus,Capped Heron,Pilherodius_pileatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pitta megarhyncha,5698,Passeriformes,Pittidae,Pittas,102,BL3,Pitta_megarhyncha,Mangrove Pitta,Pitta_megarhyncha,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Platalea ajaja,5323,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Platalea_ajaja,Roseate Spoonbill,Platalea_ajaja,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Platalea alba,5320,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Platalea_alba,African Spoonbill,Platalea_alba,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Platalea flavipes,5322,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Platalea_flavipes,Yellow-billed Spoonbill,Platalea_flavipes,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Platalea minor,5321,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Platalea_minor,Black-faced Spoonbill,Platalea_minor,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Plectrophenax nivalis,12508,Passeriformes,Emberizidae,"Buntings, American sparrows and allies",192,BL3,Plectrophenax_nivalis,Snow Bunting,Plectrophenax_nivalis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Plegadis ridgwayi,5292,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Plegadis_ridgwayi,Puna Ibis,Plegadis_ridgwayi,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ploceus philippinus,11986,Passeriformes,Ploceidae,Weavers and allies,184,BL3,Ploceus_philippinus,Baya Weaver,Ploceus_philippinus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pluvialis apricaria,4231,Charadriiformes,Charadriidae,Plovers,54,BL3,Pluvialis_apricaria,Eurasian Golden Plover,Pluvialis_apricaria,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pluvialis dominica,4233,Charadriiformes,Charadriidae,Plovers,54,BL3,Pluvialis_dominica,American Golden Plover,Pluvialis_dominica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pluvialis fulva,4232,Charadriiformes,Charadriidae,Plovers,54,BL3,Pluvialis_fulva,Pacific Golden Plover,Pluvialis_fulva,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pluvianellus socialis,4174,Charadriiformes,Chionidae,Sheathbills and allies,49,BL3,Pluvianellus_socialis,Magellanic Plover,Pluvianellus_socialis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Podiceps auritus,5013,Podicipediformes,Podicipedidae,Grebes,21,BL3,Podiceps_auritus,Horned Grebe,Podiceps_auritus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Podiceps cristatus,5012,Podicipediformes,Podicipedidae,Grebes,21,BL3,Podiceps_cristatus,Great Crested Grebe,Podiceps_cristatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Podiceps grisegena,5010,Podicipediformes,Podicipedidae,Grebes,21,BL3,Podiceps_grisegena,Red-necked Grebe,Podiceps_grisegena,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Podiceps major,5009,Podicipediformes,Podicipedidae,Grebes,21,BL3,Podiceps_major,Great Grebe,Podiceps_major,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Podiceps nigricollis,5015,Podicipediformes,Podicipedidae,Grebes,21,BL3,Podiceps_nigricollis,Black-necked Grebe,Podiceps_nigricollis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Podiceps occipitalis,5018,Podicipediformes,Podicipedidae,Grebes,21,BL3,Podiceps_occipitalis,Silvery Grebe,Podiceps_occipitalis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Poliocephalus poliocephalus,5007,Podicipediformes,Podicipedidae,Grebes,21,BL3,Poliocephalus_poliocephalus,Hoary-headed Grebe,Poliocephalus_poliocephalus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Poliocephalus rufopectus,5008,Podicipediformes,Podicipedidae,Grebes,21,BL3,Poliocephalus_rufopectus,New Zealand Grebe,Poliocephalus_rufopectus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Polioptila plumbea,9807,Passeriformes,Polioptilidae,Gnatcatchers,172,BL3,Polioptila_plumbea,Tropical Gnatcatcher,Polioptila_plumbea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Porphyrio hochstetteri,3923,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Porphyrio_hochstetteri,Takahe,Porphyrio_hochstetteri,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Porphyrio martinica,3925,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Porphyrio_martinica,Yellow-legged Gallinule,Porphyrio_martinica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Porzana albicollis,3892,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Porzana_albicollis,Ash-throated Crake,Porzana_albicollis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Porzana fluminea,3889,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Porzana_fluminea,Australian Crake,Porzana_fluminea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Porzana fusca,3894,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Porzana_fusca,Ruddy-breasted Crake,Porzana_fusca,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Porzana pusilla,3885,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Porzana_pusilla,Baillon's Crake,Porzana_pusilla,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Procellaria parkinsoni,5525,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Procellaria_parkinsoni,Parkinson's Petrel,Procellaria_parkinsoni,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pseudibis papillosa,5314,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Pseudibis_papillosa,Red-naped Ibis,Pseudibis_papillosa,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pterodroma cookii,5484,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Pterodroma_cookii,Cook's Petrel,Pterodroma_cookii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Puffinus bulleri,5535,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Puffinus_bulleri,Buller's Shearwater,Puffinus_bulleri,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Puffinus creatopus,5537,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Puffinus_creatopus,Pink-footed Shearwater,Puffinus_creatopus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Puffinus gavia,5551,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Puffinus_gavia,Fluttering Shearwater,Puffinus_gavia,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Puffinus griseus,5540,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Puffinus_griseus,Sooty Shearwater,Puffinus_griseus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Puffinus mauretanicus,19936,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Puffinus_mauretanicus,Balearic Shearwater,Puffinus_mauretanicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Puffinus opisthomelas,5550,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Puffinus_opisthomelas,Black-vented Shearwater,Puffinus_opisthomelas,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Puffinus pacificus,5534,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Puffinus_pacificus,Wedge-tailed Shearwater,Puffinus_pacificus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Puffinus puffinus,5543,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Puffinus_puffinus,Manx Shearwater,Puffinus_puffinus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Puffinus tenuirostris,5541,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Puffinus_tenuirostris,Short-tailed Shearwater,Puffinus_tenuirostris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Puffinus yelkouan,5545,Procellariiformes,Procellariidae,Petrels and shearwaters,18,BL3,Puffinus_yelkouan,Yelkouan Shearwater,Puffinus_yelkouan,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Pycnonotus capensis,10202,Passeriformes,Pycnonotidae,Bulbuls,160,BL3,Pycnonotus_capensis,Cape Bulbul,Pycnonotus_capensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Quiscalus major,13436,Passeriformes,Icteridae,New World blackbirds,190,BL3,Quiscalus_major,Boat-tailed Grackle,Quiscalus_major,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Rallina canningi,3807,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Rallina_canningi,Andaman Crake,Rallina_canningi,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Rallus aquaticus,3853,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Rallus_aquaticus,Water Rail,Rallus_aquaticus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Rallus longirostris,3842,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Rallus_longirostris,Clapper Rail,Rallus_longirostris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Rallus semiplumbeus,3851,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Rallus_semiplumbeus,Bogota Rail,Rallus_semiplumbeus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Recurvirostra avosetta,4223,Charadriiformes,Recurvirostridae,Stilts and avocets,53,BL3,Recurvirostra_avosetta,Pied Avocet,Recurvirostra_avosetta,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Recurvirostra novaehollandiae,4225,Charadriiformes,Recurvirostridae,Stilts and avocets,53,BL3,Recurvirostra_novaehollandiae,Red-necked Avocet,Recurvirostra_novaehollandiae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Rhipidura phasiana,8408,Passeriformes,Rhipiduridae,Fantails,145,BL3,Rhipidura_phasiana,Mangrove Fantail,Rhipidura_phasiana,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Rollandia rolland,4998,Podicipediformes,Podicipedidae,Grebes,21,BL3,Rollandia_rolland,White-tufted Grebe,Rollandia_rolland,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Rostratula benghalensis,4152,Charadriiformes,Rostratulidae,Painted-snipes,55,BL3,Rostratula_benghalensis,Greater Painted-snipe,Rostratula_benghalensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Rougetius rougetii,3863,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Rougetius_rougetii,Rouget's Rail,Rougetius_rougetii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Rynchops flavirostris,4361,Charadriiformes,Laridae,Gulls and terns,61,BL3,Rynchops_flavirostris,African Skimmer,Rynchops_flavirostris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sarcoramphus papa,5354,Accipitriformes,Cathartidae,New World vultures,34,BL3,Sarcoramphus_papa,King Vulture,Sarcoramphus_papa,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Scolopax rusticola,4034,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Scolopax_rusticola,Eurasian Woodcock,Scolopax_rusticola,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Seiurus motacilla,12727,Passeriformes,Parulidae,New World warblers,171,BL3,Seiurus_motacilla,Louisiana Waterthrush,Seiurus_motacilla,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Seiurus noveboracensis,12725,Passeriformes,Parulidae,New World warblers,171,BL3,Seiurus_noveboracensis,Northern Waterthrush,Seiurus_noveboracensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sericornis citreogularis,7528,Passeriformes,Acanthizidae,Thornbills and gerygones,120,BL3,Sericornis_citreogularis,Yellow-throated Scrubwren,Sericornis_citreogularis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sericornis frontalis,7529,Passeriformes,Acanthizidae,Thornbills and gerygones,120,BL3,Sericornis_frontalis,White-browed Scrubwren,Sericornis_frontalis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sericornis humilis,7531,Passeriformes,Acanthizidae,Thornbills and gerygones,120,BL3,Sericornis_humilis,Tasmanian Scrubwren,Sericornis_humilis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Serinus canicollis,12259,Passeriformes,Fringillidae,Finches and Hawaiian honeycreepers,188,BL3,Serinus_canicollis,Cape Canary,Serinus_canicollis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Serinus totta,12301,Passeriformes,Fringillidae,Finches and Hawaiian honeycreepers,188,BL3,Serinus_totta,Cape Siskin,Serinus_totta,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Somateria mollissima,740,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Somateria_mollissima,Common Eider,Somateria_mollissima,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Somateria spectabilis,743,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Somateria_spectabilis,King Eider,Somateria_spectabilis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Speculanas specularis,669,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Speculanas_specularis,Spectacled Duck,Speculanas_specularis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Spheniscus magellanicus,5435,Sphenisciformes,Spheniscidae,Penguins,15,BL3,Spheniscus_magellanicus,Magellanic Penguin,Spheniscus_magellanicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sphenoeacus afer,10771,Passeriformes,Sylviidae,Old World warblers,161,BL3,Sphenoeacus_afer,Cape Grass-warbler,Sphenoeacus_afer,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Spilornis cheela,4669,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Spilornis_cheela,Crested Serpent-eagle,Spilornis_cheela,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Spilornis holospilus,4681,Accipitriformes,Accipitridae,"Osprey, kites, hawks and eagles",36,BL3,Spilornis_holospilus,Philippine Serpent-eagle,Spilornis_holospilus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Stercorarius parasiticus,4346,Charadriiformes,Stercorariidae,Skuas and jaegers,62,BL3,Stercorarius_parasiticus,Parasitic Jaeger,Stercorarius_parasiticus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Stercorarius pomarinus,4348,Charadriiformes,Stercorariidae,Skuas and jaegers,62,BL3,Stercorarius_pomarinus,Pomarine Jaeger,Stercorarius_pomarinus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna albifrons,4471,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_albifrons,Little Tern,Sterna_albifrons,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna albostriata,4485,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_albostriata,Black-fronted Tern,Sterna_albostriata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna anaethetus,4483,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_anaethetus,Bridled Tern,Sterna_anaethetus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna antillarum,4474,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_antillarum,Least Tern,Sterna_antillarum,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna aurantia,4458,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_aurantia,River Tern,Sterna_aurantia,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna bengalensis,4452,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_bengalensis,Lesser Crested Tern,Sterna_bengalensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna bergii,4450,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_bergii,Great Crested Tern,Sterna_bergii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna caspia,4447,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_caspia,Caspian Tern,Sterna_caspia,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna elegans,4451,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_elegans,Elegant Tern,Sterna_elegans,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna forsteri,4469,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_forsteri,Forster's Tern,Sterna_forsteri,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna hirundinacea,4462,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_hirundinacea,South American Tern,Sterna_hirundinacea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna maxima,4449,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_maxima,Royal Tern,Sterna_maxima,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna nereis,4477,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_nereis,Fairy Tern,Sterna_nereis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna nilotica,4445,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_nilotica,Gull-billed Tern,Sterna_nilotica,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna sandvicensis,4454,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_sandvicensis,Sandwich Tern,Sterna_sandvicensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna striata,4460,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_striata,White-fronted Tern,Sterna_striata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna sumatrana,4461,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_sumatrana,Black-naped Tern,Sterna_sumatrana,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna superciliaris,4475,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_superciliaris,Yellow-billed Tern,Sterna_superciliaris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sterna trudeaui,4470,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_trudeaui,Snowy-crowned Tern,Sterna_trudeaui,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Stymphalornis acutirostris,6527,Passeriformes,Thamnophilidae,Antbirds,106,BL3,Stymphalornis_acutirostris,Parana Antwren,Stymphalornis_acutirostris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sula nebouxii,5057,Suliformes,Sulidae,Gannets and boobies,31,BL3,Sula_nebouxii,Blue-footed Booby,Sula_nebouxii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Sylvia cantillans,11397,Passeriformes,Sylviidae,Old World warblers,161,BL3,Sylvia_cantillans,Subalpine Warbler,Sylvia_cantillans,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tachybaptus dominicus,5004,Podicipediformes,Podicipedidae,Grebes,21,BL3,Tachybaptus_dominicus,Least Grebe,Tachybaptus_dominicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tachybaptus novaehollandiae,5001,Podicipediformes,Podicipedidae,Grebes,21,BL3,Tachybaptus_novaehollandiae,Australasian Grebe,Tachybaptus_novaehollandiae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tachybaptus ruficollis,5000,Podicipediformes,Podicipedidae,Grebes,21,BL3,Tachybaptus_ruficollis,Little Grebe,Tachybaptus_ruficollis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tachycineta albilinea,9993,Passeriformes,Hirundinidae,Swallows and martins,156,BL3,Tachycineta_albilinea,Mangrove Swallow,Tachycineta_albilinea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tachycineta cyaneoviridis,10000,Passeriformes,Hirundinidae,Swallows and martins,156,BL3,Tachycineta_cyaneoviridis,Bahama Swallow,Tachycineta_cyaneoviridis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tadorna cana,630,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Tadorna_cana,South African Shelduck,Tadorna_cana,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tadorna ferruginea,629,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Tadorna_ferruginea,Ruddy Shelduck,Tadorna_ferruginea,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tadorna tadorna,634,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Tadorna_tadorna,Common Shelduck,Tadorna_tadorna,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tadorna tadornoides,631,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Tadorna_tadornoides,Australian Shelduck,Tadorna_tadornoides,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tadorna variegata,632,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Tadorna_variegata,Paradise Shelduck,Tadorna_variegata,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Teretistris fernandinae,12748,Passeriformes,Parulidae,New World warblers,171,BL3,Teretistris_fernandinae,Yellow-headed Warbler,Teretistris_fernandinae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Thalassarche cauta,5584,Procellariiformes,Diomedeidae,Albatrosses,17,BL3,Thalassarche_cauta,Shy Albatross,Thalassarche_cauta,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Thalassarche melanophrys,5583,Procellariiformes,Diomedeidae,Albatrosses,17,BL3,Thalassarche_melanophrys,Black-browed Albatross,Thalassarche_melanophrys,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Thinornis novaeseelandiae,4275,Charadriiformes,Charadriidae,Plovers,54,BL3,Thinornis_novaeseelandiae,Shore Plover,Thinornis_novaeseelandiae,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Thinornis rubricollis,4274,Charadriiformes,Charadriidae,Plovers,54,BL3,Thinornis_rubricollis,Hooded Plover,Thinornis_rubricollis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Threskiornis melanocephalus,5311,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Threskiornis_melanocephalus,Black-headed Ibis,Threskiornis_melanocephalus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tigrisoma mexicanum,5150,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Tigrisoma_mexicanum,Bare-throated Tiger-heron,Tigrisoma_mexicanum,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Todiramphus chloris,1606,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Todiramphus_chloris,Collared Kingfisher,Todiramphus_chloris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Todiramphus macleayii,1598,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Todiramphus_macleayii,Forest Kingfisher,Todiramphus_macleayii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Trichoglossus haematodus,1959,Psittaciformes,Psittacidae,Parrots,68,BL3,Trichoglossus_haematodus,Rainbow Lorikeet,Trichoglossus_haematodus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tringa erythropus,4091,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Tringa_erythropus,Spotted Redshank,Tringa_erythropus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tringa flavipes,4097,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Tringa_flavipes,Lesser Yellowlegs,Tringa_flavipes,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tringa glareola,4100,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Tringa_glareola,Wood Sandpiper,Tringa_glareola,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tringa guttifer,4095,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Tringa_guttifer,Spotted Greenshank,Tringa_guttifer,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tringa melanoleuca,4096,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Tringa_melanoleuca,Greater Yellowlegs,Tringa_melanoleuca,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tringa nebularia,4094,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Tringa_nebularia,Common Greenshank,Tringa_nebularia,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tringa ochropus,4099,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Tringa_ochropus,Green Sandpiper,Tringa_ochropus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tringa solitaria,4098,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Tringa_solitaria,Solitary Sandpiper,Tringa_solitaria,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tringa stagnatilis,4093,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Tringa_stagnatilis,Marsh Sandpiper,Tringa_stagnatilis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tringa totanus,4092,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Tringa_totanus,Common Redshank,Tringa_totanus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Troglodytes troglodytes,9750,Passeriformes,Troglodytidae,Wrens,162,BL3,Troglodytes_troglodytes,Winter Wren,Troglodytes_troglodytes,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Tryngites subruficollis,4140,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Tryngites_subruficollis,Buff-breasted Sandpiper,Tryngites_subruficollis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Turdus pelios,8919,Passeriformes,Turdidae,Thrushes,178,BL3,Turdus_pelios,African Thrush,Turdus_pelios,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vanellus albiceps,4299,Charadriiformes,Charadriidae,Plovers,54,BL3,Vanellus_albiceps,White-headed Lapwing,Vanellus_albiceps,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vanellus armatus,4292,Charadriiformes,Charadriidae,Plovers,54,BL3,Vanellus_armatus,Blacksmith Lapwing,Vanellus_armatus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vanellus chilensis,4308,Charadriiformes,Charadriidae,Plovers,54,BL3,Vanellus_chilensis,Southern Lapwing,Vanellus_chilensis,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vanellus crassirostris,4284,Charadriiformes,Charadriidae,Plovers,54,BL3,Vanellus_crassirostris,Long-toed Lapwing,Vanellus_crassirostris,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vanellus duvaucelii,4294,Charadriiformes,Charadriidae,Plovers,54,BL3,Vanellus_duvaucelii,River Lapwing,Vanellus_duvaucelii,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vanellus indicus,4298,Charadriiformes,Charadriidae,Plovers,54,BL3,Vanellus_indicus,Red-wattled Lapwing,Vanellus_indicus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vanellus leucurus,4306,Charadriiformes,Charadriidae,Plovers,54,BL3,Vanellus_leucurus,White-tailed Lapwing,Vanellus_leucurus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vanellus miles,4288,Charadriiformes,Charadriidae,Plovers,54,BL3,Vanellus_miles,Masked Lapwing,Vanellus_miles,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vanellus spinosus,4293,Charadriiformes,Charadriidae,Plovers,54,BL3,Vanellus_spinosus,Spur-winged Lapwing,Vanellus_spinosus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vanellus tricolor,4287,Charadriiformes,Charadriidae,Plovers,54,BL3,Vanellus_tricolor,Banded Lapwing,Vanellus_tricolor,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vireo pallens,7767,Passeriformes,Vireonidae,Vireos and allies,141,BL3,Vireo_pallens,Mangrove Vireo,Vireo_pallens,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Vultur gryphus,5353,Accipitriformes,Cathartidae,New World vultures,34,BL3,Vultur_gryphus,Andean Condor,Vultur_gryphus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Xenus cinereus,4101,Charadriiformes,Scolopacidae,Sandpipers and allies,59,BL3,Xenus_cinereus,Terek Sandpiper,Xenus_cinereus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Zosterops pallidus,10566,Passeriformes,Zosteropidae,White-eyes,164,BL3,Zosterops_pallidus,Pale White-eye,Zosterops_pallidus,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Aix galericulata,660,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Aix_galericulata,Mandarin Duck,Aix_galericulata,9,15.8,12.7,0.569620253,Ritland 1982,Live,NA,NA,
+Alca torda,4510,Charadriiformes,Alcidae,Auks,63,BL3,Alca_torda,Razorbill,Alca_torda,7.6,19.3,15.4,0.393782383,Ritland 1982,Live,NA,NA,
+Alcedo atthis,1546,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Alcedo_atthis,Common Kingfisher,Alcedo_atthis,5.55,10.55,8.3,0.526066351,Ritland 1982,Live,NA,NA,
+Alcedo azurea,1550,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Alcedo_azurea,Azure Kingfisher,Alcedo_azurea,6,11.2,8.8,0.535714286,Ritland 1982,Live,NA,NA,
+Alcedo coerulescens,1560,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Alcedo_coerulescens,Small Blue Kingfisher,Alcedo_coerulescens,4.4,9.3,7.4,0.47311828,Ritland 1982,Live,NA,NA,
+Alcedo cristata,1555,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Alcedo_cristata,Malachite Kingfisher,Alcedo_cristata,4.1,9.1,7.3,0.450549451,Ritland 1982,Live,NA,NA,
+Alcedo meninting,1549,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Alcedo_meninting,Blue-eared Kingfisher,Alcedo_meninting,4.8,10.6,8.4,0.452830189,Ritland 1982,Live,NA,NA,
+Alectura lathami,195,Galliformes,Megapodiidae,Megapodes,7,BL3,Alectura_lathami,Australian Brush-turkey,Alectura_lathami,9.5,21.5,16,0.441860465,Ritland 1982,Live,NA,NA,
+Alle alle,4507,Charadriiformes,Alcidae,Auks,63,BL3,Alle_alle,Little Auk,Alle_alle,6.1,13.5,10.9,0.451851852,Ritland 1982,Live,NA,NA,
+Alopochen aegyptiaca,637,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Alopochen_aegyptiaca,Egyptian Goose,Alopochen_aegyptiaca,11.4,19.8,16.3,0.575757576,Ritland 1982,Live,NA,NA,
+Amaurornis phoenicurus,3880,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Amaurornis_phoenicurus,White-breasted Waterhen,Amaurornis_phoenicurus,6.4,14.3,11,0.447552448,Ritland 1982,Live,NA,NA,
+Anas americana,674,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_americana,American Wigeon,Anas_americana,7.78,15.02,NA,0.517976032,Lisney et al. 2013a,Live,NA,NA,
+Anas clypeata,695,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_clypeata,Northern Shoveler,Anas_clypeata,8,13.44,12,0.595238095,Lisney et al. 2013a,Live,NA,NA,
+Anas discors,690,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_discors,Blue-winged Teal,Anas_discors,6.475,11.76,8.8,0.550595238,"Lisney et al. 2013a, Ritland 1982",Live,NA,NA,
+Anas strepera,671,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Anas_strepera,Gadwall,Anas_strepera,8.02,14.01,12.4,0.572448251,Lisney et al. 2013a,Live,NA,NA,
+Anastomus lamelligerus,5363,Ciconiiformes,Ciconiidae,Storks,23,BL3,Anastomus_lamelligerus,African Openbill,Anastomus_lamelligerus,9.2,20.9,16.6,0.440191388,Ritland 1982,Live,NA,NA,
+Anastomus oscitans,5362,Ciconiiformes,Ciconiidae,Storks,23,BL3,Anastomus_oscitans,Asian Openbill,Anastomus_oscitans,9.9,21.6,17.65,0.458333333,Ritland 1982,Live,NA,NA,
+Anhinga anhinga,5069,Suliformes,Anhingidae,Anhingas,33,BL3,Anhinga_anhinga,Anhinga,Anhinga_anhinga,6.866666667,13.83333333,12.13333333,0.496385542,Ritland 1982,Live,NA,NA,
+Anhinga rufa,19919,Suliformes,Anhingidae,Anhingas,33,BL3,Anhinga_rufa,African Darter,Anhinga_rufa,6.7,13.5,11.3,0.496296296,Ritland 1982,Live,NA,NA,
+Anous minutus,4491,Charadriiformes,Laridae,Gulls and terns,61,BL3,Anous_minutus,Black Noddy,Anous_minutus,5.8,13.5,11.6,0.42962963,Ritland 1982,Live,NA,NA,
+Anthus spinoletta,11884,Passeriformes,Motacillidae,Wagtails and pipits,170,BL3,Anthus_spinoletta,Water Pipit,Anthus_spinoletta,3.8,8.1,6.3,0.469135802,Ritland 1982,Live,NA,NA,
+Ardea cinerea,5209,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardea_cinerea,Grey Heron,Ardea_cinerea,11.9,23.2,18.7,0.512931034,Ritland 1982,Live,NA,NA,
+Ardea herodias,5213,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardea_herodias,Great Blue Heron,Ardea_herodias,13.15,25.35,20.9,0.518737673,Ritland 1982,Live,NA,NA,
+Ardea melanocephala,5219,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardea_melanocephala,Black-headed Heron,Ardea_melanocephala,11.1,21.4,18.2,0.518691589,Ritland 1982,Live,NA,NA,
+Ardeola ralloides,5249,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardeola_ralloides,Squacco Heron,Ardeola_ralloides,7.2,14.3,11.2,0.503496503,Ritland 1982,Live,NA,NA,
+Ardeola speciosa,5252,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ardeola_speciosa,Javan Pond-heron,Ardeola_speciosa,7,13.8,11.3,0.507246377,Ritland 1982,Live,NA,NA,
+Aythya affinis,739,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Aythya_affinis,Lesser Scaup,Aythya_affinis,6.65,13.8,12.5,0.481884058,Lisney et al. 2013a,Live,NA,NA,
+Aythya americana,729,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Aythya_americana,Redhead,Aythya_americana,7.705,14.97,11.3,0.514696059,"Lisney et al. 2013a, Ritland 1982",Live,NA,NA,
+Aythya marila,738,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Aythya_marila,Greater Scaup,Aythya_marila,7.69,14.95,13,0.514381271,"Lisney et al. 2013a, Ritland 1982",Live,NA,NA,
+Aythya valisineria,728,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Aythya_valisineria,Canvasback,Aythya_valisineria,7.875,15.38,11.6,0.512028609,"Lisney et al. 2013a, Ritland 1982",Live,NA,NA,
+Biziura lobata,579,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Biziura_lobata,Musk Duck,Biziura_lobata,8.9,15.6,13.3,0.570512821,Ritland 1982,Live,NA,NA,
+Bostrychia hagedash,5299,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Bostrychia_hagedash,Hadada Ibis,Bostrychia_hagedash,9.6,21.5,16.5,0.446511628,Ritland 1982,Live,NA,NA,
+Botaurus lentiginosus,5172,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Botaurus_lentiginosus,American Bittern,Botaurus_lentiginosus,9.6,19.45,15,0.493573265,Ritland 1982,Live,NA,NA,
+Botaurus poiciloptilus,5177,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Botaurus_poiciloptilus,Australasian Bittern,Botaurus_poiciloptilus,11.6,21,17.4,0.552380952,Ritland 1982,Live,NA,NA,
+Botaurus stellaris,5174,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Botaurus_stellaris,Great Bittern,Botaurus_stellaris,8.8,19.4,13.8,0.453608247,Ritland 1982,Live,NA,NA,
+Brachyramphus marmoratus,4517,Charadriiformes,Alcidae,Auks,63,BL3,Brachyramphus_marmoratus,Marbled Murrelet,Brachyramphus_marmoratus,7.8,15,13,0.52,Ritland 1982,Live,NA,NA,
+Branta bernicla,616,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Branta_bernicla,Brent Goose,Branta_bernicla,8.1,16.3,14.1,0.496932515,Ritland 1982,Live,NA,NA,
+Bucephala albeola,760,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Bucephala_albeola,Bufflehead,Bucephala_albeola,8.4,14.2,11.9,0.591549296,Ritland 1982,Live,NA,NA,
+Bucephala clangula,757,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Bucephala_clangula,Common Goldeneye,Bucephala_clangula,7.4,15.1,10.8,0.490066225,Ritland 1982,Live,NA,NA,
+Butorides virescens,19921,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Butorides_virescens,Green Heron,Butorides_virescens,7.8,14.4,12.1,0.541666667,Ritland 1982,Live,NA,NA,
+Cairina moschata,657,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Cairina_moschata,Muscovy Duck,Cairina_moschata,10.3,19.8,16.3,0.52020202,Ritland 1982,Live,NA,NA,
+Cathartes aura,5349,Accipitriformes,Cathartidae,New World vultures,34,BL3,Cathartes_aura,Turkey Vulture,Cathartes_aura,9.125,22.87,18.66,0.398994316,"Ritland 1982, Hall et al. 2009, Lisney et al. 2013",Live,NA,NA,
+Cepphus columba,4513,Charadriiformes,Alcidae,Auks,63,BL3,Cepphus_columba,Pigeon Guillemot,Cepphus_columba,6.8,17,12.2,0.4,Ritland 1982,Live,NA,NA,
+Cepphus grylle,4512,Charadriiformes,Alcidae,Auks,63,BL3,Cepphus_grylle,Black Guillemot,Cepphus_grylle,8,15.2,12.5,0.526315789,Ritland 1982,Live,NA,NA,
+Cereopsis novaehollandiae,621,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Cereopsis_novaehollandiae,Cape Barren Goose,Cereopsis_novaehollandiae,10.8,20.5,16.8,0.526829268,Ritland 1982,Live,NA,NA,
+Cerorhinca monocerata,4531,Charadriiformes,Alcidae,Auks,63,BL3,Cerorhinca_monocerata,Rhinoceros Auklet,Cerorhinca_monocerata,6.8,17.5,15.3,0.388571429,Ritland 1982,Live,NA,NA,
+Ceryle rudis,1643,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Ceryle_rudis,Pied Kingfisher,Ceryle_rudis,7,15.3,11.3,0.45751634,Ritland 1982,Live,NA,NA,
+Ceyx erithaca,1563,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Ceyx_erithaca,Black-backed Kingfisher,Ceyx_erithaca,5.1,9.8,8.15,0.520408163,Ritland 1982,Live,NA,NA,
+Chenonetta jubata,666,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Chenonetta_jubata,Australian Wood Duck,Chenonetta_jubata,9.1,16.2,12.6,0.561728395,Ritland 1982,Live,NA,NA,
+Chlidonias niger,4488,Charadriiformes,Laridae,Gulls and terns,61,BL3,Chlidonias_niger,Black Tern,Chlidonias_niger,5.3,12.2,9.1,0.43442623,Ritland 1982,Live,NA,NA,
+Chloroceryle aenea,1647,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Chloroceryle_aenea,American Pygmy Kingfisher,Chloroceryle_aenea,4.8,10.1,8.1,0.475247525,Ritland 1982,Live,NA,NA,
+Chloroceryle amazona,1644,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Chloroceryle_amazona,Amazon Kingfisher,Chloroceryle_amazona,8.3,15.8,12.8,0.525316456,Ritland 1982,Live,NA,NA,
+Chloroceryle americana,1645,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Chloroceryle_americana,Green Kingfisher,Chloroceryle_americana,6.1,11.9,9.8,0.512605042,Ritland 1982,Live,NA,NA,
+Ciconia ciconia,5369,Ciconiiformes,Ciconiidae,Storks,23,BL3,Ciconia_ciconia,White Stork,Ciconia_ciconia,11.5,27,22.2,0.425925926,Ritland 1982,Live,NA,NA,
+Ciconia nigra,5364,Ciconiiformes,Ciconiidae,Storks,23,BL3,Ciconia_nigra,Black Stork,Ciconia_nigra,12.1,26,19.8,0.465384615,Ritland 1982,Live,NA,NA,
+Cinclodes nigrofumosus,6655,Passeriformes,Furnariidae,Ovenbirds,110,BL3,Cinclodes_nigrofumosus,Seaside Cinclodes,Cinclodes_nigrofumosus,4.8,10.1,8.8,0.475247525,Ritland 1982,Live,NA,NA,
+Clangula hyemalis,748,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Clangula_hyemalis,Long-tailed Duck,Clangula_hyemalis,8.2,16.1,13.5,0.50931677,Ritland 1982,Live,NA,NA,
+Coccyzus erythropthalmus,1857,Cuculiformes,Cuculidae,Cuckoos,67,BL3,Coccyzus_erythropthalmus,Black-billed Cuckoo,Coccyzus_erythropthalmus,5.55,12.05,9.7,0.460580913,Ritland 1982,Live,NA,NA,
+Coccyzus minor,1860,Cuculiformes,Cuculidae,Cuckoos,67,BL3,Coccyzus_minor,Mangrove Cuckoo,Coccyzus_minor,7,14,12.1,0.5,Ritland 1982,Live,NA,NA,
+Cochlearius cochlearius,5157,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Cochlearius_cochlearius,Boat-billed Heron,Cochlearius_cochlearius,15.26666667,26.33333333,21.23333333,0.579746835,Ritland 1982,Live,NA,NA,
+Coragyps atratus,5348,Accipitriformes,Cathartidae,New World vultures,34,BL3,Coragyps_atratus,Black Vulture,Coragyps_atratus,9.26,20.79,17.435,0.445406445,"Ritland 1982, Hall et al. 2009, Lisney et al. 2013",Live,NA,NA,
+Coscoroba coscoroba,594,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Coscoroba_coscoroba,Coscoroba Swan,Coscoroba_coscoroba,8.8,18.5,15.2,0.475675676,Ritland 1982,Live,NA,NA,
+Coturnicops noveboracensis,3797,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Coturnicops_noveboracensis,Yellow Rail,Coturnicops_noveboracensis,3.8,9,7,0.422222222,Ritland 1982,Live,NA,NA,
+Cyanochen cyanoptera,644,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Cyanochen_cyanoptera,Blue-winged Goose,Cyanochen_cyanoptera,8.5,16.7,13.6,0.508982036,Ritland 1982,Live,NA,NA,
+Cygnus atratus,587,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Cygnus_atratus,Black Swan,Cygnus_atratus,10.8,20,16.8,0.54,Ritland 1982,Live,NA,NA,
+Cygnus cygnus,589,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Cygnus_cygnus,Whooper Swan,Cygnus_cygnus,11.1,22.5,18.45,0.493333333,Ritland 1982,Live,NA,NA,
+Cygnus olor,586,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Cygnus_olor,Mute Swan,Cygnus_olor,11,20.2,17.2,0.544554455,Ritland 1982,Live,NA,NA,
+Cypsiurus parvus,2417,Apodiformes,Apodidae,Swifts,77,BL3,Cypsiurus_parvus,African Palm-swift,Cypsiurus_parvus,4.5,9.57,7.75,0.470219436,"Hall and Ross 2007, Ritland 1982",Live,NA,NA,
+Dacelo leachii,1574,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Dacelo_leachii,Blue-winged Kookaburra,Dacelo_leachii,11.8,23.8,20.3,0.495798319,Ritland 1982,Live,NA,NA,
+Dacelo novaeguineae,1573,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Dacelo_novaeguineae,Laughing Kookaburra,Dacelo_novaeguineae,11.2,23.6,19.8,0.474576271,Ritland 1982,Live,NA,NA,
+Delichon urbicum,10137,Passeriformes,Hirundinidae,Swallows and martins,156,BL3,Delichon_urbicum,Northern House-martin,Delichon_urbicum,4.5,8,7.8,0.5625,Ritland 1982,Live,NA,NA,
+Dendrocygna autumnalis,567,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Dendrocygna_autumnalis,Black-bellied Whistling-duck,Dendrocygna_autumnalis,8.3,14.5,12.6,0.572413793,Ritland 1982,Live,NA,NA,
+Dendrocygna bicolor,560,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Dendrocygna_bicolor,Fulvous Whistling-duck,Dendrocygna_bicolor,8.2,14.4,12,0.569444444,Ritland 1982,Live,NA,NA,
+Dendrocygna eytoni,559,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Dendrocygna_eytoni,Plumed Whistling-duck,Dendrocygna_eytoni,9.1,15,12.2,0.606666667,Ritland 1982,Live,NA,NA,
+Dendrocygna javanica,564,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Dendrocygna_javanica,Lesser Whistling-duck,Dendrocygna_javanica,8.3,14.3,11.6,0.58041958,Ritland 1982,Live,NA,NA,
+Dendrocygna viduata,565,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Dendrocygna_viduata,White-faced Whistling-duck,Dendrocygna_viduata,8,14.4,11.3,0.555555556,Ritland 1982,Live,NA,NA,
+Egretta garzetta,5199,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Egretta_garzetta,Little Egret,Egretta_garzetta,8.2,16.2,14.3,0.50617284,Ritland 1982,Live,NA,NA,
+Egretta sacra,5207,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Egretta_sacra,Pacific Reef-egret,Egretta_sacra,8.5,16.1,12.6,0.527950311,Ritland 1982,Live,NA,NA,
+Empidonax difficilis,6047,Passeriformes,Tyrannidae,Tyrant-flycatchers,105,BL3,Empidonax_difficilis,Pacific-slope Flycatcher,Empidonax_difficilis,4.5,8.3,7.4,0.542168675,Ritland 1982,Live,NA,NA,
+Ephippiorhynchus asiaticus,5371,Ciconiiformes,Ciconiidae,Storks,23,BL3,Ephippiorhynchus_asiaticus,Black-necked Stork,Ephippiorhynchus_asiaticus,16.8,32.1,26.7,0.523364486,Ritland 1982,Live,NA,NA,
+Eudocimus albus,5284,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Eudocimus_albus,White Ibis,Eudocimus_albus,7.65,16.675,12.5,0.458770615,Ritland 1982,Live,NA,NA,
+Falco columbarius,4963,Falconiformes,Falconidae,Falcons and caracaras,35,BL3,Falco_columbarius,Merlin,Falco_columbarius,8.47,15.44,NA,0.54857513,,Live,NA,NA,
+Fregata magnificens,5397,Suliformes,Fregatidae,Frigatebirds,27,BL3,Fregata_magnificens,Magnificent Frigatebird,Fregata_magnificens,10.2,23.2,21.4,0.439655172,Ritland 1982,Live,NA,NA,
+Fregata minor,5400,Suliformes,Fregatidae,Frigatebirds,27,BL3,Fregata_minor,Greater Frigatebird,Fregata_minor,10.35,23.2,20.45,0.44612069,Ritland 1982,Live,NA,NA,
+Fulica americana,3942,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Fulica_americana,American Coot,Fulica_americana,5.9,12.9,10.6,0.457364341,Ritland 1982,Live,NA,NA,
+Fulica atra,3939,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Fulica_atra,Common Coot,Fulica_atra,6.6,14.2,11.8,0.464788732,Ritland 1982,Live,NA,NA,
+Fulica cristata,3938,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Fulica_cristata,Red-knobbed Coot,Fulica_cristata,6.2,13.1,11.1,0.473282443,Ritland 1982,Live,NA,NA,
+Fulica leucoptera,3944,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Fulica_leucoptera,White-winged Coot,Fulica_leucoptera,5.8,13.5,10.5,0.42962963,Ritland 1982,Live,NA,NA,
+Gallicrex cinerea,3912,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Gallicrex_cinerea,Watercock,Gallicrex_cinerea,6,13.3,10.7,0.45112782,Ritland 1982,Live,NA,NA,
+Gallinula mortierii,3937,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Gallinula_mortierii,Tasmanian Native-hen,Gallinula_mortierii,8.3,17,14.3,0.488235294,Ritland 1982,Live,NA,NA,
+Gallirallus australis,3825,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Gallirallus_australis,Weka,Gallirallus_australis,7.5,16.4,14.1,0.457317073,Ritland 1982,Live,NA,NA,
+Gallirallus philippensis,3832,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Gallirallus_philippensis,Buff-banded Rail,Gallirallus_philippensis,5.8,12.1,8.2,0.479338843,Ritland 1982,Live,NA,NA,
+Gallirallus torquatus,3830,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Gallirallus_torquatus,Barred Rail,Gallirallus_torquatus,6.6,14.3,10,0.461538462,Ritland 1982,Live,NA,NA,
+Grus antigone,3738,Gruiformes,Gruidae,Cranes,45,BL3,Grus_antigone,Sarus Crane,Grus_antigone,13.65,30.45,23.15,0.448275862,Ritland 1982,Live,NA,NA,
+Grus canadensis,3741,Gruiformes,Gruidae,Cranes,45,BL3,Grus_canadensis,Sandhill Crane,Grus_canadensis,11.6,28.5,22.3,0.407017544,Ritland 1982,Live,NA,NA,
+Grus grus,3745,Gruiformes,Gruidae,Cranes,45,BL3,Grus_grus,Common Crane,Grus_grus,12,26,21.4,0.461538462,Ritland 1982,Live,NA,NA,
+Gygis alba,4496,Charadriiformes,Laridae,Gulls and terns,61,BL3,Gygis_alba,Common White Tern,Gygis_alba,6.8,17.8,15.1,0.382022472,Ritland 1982,Live,NA,NA,
+Halcyon albiventris,1591,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Halcyon_albiventris,Brown-hooded Kingfisher,Halcyon_albiventris,6.9,14.6,10.5,0.47260274,Ritland 1982,Live,NA,NA,
+Halcyon coromanda,1582,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Halcyon_coromanda,Ruddy Kingfisher,Halcyon_coromanda,8,15.8,12.2,0.506329114,Ritland 1982,Live,NA,NA,
+Halcyon leucocephala,1587,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Halcyon_leucocephala,Grey-headed Kingfisher,Halcyon_leucocephala,5.8,13.2,10.15,0.439393939,Ritland 1982,Live,NA,NA,
+Halcyon pileata,1585,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Halcyon_pileata,Black-capped Kingfisher,Halcyon_pileata,8.3,15.8,12.8,0.525316456,Ritland 1982,Live,NA,NA,
+Halcyon smyrnensis,1584,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Halcyon_smyrnensis,White-throated Kingfisher,Halcyon_smyrnensis,7.4,15.1,11.6,0.490066225,Ritland 1982,Live,NA,NA,
+Heteronetta atricapilla,580,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Heteronetta_atricapilla,Black-headed Duck,Heteronetta_atricapilla,7.2,12.6,10.7,0.571428571,Ritland 1982,Live,NA,NA,
+Hirundo tahitica,10083,Passeriformes,Hirundinidae,Swallows and martins,156,BL3,Hirundo_tahitica,Pacific Swallow,Hirundo_tahitica,4.15,8.4,7.7,0.494047619,Ritland 1982,Live,NA,NA,
+Histrionicus histrionicus,747,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Histrionicus_histrionicus,Harlequin Duck,Histrionicus_histrionicus,7.1,15.1,12.5,0.470198675,Ritland 1982,Live,NA,NA,
+Ixobrychus cinnamomeus,5169,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ixobrychus_cinnamomeus,Cinnamon Bittern,Ixobrychus_cinnamomeus,6.4,12.8,11,0.5,Ritland 1982,Live,NA,NA,
+Ixobrychus exilis,5166,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ixobrychus_exilis,Least Bittern,Ixobrychus_exilis,6.4,11,8.2,0.581818182,Ritland 1982,Live,NA,NA,
+Ixobrychus flavicollis,5171,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ixobrychus_flavicollis,Black Bittern,Ixobrychus_flavicollis,8.1,15.7,12.5,0.515923567,Ritland 1982,Live,NA,NA,
+Ixobrychus minutus,5162,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ixobrychus_minutus,Little Bittern,Ixobrychus_minutus,5.9,11.6,9.6,0.50862069,Ritland 1982,Live,NA,NA,
+Ixobrychus sinensis,5164,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Ixobrychus_sinensis,Yellow Bittern,Ixobrychus_sinensis,4.8,11,7.8,0.436363636,Ritland 1982,Live,NA,NA,
+Larosterna inca,4498,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larosterna_inca,Inca Tern,Larosterna_inca,7.35,15.65,13.25,0.469648562,Ritland 1982,Live,NA,NA,
+Larus argentatus,4396,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_argentatus,Herring Gull,Larus_argentatus,8.7,23.7,18.2,0.367088608,Ritland 1982,Live,NA,NA,
+Larus atricilla,4433,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_atricilla,Laughing Gull,Larus_atricilla,7.4,17.2,14.1,0.430232558,Ritland 1982,Live,NA,NA,
+Larus delawarensis,4381,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_delawarensis,Ring-billed Gull,Larus_delawarensis,8.65,20.15,16.55,0.429280397,Ritland 1982,Live,NA,NA,
+Larus fuscus,4411,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_fuscus,Lesser Black-backed Gull,Larus_fuscus,9.7,22.6,19,0.42920354,Ritland 1982,Live,NA,NA,
+Larus hyperboreus,4390,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_hyperboreus,Glaucous Gull,Larus_hyperboreus,10.1,24.6,18.8,0.410569106,Ritland 1982,Live,NA,NA,
+Larus marinus,4384,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_marinus,Great Black-backed Gull,Larus_marinus,10.5,24.5,20.9,0.428571429,Ritland 1982,Live,NA,NA,
+Larus minutus,4435,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_minutus,Little Gull,Larus_minutus,6,15.3,11.8,0.392156863,Ritland 1982,Live,NA,NA,
+Larus pipixcan,4434,Charadriiformes,Laridae,Gulls and terns,61,BL3,Larus_pipixcan,Franklin's Gull,Larus_pipixcan,7.1,17.4,14.8,0.408045977,Ritland 1982,Live,NA,NA,
+Laterallus albigularis,3816,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Laterallus_albigularis,White-throated Crake,Laterallus_albigularis,4.5,9.5,6.6,0.473684211,Ritland 1982,Live,NA,NA,
+Leptoptilos crumeniferus,5377,Ciconiiformes,Ciconiidae,Storks,23,BL3,Leptoptilos_crumeniferus,Marabou Stork,Leptoptilos_crumeniferus,14.6,31.6,28.5,0.462025316,Ritland 1982,Live,NA,NA,
+Leptoptilos javanicus,5376,Ciconiiformes,Ciconiidae,Storks,23,BL3,Leptoptilos_javanicus,Lesser Adjutant,Leptoptilos_javanicus,16,31.7,27.5,0.504731861,Ritland 1982,Live,NA,NA,
+Lewinia pectoralis,3857,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Lewinia_pectoralis,Lewin's Rail,Lewinia_pectoralis,4.7,10.8,7.6,0.435185185,Ritland 1982,Live,NA,NA,
+Limnornis curvirostris,6800,Passeriformes,Furnariidae,Ovenbirds,110,BL3,Limnornis_curvirostris,Curve-billed Reedhaunter,Limnornis_curvirostris,3.8,8.8,7.8,0.431818182,Ritland 1982,Live,NA,NA,
+Lophodytes cucullatus,762,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Lophodytes_cucullatus,Hooded Merganser,Lophodytes_cucullatus,7.9,15.34,12,0.514993481,"Lisney et al. 2013a, Ritland 1982",Live,NA,NA,
+Malacorhynchus membranaceus,636,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Malacorhynchus_membranaceus,Pink-eared Duck,Malacorhynchus_membranaceus,7.7,12.65,9.8,0.608695652,Ritland 1982,Live,NA,NA,
+Marmaronetta angustirostris,720,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Marmaronetta_angustirostris,Marbled Teal,Marmaronetta_angustirostris,8,14.2,10.6,0.563380282,Ritland 1982,Live,NA,NA,
+Melanitta nigra,749,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Melanitta_nigra,Black Scoter,Melanitta_nigra,7.4,16,12.8,0.4625,Ritland 1982,Live,NA,NA,
+Merganetta armata,646,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Merganetta_armata,Torrent Duck,Merganetta_armata,6.1,12.8,10.3,0.4765625,Ritland 1982,Live,NA,NA,
+Mergus merganser,767,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Mergus_merganser,Common Merganser,Mergus_merganser,9,17,15,0.529411765,Ritland 1982,Live,NA,NA,
+Mergus serrator,764,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Mergus_serrator,Red-breasted Merganser,Mergus_serrator,7.13,15.19,12.5,0.469387755,Lisney et al. 2013a,Live,NA,NA,
+Morus bassanus,5054,Suliformes,Sulidae,Gannets and boobies,31,BL3,Morus_bassanus,Northern Gannet,Morus_bassanus,11.2,27.2,22.25,0.411764706,Ritland 1982,Live,NA,NA,
+Mycteria leucocephala,5361,Ciconiiformes,Ciconiidae,Storks,23,BL3,Mycteria_leucocephala,Painted Stork,Mycteria_leucocephala,11.1,23.5,18.1,0.472340426,Ritland 1982,Live,NA,NA,
+Netta peposaca,723,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Netta_peposaca,Rosy-billed Pochard,Netta_peposaca,8.8,16.1,11.8,0.546583851,Ritland 1982,Live,NA,NA,
+Nettapus coromandelianus,663,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Nettapus_coromandelianus,Cotton Pygmy-goose,Nettapus_coromandelianus,7,12.2,9.8,0.573770492,Ritland 1982,Live,NA,NA,
+Nettapus pulchellus,662,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Nettapus_pulchellus,Green Pygmy-goose,Nettapus_pulchellus,7.1,13.2,11,0.537878788,Ritland 1982,Live,NA,NA,
+Nycticorax caledonicus,5185,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Nycticorax_caledonicus,Rufous Night-heron,Nycticorax_caledonicus,12.5,23.1,19.2,0.541125541,Ritland 1982,Live,NA,NA,
+Nycticorax nycticorax,5182,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Nycticorax_nycticorax,Black-crowned Night-heron,Nycticorax_nycticorax,15,25.7,17.8,0.583657588,Ritland 1982,Live,NA,NA,
+Oxyura jamaicensis,573,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Oxyura_jamaicensis,Ruddy Duck,Oxyura_jamaicensis,5,9.8,8.4,0.510204082,Ritland 1982,Live,NA,NA,
+Oxyura maccoa,576,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Oxyura_maccoa,Maccoa Duck,Oxyura_maccoa,7.4,13.2,11.4,0.560606061,Ritland 1982,Live,NA,NA,
+Pelargopsis capensis,1580,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Pelargopsis_capensis,Stork-billed Kingfisher,Pelargopsis_capensis,9.3,17,14.3,0.547058824,Ritland 1982,Live,NA,NA,
+Pelecanus erythrorhynchos,5339,Pelecaniformes,Pelecanidae,Pelicans,30,BL3,Pelecanus_erythrorhynchos,American White Pelican,Pelecanus_erythrorhynchos,11.55,25.075,20.875,0.460618146,Ritland 1982,Live,NA,NA,
+Pelecanus occidentalis,5340,Pelecaniformes,Pelecanidae,Pelicans,30,BL3,Pelecanus_occidentalis,Brown Pelican,Pelecanus_occidentalis,12.95,26.45,22.5,0.489603025,Ritland 1982,Live,NA,NA,
+Pelecanus onocrotalus,5334,Pelecaniformes,Pelecanidae,Pelicans,30,BL3,Pelecanus_onocrotalus,Great White Pelican,Pelecanus_onocrotalus,12.4,25.6,21,0.484375,Ritland 1982,Live,NA,NA,
+Pelecanus rufescens,5335,Pelecaniformes,Pelecanidae,Pelicans,30,BL3,Pelecanus_rufescens,Pink-backed Pelican,Pelecanus_rufescens,12.7,26.8,21.9,0.473880597,Ritland 1982,Live,NA,NA,
+Phaethon aethereus,5046,Phaethontiformes,Phaethontidae,Tropicbirds,26,BL3,Phaethon_aethereus,Red-billed Tropicbird,Phaethon_aethereus,9.95,23.05,21.3,0.431670282,Ritland 1982,Live,NA,NA,
+Phaethon lepturus,5048,Phaethontiformes,Phaethontidae,Tropicbirds,26,BL3,Phaethon_lepturus,White-tailed Tropicbird,Phaethon_lepturus,9.8,21.1,20,0.464454976,Ritland 1982,Live,NA,NA,
+Phaethon rubricauda,5047,Phaethontiformes,Phaethontidae,Tropicbirds,26,BL3,Phaethon_rubricauda,Red-tailed Tropicbird,Phaethon_rubricauda,11.2,24,22.8,0.466666667,Ritland 1982,Live,NA,NA,
+Phaetusa simplex,4489,Charadriiformes,Laridae,Gulls and terns,61,BL3,Phaetusa_simplex,Large-billed Tern,Phaetusa_simplex,7.9,17.7,15.6,0.446327684,Ritland 1982,Live,NA,NA,
+Phalacrocorax atriceps,5102,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_atriceps,Imperial Shag,Phalacrocorax_atriceps,9.6,21.2,17.7,0.452830189,Ritland 1982,Live,NA,NA,
+Phalacrocorax auritus,5090,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_auritus,Double-crested Cormorant,Phalacrocorax_auritus,8.5,18.3,15,0.464480874,Ritland 1982,Live,NA,NA,
+Phalacrocorax bougainvillii,5100,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_bougainvillii,Guanay Cormorant,Phalacrocorax_bougainvillii,7.7,17.6,15.4,0.4375,Ritland 1982,Live,NA,NA,
+Phalacrocorax carbo,5094,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_carbo,Great Cormorant,Phalacrocorax_carbo,8.6,17.7,15.8,0.485875706,Ritland 1982,Live,NA,NA,
+Phalacrocorax gaimardi,5118,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_gaimardi,Red-legged Cormorant,Phalacrocorax_gaimardi,6.7,16.3,14.2,0.411042945,Ritland 1982,Live,NA,NA,
+Phalacrocorax magellanicus,5113,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_magellanicus,Rock Shag,Phalacrocorax_magellanicus,7.7,18.1,14.8,0.425414365,Ritland 1982,Live,NA,NA,
+Phalacrocorax melanoleucos,5081,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_melanoleucos,Little Pied Cormorant,Phalacrocorax_melanoleucos,6.6,15.8,13.2,0.417721519,Ritland 1982,Live,NA,NA,
+Phalacrocorax pelagicus,5116,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_pelagicus,Pelagic Cormorant,Phalacrocorax_pelagicus,6.2,13.2,11.3,0.46969697,Ritland 1982,Live,NA,NA,
+Phalacrocorax pygmeus,5079,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_pygmeus,Pygmy Cormorant,Phalacrocorax_pygmeus,6.8,14.9,12.8,0.456375839,Ritland 1982,Live,NA,NA,
+Phalacrocorax sulcirostris,5093,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_sulcirostris,Little Black Cormorant,Phalacrocorax_sulcirostris,7,14.8,12.6,0.472972973,Ritland 1982,Live,NA,NA,
+Phalacrocorax varius,5092,Suliformes,Phalacrocoracidae,Cormorants,32,BL3,Phalacrocorax_varius,Large Pied Cormorant,Phalacrocorax_varius,7.7,18.7,15.8,0.411764706,Ritland 1982,Live,NA,NA,
+Phleocryptes melanops,6799,Passeriformes,Furnariidae,Ovenbirds,110,BL3,Phleocryptes_melanops,Wren-like Rushbird,Phleocryptes_melanops,3.4,7.7,6.8,0.441558442,Ritland 1982,Live,NA,NA,
+Phoenicopterus chilensis,5274,Phoenicopteriformes,Phoenicopteridae,Flamingos,22,BL3,Phoenicopterus_chilensis,Chilean Flamingo,Phoenicopterus_chilensis,8.8,17.1,14.35,0.514619883,Ritland 1982,Live,NA,NA,
+Phoenicopterus ruber,5271,Phoenicopteriformes,Phoenicopteridae,Flamingos,22,BL3,Phoenicopterus_ruber,American Flamingo,Phoenicopterus_ruber,9.2,17.23333333,14,0.53384913,Ritland 1982,Live,NA,NA,
+Platalea leucorodia,5318,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Platalea_leucorodia,Eurasian Spoonbill,Platalea_leucorodia,8.85,17.3,13.9,0.511560694,Ritland 1982,Live,NA,NA,
+Platalea regia,5319,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Platalea_regia,Royal Spoonbill,Platalea_regia,9.25,18.55,15.05,0.498652291,Ritland 1982,Live,NA,NA,
+Plectropterus gambensis,624,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Plectropterus_gambensis,Spur-winged Goose,Plectropterus_gambensis,7.8,16.75,14,0.465671642,Ritland 1982,Live,NA,NA,
+Plegadis chihi,5291,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Plegadis_chihi,White-faced Ibis,Plegadis_chihi,7,12.9,10.4,0.542635659,Ritland 1982,Live,NA,NA,
+Plegadis falcinellus,5288,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Plegadis_falcinellus,Glossy Ibis,Plegadis_falcinellus,6.9,14,11.4,0.492857143,Ritland 1982,Live,NA,NA,
+Porphyrio porphyrio,3913,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Porphyrio_porphyrio,Purple Swamphen,Porphyrio_porphyrio,6.7,15.5,12,0.432258065,Ritland 1982,Live,NA,NA,
+Porzana carolina,3890,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Porzana_carolina,Sora,Porzana_carolina,4.4,10.55,8.1,0.417061611,Ritland 1982,Live,NA,NA,
+Porzana cinerea,3900,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Porzana_cinerea,White-browed Crake,Porzana_cinerea,4.8,9.8,7.5,0.489795918,Ritland 1982,Live,NA,NA,
+Porzana tabuensis,3896,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Porzana_tabuensis,Spotless Crake,Porzana_tabuensis,4.4,9.1,7.3,0.483516484,Ritland 1982,Live,NA,NA,
+Progne dominicensis,10007,Passeriformes,Hirundinidae,Swallows and martins,156,BL3,Progne_dominicensis,Caribbean Martin,Progne_dominicensis,5.7,10.8,10.4,0.527777778,Ritland 1982,Live,NA,NA,
+Rallina eurizonoides,3809,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Rallina_eurizonoides,Slaty-legged Crake,Rallina_eurizonoides,6.8,13.3,11.1,0.511278195,Ritland 1982,Live,NA,NA,
+Rallina fasciata,3808,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Rallina_fasciata,Red-legged Crake,Rallina_fasciata,7.2,14.1,10.5,0.510638298,Ritland 1982,Live,NA,NA,
+Rallus elegans,3847,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Rallus_elegans,King Rail,Rallus_elegans,5.65,13.65,9.8,0.413919414,Ritland 1982,Live,NA,NA,
+Rallus limicola,3850,Gruiformes,Rallidae,"Rails, crakes and allies",42,BL3,Rallus_limicola,Virginia Rail,Rallus_limicola,4.1,9.15,7,0.448087432,Ritland 1982,Live,NA,NA,
+Rhodopis vesper,2781,Apodiformes,Trochilidae,Hummingbirds,79,BL3,Rhodopis_vesper,Oasis Hummingbird,Rhodopis_vesper,2.7,5.4,4.7,0.5,Ritland 1982,Live,NA,NA,
+Riparia riparia,10052,Passeriformes,Hirundinidae,Swallows and martins,156,BL3,Riparia_riparia,Sand Martin,Riparia_riparia,2.74,5.52,5.28,0.496376812,Ritland 1982,Live,NA,NA,
+Rissa tridactyla,4440,Charadriiformes,Laridae,Gulls and terns,61,BL3,Rissa_tridactyla,Black-legged Kittiwake,Rissa_tridactyla,9.8,20.35,16.2,0.481572482,Ritland 1982,Live,NA,NA,
+Rynchops niger,4360,Charadriiformes,Laridae,Gulls and terns,61,BL3,Rynchops_niger,Black Skimmer,Rynchops_niger,6.85,14.65,12.025,0.467576792,Ritland 1982,Live,NA,NA,
+Sarkidiornis melanotos,626,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Sarkidiornis_melanotos,Comb Duck,Sarkidiornis_melanotos,9.7,18,14.3,0.538888889,Ritland 1982,Live,NA,NA,
+Spheniscus demersus,5433,Sphenisciformes,Spheniscidae,Penguins,15,BL3,Spheniscus_demersus,African Penguin,Spheniscus_demersus,8.8,22.9,19.2,0.384279476,Ritland 1982,Live,NA,NA,
+Spheniscus humboldti,5434,Sphenisciformes,Spheniscidae,Penguins,15,BL3,Spheniscus_humboldti,Humboldt Penguin,Spheniscus_humboldti,8.1,22.8,18.4,0.355263158,Ritland 1982,Live,NA,NA,
+Sterna dougallii,4459,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_dougallii,Roseate Tern,Sterna_dougallii,5.8,12.9,11.2,0.449612403,Ritland 1982,Live,NA,NA,
+Sterna fuscata,4484,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_fuscata,Sooty Tern,Sterna_fuscata,6.3,15.9,13,0.396226415,Ritland 1982,Live,NA,NA,
+Sterna hirundo,4463,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_hirundo,Common Tern,Sterna_hirundo,6.2,14.35,12.2,0.432055749,Ritland 1982,Live,NA,NA,
+Sterna paradisaea,4465,Charadriiformes,Laridae,Gulls and terns,61,BL3,Sterna_paradisaea,Arctic Tern,Sterna_paradisaea,6.5,15.25,13.25,0.426229508,Ritland 1982,Live,NA,NA,
+Stictonetta naevosa,582,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Stictonetta_naevosa,Freckled Duck,Stictonetta_naevosa,8.2,15.3,12.3,0.535947712,Ritland 1982,Live,NA,NA,
+Sublegatus arenarum,5857,Passeriformes,Tyrannidae,Tyrant-flycatchers,105,BL3,Sublegatus_arenarum,Northern Scrub-flycatcher,Sublegatus_arenarum,4.4,8.3,7.8,0.530120482,Ritland 1982,Live,NA,NA,
+Sula dactylatra,5059,Suliformes,Sulidae,Gannets and boobies,31,BL3,Sula_dactylatra,Masked Booby,Sula_dactylatra,9.3,23.1,20.5,0.402597403,Ritland 1982,Live,NA,NA,
+Sula leucogaster,5064,Suliformes,Sulidae,Gannets and boobies,31,BL3,Sula_leucogaster,Brown Booby,Sula_leucogaster,8.1,21,18,0.385714286,Ritland 1982,Live,NA,NA,
+Sula sula,5063,Suliformes,Sulidae,Gannets and boobies,31,BL3,Sula_sula,Red-footed Booby,Sula_sula,9,22.6,19.85,0.398230088,Ritland 1982,Live,NA,NA,
+Sula variegata,5058,Suliformes,Sulidae,Gannets and boobies,31,BL3,Sula_variegata,Peruvian Booby,Sula_variegata,8.7,22.05,18.9,0.394557823,Ritland 1982,Live,NA,NA,
+Synthliboramphus antiquus,4524,Charadriiformes,Alcidae,Auks,63,BL3,Synthliboramphus_antiquus,Ancient Murrelet,Synthliboramphus_antiquus,6,15.8,12.6,0.379746835,Ritland 1982,Live,NA,NA,
+Syrigma sibilatrix,5190,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Syrigma_sibilatrix,Whistling Heron,Syrigma_sibilatrix,9,19,15.5,0.473684211,Ritland 1982,Live,NA,NA,
+Tachyeres patachonicus,652,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Tachyeres_patachonicus,Flying Steamerduck,Tachyeres_patachonicus,9.5,17.6,15.8,0.539772727,Ritland 1982,Live,NA,NA,
+Tachyeres pteneres,649,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Tachyeres_pteneres,Flightless Steamerduck,Tachyeres_pteneres,10.6,19.6,17.2,0.540816327,Ritland 1982,Live,NA,NA,
+Tadorna radjah,635,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Tadorna_radjah,Radjah Shelduck,Tadorna_radjah,8.45,15.55,12.6,0.54340836,Ritland 1982,Live,NA,NA,
+Thalassornis leuconotus,568,Anseriformes,Anatidae,"Ducks, geese and swans",14,BL3,Thalassornis_leuconotus,White-backed Duck,Thalassornis_leuconotus,8.5,14.8,12.9,0.574324324,Ritland 1982,Live,NA,NA,
+Theristicus caudatus,5295,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Theristicus_caudatus,Buff-necked Ibis,Theristicus_caudatus,10.4,20.2,17,0.514851485,Ritland 1982,Live,NA,NA,
+Theristicus melanopis,5297,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Theristicus_melanopis,Black-faced Ibis,Theristicus_melanopis,9.8,20.6,16.1,0.475728155,Ritland 1982,Live,NA,NA,
+Threskiornis aethiopicus,5308,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Threskiornis_aethiopicus,African Sacred Ibis,Threskiornis_aethiopicus,7.5,17.1,14.1,0.438596491,Ritland 1982,Live,NA,NA,
+Threskiornis molucca,5312,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Threskiornis_molucca,Australian Sacred Ibis,Threskiornis_molucca,7.8,17.4,13.3,0.448275862,Ritland 1982,Live,NA,NA,
+Threskiornis spinicollis,5313,Pelecaniformes,Threskiornithidae,Ibises and spoonbills,24,BL3,Threskiornis_spinicollis,Straw-necked Ibis,Threskiornis_spinicollis,7.75,18.05,13.7,0.429362881,Ritland 1982,Live,NA,NA,
+Tigrisoma lineatum,5152,Pelecaniformes,Ardeidae,Herons and egrets,25,BL3,Tigrisoma_lineatum,Rufescent Tiger-heron,Tigrisoma_lineatum,10.75,21.75,17.7,0.494252874,Ritland 1982,Live,NA,NA,
+Todiramphus sanctus,1610,Coraciiformes,Alcedinidae,Kingfishers,85,BL3,Todiramphus_sanctus,Sacred Kingfisher,Todiramphus_sanctus,5.8,12.3,9.3,0.471544715,Ritland 1982,Live,NA,NA,
+Tyrannus melancholicus,6187,Passeriformes,Tyrannidae,Tyrant-flycatchers,105,BL3,Tyrannus_melancholicus,Tropical Kingbird,Tyrannus_melancholicus,4.385714286,9.285714286,8.371428571,0.472307692,Ritland 1982,Live,NA,NA,
+Uria aalge,4508,Charadriiformes,Alcidae,Auks,63,BL3,Uria_aalge,Common Guillemot,Uria_aalge,8.2,19.9,17.8,0.412060302,Ritland 1982,Live,NA,NA,
+Uria lomvia,4509,Charadriiformes,Alcidae,Auks,63,BL3,Uria_lomvia,Thick-billed Guillemot,Uria_lomvia,8.2,20.4,18.3,0.401960784,Ritland 1982,Live,NA,NA,
+Xema sabini,4438,Charadriiformes,Laridae,Gulls and terns,61,BL3,Xema_sabini,Sabine's Gull,Xema_sabini,6.9,14.9,12.8,0.463087248,Ritland 1982,Live,NA,NA,
