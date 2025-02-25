@@ -24,7 +24,7 @@ R packages with version number: ape (5.8), colorspace (2.1-0), broom (1.0.6), br
 ## **Description of Folders and Files**
 This repository contains an R project with various folders that are organized and named for their contents. Below we have provided a description of each folder, and the files contained within each.
 
-### * Scripts Folder**
+### **Scripts Folder**
 
 ***Description:*** contains R scripts to analyze the data, to generate the findings in the manuscript, and to create the tables and results figures. The scripts are sequential and are labeled accordingly (Step1 through Step 9).
 
