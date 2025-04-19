@@ -25,7 +25,6 @@ library(logistf)
 C_Nest_dat <- readRDS(here("Outputs", "Coastal_Species_Nest.rds"))
 str(C_Nest_dat)
 nrow(C_Nest_dat)
-#807
 
 C_Nest_dat2 <- C_Nest_dat %>%
   mutate(Species_Jetz  = str_replace(Species_Jetz, " ", "_"))
@@ -45,7 +44,7 @@ colnames(C_Nest_dat2)
 UAI_NestStr <- C_Nest_dat2 %>% filter(!is.na(aveUAI)) %>% 
   filter(!is.na(NestStr)) %>% as.data.frame()
 length(UAI_NestStr$NestStr)
-# 733 species with UAI and NestStr
+# 727 species with UAI and NestStr
 
 ###### add and pair tree
 
@@ -54,14 +53,13 @@ row.names(UAI_NestStr) <- UAI_NestStr$Species_Jetz
 
 tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_NestStr_phydat <- treedata(tree_out, UAI_NestStr, sort=T)
+UAI_NestStr_phydat <- geiger::treedata(tree_out, UAI_NestStr, sort=T)
 
 UAI_NestStr_phy <- UAI_NestStr_phydat$phy
 UAI_NestStr_dat <- as.data.frame(UAI_NestStr_phydat$data)
 
 str(UAI_NestStr_dat)
 length(UAI_NestStr_dat$NestStr)
-# 733
 
 # convert traits of interest to numeric
 UAI_NestStr_dat$aveUAI <- as.numeric(UAI_NestStr_dat$aveUAI)
@@ -95,7 +93,7 @@ saveRDS(UAI_GLS_neststr, here("Models/UAI", "UAI_GLS_neststr.rds"))
 MUTI_NestStr <- C_Nest_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(NestStr)) %>% as.data.frame()
 length(MUTI_NestStr$NestStr)
-# 117 species with MUTIscore and NestStr
+# 115 species with MUTIscore and NestStr
 
 ###### add and pair tree
 
@@ -104,15 +102,13 @@ row.names(MUTI_NestStr) <- MUTI_NestStr$Species_Jetz
 
 tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_NestStr_phydat <- treedata(tree_out, MUTI_NestStr, sort=T)
+MUTI_NestStr_phydat <- geiger::treedata(tree_out, MUTI_NestStr, sort=T)
 
 MUTI_NestStr_phy <- MUTI_NestStr_phydat$phy
 MUTI_NestStr_dat <- as.data.frame(MUTI_NestStr_phydat$data)
 
 str(MUTI_NestStr_dat)
 length(MUTI_NestStr_dat$NestStr)
-#117
-
 
 # convert traits of interest to numeric
 MUTI_NestStr_dat$MUTIscore <- as.numeric(MUTI_NestStr_dat$MUTIscore)
@@ -168,7 +164,7 @@ UN_NestStr %>% filter(!is.na(NestStr)) %>%
 UAI_NestLow <- C_Nest_dat2 %>% filter(!is.na(aveUAI))  %>% 
   filter(!is.na(NestSite_Low)) %>% as.data.frame()
 length(UAI_NestLow$NestSite_Low)
-#792 species with UAI and NestSite_Low
+# 785 species with UAI and NestSite_Low
 
 ###### add and pair tree
 
@@ -177,14 +173,13 @@ row.names(UAI_NestLow) <- UAI_NestLow$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_NestLow_phydat <- treedata(tree_out, UAI_NestLow, sort=T)
+UAI_NestLow_phydat <- geiger::treedata(tree_out, UAI_NestLow, sort=T)
 
 UAI_NestLow_phy <- UAI_NestLow_phydat$phy
 UAI_NestLow_dat <- as.data.frame(UAI_NestLow_phydat$data)
 
 str(UAI_NestLow_dat)
 length(UAI_NestLow_dat$NestSite_Low)
-#792
 
 # convert traits of interest to numeric
 UAI_NestLow_dat$aveUAI <- as.numeric(UAI_NestLow_dat$aveUAI)
@@ -199,6 +194,7 @@ UAI_GLS_nest_low <- gls(aveUAI~ NestSite_Low + Mass_log, data = UAI_NestLow_dat,
 # model summary and results
 summary(UAI_GLS_nest_low) 
 confint(UAI_GLS_nest_low)
+confint(UAI_GLS_nest_low, level = 0.85)
 
 # model diagnostics
 check_model(UAI_GLS_nest_low) 
@@ -220,7 +216,7 @@ UAI_NestLow_only <- C_Nest_dat2 %>% filter(!is.na(aveUAI)) %>%
   filter(!(NestSite_Low == 1 & NestSite_High == 1)) %>% as.data.frame()
 length(UAI_NestLow_only$NestSite_Low)
 # 571 species with UAI and ONLY NestSite_Low (not also high nesters)
-792-571 # = 221 --> there are 221 species that were both High and Low nesters and had UAI scores 
+785-571 # = 214 --> there are 214 species that were both High and Low nesters and had UAI scores 
 
 ###### add and pair tree
 
@@ -229,7 +225,7 @@ row.names(UAI_NestLow_only) <- UAI_NestLow_only$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_NestLow_only_phydat <- treedata(tree_out, UAI_NestLow_only, sort=T)
+UAI_NestLow_only_phydat <- geiger::treedata(tree_out, UAI_NestLow_only, sort=T)
 
 UAI_NestLow_only_phy <- UAI_NestLow_only_phydat$phy
 UAI_NestLow_only_dat <- as.data.frame(UAI_NestLow_only_phydat$data)
@@ -251,7 +247,6 @@ UAI_GLS_nest_low_only <- gls(aveUAI~ NestSite_Low + Mass_log, data = UAI_NestLow
 # model summary and results
 summary(UAI_GLS_nest_low_only) 
 confint(UAI_GLS_nest_low_only, level = 0.95)
-confint(UAI_GLS_nest_low_only, level = 0.85)
 
 # model diagnostics
 check_model(UAI_GLS_nest_low_only) 
@@ -271,7 +266,7 @@ saveRDS(UAI_GLS_nest_low_only, here("Models/UAI", "UAI_GLS_nest_low_only.rds"))
 MUTI_NestLow <- C_Nest_dat2 %>% filter(!is.na(MUTIscore)) %>%
   filter(!is.na(NestSite_Low)) %>% as.data.frame()
 length(MUTI_NestLow$NestSite_Low)
-#130 species with MUTIscore and NestSite_Low
+# 128 species with MUTIscore and NestSite_Low
 
 ###### add and pair tree
 
@@ -280,14 +275,13 @@ row.names(MUTI_NestLow) <- MUTI_NestLow$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_NestLow_phydat <- treedata(tree_out, MUTI_NestLow, sort=T)
+MUTI_NestLow_phydat <- geiger::treedata(tree_out, MUTI_NestLow, sort=T)
 
 MUTI_NestLow_phy <- MUTI_NestLow_phydat$phy
 MUTI_NestLow_dat <- as.data.frame(MUTI_NestLow_phydat$data)
 
 str(MUTI_NestLow_dat)
 length(MUTI_NestLow_dat$NestSite_Low)
-#130
 
 # convert traits of interest to numeric
 MUTI_NestLow_dat$MUTIscore <- as.numeric(MUTI_NestLow_dat$MUTIscore)
@@ -323,8 +317,8 @@ MUTI_NestLow_only <- C_Nest_dat2 %>% filter(!is.na(MUTIscore)) %>%
   filter(!is.na(NestSite_Low)) %>% 
   filter(!(NestSite_Low == 1 & NestSite_High == 1)) %>% as.data.frame()
 length(MUTI_NestLow_only$NestSite_Low)
-# 91 species 
-130-91 # = 39 --> there are 39 species that were both High and Low nesters and had MUTI scores 
+# 89 species 
+128-89 # = 39 --> there are 39 species that were both High and Low nesters and had MUTI scores 
 
 ###### add and pair tree
 
@@ -333,15 +327,13 @@ row.names(MUTI_NestLow_only) <- MUTI_NestLow_only$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_NestLow_only_phydat <- treedata(tree_out, MUTI_NestLow_only, sort=T)
+MUTI_NestLow_only_phydat <- geiger::treedata(tree_out, MUTI_NestLow_only, sort=T)
 
 MUTI_NestLow_only_phy <- MUTI_NestLow_only_phydat$phy
 MUTI_NestLow_only_dat <- as.data.frame(MUTI_NestLow_only_phydat$data)
 
 str(MUTI_NestLow_only_dat)
 length(MUTI_NestLow_only_dat$NestSite_Low)
-#91
-
 
 # convert traits of interest to numeric
 MUTI_NestLow_only_dat$MUTIscore <- as.numeric(MUTI_NestLow_only_dat$MUTIscore)
@@ -367,17 +359,18 @@ for (i in seq(0, 1, by = 0.1)) {
 
 # Print AIC values
 print(AIC_values)
-#0.3 = best AIC score 
+# 0.4 = best AIC score 
 
 
 # run a phylogenetic linear model
 MUTI_GLS_nest_low_only <- gls(MUTIscore~ NestSite_Low + Mass_log, data = MUTI_NestLow_only_dat, 
-                         correlation = corPagel(0.3, phy = MUTI_NestLow_only_phy, fixed = T, form = ~Species_Jetz), 
+                         correlation = corPagel(0.4, phy = MUTI_NestLow_only_phy, fixed = T, form = ~Species_Jetz), 
                          method = "ML") 
 
 # model summary and results
 summary(MUTI_GLS_nest_low_only) 
 confint(MUTI_GLS_nest_low_only, level = 0.95)
+confint(MUTI_GLS_nest_low_only, level = 0.85)
 
 # model diagnostics
 check_model(MUTI_GLS_nest_low_only) 
@@ -397,21 +390,19 @@ saveRDS(MUTI_GLS_nest_low_only, here("Models/MUTI", "MUTI_GLS_nest_low_only.rds"
 UN_NestLow <- C_Nest_dat2 %>% filter(!is.na(Urban)) %>%
   filter(!is.na(NestSite_Low)) %>% column_to_rownames(., var = "Species_Jetz")
 length(UN_NestLow$NestSite_Low)
-# 129 species with UN and NestSite_Low
+# 128 species with UN and NestSite_Low
 
 ###### add and pair tree
 
 tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_NestLow_phydat <- treedata(tree_out, UN_NestLow, sort=T)
+UN_NestLow_phydat <- geiger::treedata(tree_out, UN_NestLow, sort=T)
 
 UN_NestLow_phy <- UN_NestLow_phydat$phy
 UN_NestLow_dat <- as.data.frame(UN_NestLow_phydat$data)
 
 str(UN_NestLow_dat)
 length(UN_NestLow_dat$NestSite_Low)
-#129
-
 
 # convert traits of interest to numeric
 UN_NestLow_dat$Urban <- as.numeric(UN_NestLow_dat$Urban)
@@ -421,47 +412,19 @@ UN_NestLow_dat$NestSite_Low <- as.numeric(UN_NestLow_dat$NestSite_Low)
 # Run the model using phyloglm(), which performs a logistic phylogenetic model to account for binary UN index
 # default method ="logistic_MPLE"
 # we will also scale and center the response variable to help with convergence
+set.seed(238)
 phyglm_UN_nest_low_scale <- phyloglm( Urban ~ NestSite_Low + scale(Mass_log), 
                                       data = UN_NestLow_dat, 
-                                      phy = UN_NestLow_phy, 
+                                      phy = UN_NestLow_phy,
                                       boot = 1000) 
 
 summary(phyglm_UN_nest_low_scale)
-# fails to converge
-# alpha at upper bounds
-
-
-# print AIC values for models with different upper bounds
-# intervals of 0.1 from 0 up to 4
-for (i in seq(0, 4, by = 0.1)) {
-  print(phyloglm(Urban ~  NestSite_Low + scale(Mass_log), 
-                 data = UN_NestLow_dat, 
-                 phy = UN_NestLow_phy,
-                 log.alpha.bound = i)$aic)
-}
-# AIC values support models with larger values of alpha (low phylo signal)
-
-
-# try fixing alpha at upper bounds
-# giving the model a little more searching space for alpha because AIC is actually lowest slightly below log.alpha.bounds = 4
-exp(3.7)/(phyglm_UN_nest_low_scale$mean.tip.height) # equals 0.41. Using this as start.alpha
-
-set.seed(701)
-phyglm_UN_nest_low_fix <- phyloglm( Urban ~ NestSite_Low + scale(Mass_log), 
-                                    data = UN_NestLow_dat, 
-                                    phy = UN_NestLow_phy,
-                                    log.alpha.bound = 4,
-                                    start.alpha = 0.41,
-                                    boot = 1000)
-summary(phyglm_UN_nest_low_fix)
-# model converges
-# alpha at upper bounds (= 0.559)
 
 
 # save model
-saveRDS(phyglm_UN_nest_low_fix, here("Models/UN", "phyglm_UN_nest_low_fix.rds"))
+saveRDS(phyglm_UN_nest_low_scale, here("Models/UN", "phyglm_UN_nest_low_scale.rds"))
 # load model
-phyglm_UN_nest_low_fix <- readRDS(here("Models/UN", "phyglm_UN_nest_low_fix.rds"))
+phyglm_UN_nest_low_scale <- readRDS(here("Models/UN", "phyglm_UN_nest_low_scale.rds"))
 
 
 # compare with non-phylogenetic model
@@ -472,8 +435,8 @@ summary(glm_UN_nest_low)
 
 
 # get alpha, t, and half life for the model
-(phyglm_UN_nest_low_fix$mean.tip.height) # t
-(alpha_Nlow <- phyglm_UN_nest_low_fix$alpha) # alpha
+(phyglm_UN_nest_low_scale$mean.tip.height) # t
+(alpha_Nlow <- phyglm_UN_nest_low_scale$alpha) # alpha
 (hl_NLow <- log(2)/alpha_Nlow) # half life
 # compared to t, this is a small half life
 
@@ -486,21 +449,20 @@ UN_NestLow_only <- C_Nest_dat2 %>% filter(!is.na(Urban)) %>%
   filter(!(NestSite_Low == 1 & NestSite_High == 1)) %>%
   column_to_rownames(., var = "Species_Jetz")
 length(UN_NestLow_only$NestSite_Low)
-#104 species 
-129-104 # = 25 --> there are 25 species that were both High and Low nesters and had UN scores 
+# 103 species 
+128-103 # = 25 --> there are 25 species that were both High and Low nesters and had UN scores 
 
 ###### add and pair tree
 
 tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_NestLow_only_phydat <- treedata(tree_out, UN_NestLow_only, sort=T)
+UN_NestLow_only_phydat <- geiger::treedata(tree_out, UN_NestLow_only, sort=T)
 
 UN_NestLow_only_phy <- UN_NestLow_only_phydat$phy
 UN_NestLow_only_dat <- as.data.frame(UN_NestLow_only_phydat$data)
 
 str(UN_NestLow_only_dat)
 length(UN_NestLow_only_dat$NestSite_Low)
-#104
 
 
 # convert traits of interest to numeric
@@ -512,7 +474,7 @@ UN_NestLow_only_dat$NestSite_Low <- as.numeric(UN_NestLow_only_dat$NestSite_Low)
 # Run the model using phyloglm(), which performs a logistic phylogenetic model to account for binary UN index
 # default method ="logistic_MPLE"
 # we will also scale and center the response variable to help with convergence
-set.seed(438)
+set.seed(481)
 phyglm_UN_nest_low_only_scale <- phyloglm( Urban ~ NestSite_Low + scale(Mass_log), 
                                            data = UN_NestLow_only_dat, 
                                            phy = UN_NestLow_only_phy,
@@ -520,10 +482,7 @@ phyglm_UN_nest_low_only_scale <- phyloglm( Urban ~ NestSite_Low + scale(Mass_log
 
 
 summary(phyglm_UN_nest_low_only_scale)
-# alpha at upper bounds
-# the p-value for NestSite_low flagged as significant
-# but the bootstrapped CI interval strongly overlaps zero
-# we will use the bootstrapped 95% CI here over the p-value
+confint(phyglm_UN_nest_low_only_scale)
 
 
 # save model
