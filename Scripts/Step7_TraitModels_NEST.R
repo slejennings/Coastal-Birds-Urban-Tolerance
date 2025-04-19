@@ -509,7 +509,7 @@ phyglm_UN_nest_low_only_scale <- readRDS(here("Models/UN", "phyglm_UN_nest_low_o
 UAI_NestHigh <- C_Nest_dat2 %>% filter(!is.na(aveUAI)) %>% 
   filter(!is.na(NestSite_High)) %>% as.data.frame()
 length(UAI_NestHigh$NestSite_High)
-#796 species with UAI and NestSite_High
+# 785 species with UAI and NestSite_High
 
 ###### add and pair tree
 
@@ -518,15 +518,13 @@ row.names(UAI_NestHigh) <- UAI_NestHigh$Species_Jetz
 
 tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_NestHigh_phydat <- treedata(tree_out, UAI_NestHigh, sort=T)
+UAI_NestHigh_phydat <- geiger::treedata(tree_out, UAI_NestHigh, sort=T)
 
 UAI_NestHigh_phy <- UAI_NestHigh_phydat$phy
 UAI_NestHigh_dat <- as.data.frame(UAI_NestHigh_phydat$data)
 
 str(UAI_NestHigh_dat)
 length(UAI_NestHigh_dat$NestSite_High)
-#796
-
 
 # convert traits of interest to numeric
 UAI_NestHigh_dat$aveUAI <- as.numeric(UAI_NestHigh_dat$aveUAI)
@@ -560,7 +558,7 @@ saveRDS(UAI_GLS_nest_high, here("Models/UAI", "UAI_GLS_nest_high.rds"))
 MUTI_NestHigh <- C_Nest_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(NestSite_High)) %>% as.data.frame()
 length(MUTI_NestHigh$NestSite_High)
-# 130 species with UAI and NestSite_High
+# 128 species with UAI and NestSite_High
 
 ###### add and pair tree
 
@@ -569,15 +567,13 @@ row.names(MUTI_NestHigh) <- MUTI_NestHigh$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_NestHigh_phydat <- treedata(tree_out, MUTI_NestHigh, sort=T)
+MUTI_NestHigh_phydat <- geiger::treedata(tree_out, MUTI_NestHigh, sort=T)
 
 MUTI_NestHigh_phy <- MUTI_NestHigh_phydat$phy
 MUTI_NestHigh_dat <- as.data.frame(MUTI_NestHigh_phydat$data)
 
 str(MUTI_NestHigh_dat)
 length(MUTI_NestHigh_dat$NestSite_High)
-# 130
-
 
 # convert traits of interest to numeric
 MUTI_NestHigh_dat$MUTIscore <- as.numeric(MUTI_NestHigh_dat$MUTIscore)
@@ -593,7 +589,7 @@ MUTI_GLS_nest_high <- gls(MUTIscore~ NestSite_High + Mass_log, data = MUTI_NestH
 # model summary and results
 summary(MUTI_GLS_nest_high) 
 confint(MUTI_GLS_nest_high)
-confint(MUTI_GLS_nest_high, level = 0.85)
+
 
 # model diagnostics
 check_model(MUTI_GLS_nest_high) 
@@ -613,21 +609,20 @@ saveRDS(MUTI_GLS_nest_high, here("Models/MUTI", "MUTI_GLS_nest_high.rds"))
 UN_NestHigh <- C_Nest_dat2 %>% filter(!is.na(Urban)) %>% 
   filter(!is.na(NestSite_High)) %>% column_to_rownames(., var ="Species_Jetz")
 length(UN_NestHigh$NestSite_High)
-#129 species with UN and NestSite_High
+# 128 species with UN and NestSite_High
 
 
 ###### add and pair tree
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_NestHigh_phydat <- treedata(tree_out, UN_NestHigh, sort=T)
+UN_NestHigh_phydat <- geiger::treedata(tree_out, UN_NestHigh, sort=T)
 
 UN_NestHigh_phy <- UN_NestHigh_phydat$phy
 UN_NestHigh_dat <- as.data.frame(UN_NestHigh_phydat$data)
 
 str(UN_NestHigh_dat)
 length(UN_NestHigh_dat$NestSite_High)
-# 129
 
 
 ### convert traits of interest to numeric
@@ -639,43 +634,18 @@ UN_NestHigh_dat$NestSite_High <- as.numeric(UN_NestHigh_dat$NestSite_High)
 # Run the model using phyloglm(), which performs a logistic phylogenetic model to account for binary UN index
 # default method ="logistic_MPLE"
 # we will also scale and center the response variable to help with convergence
+set.seed(499)
 phyglm_UN_nest_high_scale <- phyloglm( Urban ~ NestSite_High + scale(Mass_log), 
                                        data = UN_NestHigh_dat, 
-                                       phy = UN_NestHigh_phy, 
+                                       phy = UN_NestHigh_phy,
                                        boot = 1000)
-summary(phyglm_UN_nest_high_scale) # this fails to converge
-
-
-# print AIC values for models with different upper bounds
-# intervals of 0.1 from 0 up to 4
-for (i in seq(0, 4, by = 0.1)) {
-  print(phyloglm(Urban ~  NestSite_High + scale(Mass_log), 
-                 data = UN_NestHigh_dat, 
-                 phy = UN_NestHigh_phy, 
-                 log.alpha.bound = i)$aic)
-}
-# AIC values support models with larger values of alpha (low phylo signal)
-
-
-# try fixing alpha at upper bounds
-# give the model a little more searching space for alpha because AIC is actually lowest slightly below log.alpha.bounds = 4
-exp(3.8)/(phyglm_UN_nest_high_scale$mean.tip.height) # equals 0.45. Using this as start.alpha
-
-set.seed(782)
-phyglm_UN_nest_high_fix <- phyloglm( Urban ~ NestSite_High + scale(Mass_log), 
-                                     data = UN_NestHigh_dat, 
-                                     phy = UN_NestHigh_phy,  
-                                     log.alpha.bound = 4,
-                                     start.alpha = 0.45,
-                                     boot = 1000)
-summary(phyglm_UN_nest_high_fix)
-# model converges
+summary(phyglm_UN_nest_high_scale) 
 
 
 # save model
-saveRDS(phyglm_UN_nest_high_fix, here("Models/UN", "phyglm_UN_nest_high_fix.rds"))
+saveRDS(phyglm_UN_nest_high_scale, here("Models/UN", "phyglm_UN_nest_high_scale.rds"))
 # load model
-phyglm_UN_nest_high_fix <- readRDS(here("Models/UN", "phyglm_UN_nest_high_fix.rds"))
+phyglm_UN_nest_high_scale <- readRDS(here("Models/UN", "phyglm_UN_nest_high_scale.rds"))
 
 
 # look at a non-phylogenetic logistic model
@@ -686,8 +656,8 @@ summary(glm_UN_nest_high) # we reach same conclusions
 
 
 # get alpha, t, and half life for the model
-(phyglm_UN_nest_high_fix$mean.tip.height) # t
-(alpha_Nhigh <- phyglm_UN_nest_high_fix$alpha) # alpha
+(phyglm_UN_nest_high_scale$mean.tip.height) # t
+(alpha_Nhigh <- phyglm_UN_nest_high_scale$alpha) # alpha
 (hl_Nhigh <- log(2)/alpha_Nhigh) # half life
 #compared to t, this is a small half life
 
@@ -700,7 +670,7 @@ summary(glm_UN_nest_high) # we reach same conclusions
 UAI_NestSafety <- C_Nest_dat2 %>% filter(!is.na(aveUAI)) %>% 
   filter(!is.na(nest.safety)) %>% as.data.frame()
 length(UAI_NestSafety$nest.safety)
-#766 species with UAI and nest.safety
+# 760 species with UAI and nest.safety
 
 ###### add and pair tree
 
@@ -709,15 +679,13 @@ row.names(UAI_NestSafety) <- UAI_NestSafety$Species_Jetz
 
 tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_NestSafety_phydat <- treedata(tree_out, UAI_NestSafety, sort=T)
+UAI_NestSafety_phydat <- geiger::treedata(tree_out, UAI_NestSafety, sort=T)
 
 UAI_NestSafety_phy <- UAI_NestSafety_phydat$phy
 UAI_NestSafety_dat <- as.data.frame(UAI_NestSafety_phydat$data)
 
 str(UAI_NestSafety_dat)
 length(UAI_NestSafety_dat$nest.safety)
-#766
-
 
 ### convert traits of interest to numeric
 UAI_NestSafety_dat$aveUAI <- as.numeric(UAI_NestSafety_dat$aveUAI)
@@ -750,7 +718,7 @@ saveRDS(UAI_GLS_nest_safety, here("Models/UAI", "UAI_GLS_nest_safety.rds"))
 MUTI_NestSafety <- C_Nest_dat2 %>% filter(!is.na(MUTIscore))  %>%
   filter(!is.na(nest.safety)) %>% as.data.frame()
 length(MUTI_NestSafety$nest.safety)
-# 127 species with MUTIscore and nest.safety
+# 125 species with MUTIscore and nest.safety
 
 ###### add and pair tree
 
@@ -759,14 +727,13 @@ row.names(MUTI_NestSafety) <- MUTI_NestSafety$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_NestSafety_phydat <- treedata(tree_out, MUTI_NestSafety, sort=T)
+MUTI_NestSafety_phydat <- geiger::treedata(tree_out, MUTI_NestSafety, sort=T)
 
 MUTI_NestSafety_phy <- MUTI_NestSafety_phydat$phy
 MUTI_NestSafety_dat <- as.data.frame(MUTI_NestSafety_phydat$data)
 
 str(MUTI_NestSafety_dat)
 length(MUTI_NestSafety_dat$nest.safety)
-#127
 
 # convert traits of interest to numeric
 MUTI_NestSafety_dat$MUTIscore <- as.numeric(MUTI_NestSafety_dat$MUTIscore)
@@ -800,19 +767,18 @@ saveRDS(MUTI_GLS_nest_safety, here("Models/MUTI", "MUTI_GLS_nest_safety.rds"))
 UN_NestSafety <- C_Nest_dat2 %>% filter(!is.na(Urban))  %>% 
   filter(!is.na(nest.safety)) %>% column_to_rownames(., var="Species_Jetz")
 length(UN_NestSafety$nest.safety)
-#129 species with Urban and nest.safety
+# 128 species with Urban and nest.safety
 
 ###### add and pair tree
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_NestSafety_phydat <- treedata(tree_out, UN_NestSafety, sort=T)
+UN_NestSafety_phydat <- geiger::treedata(tree_out, UN_NestSafety, sort=T)
 
 UN_NestSafety_phy <- UN_NestSafety_phydat$phy
 UN_NestSafety_dat <- as.data.frame(UN_NestSafety_phydat$data)
 
 str(UN_NestSafety_dat)
 length(UN_NestSafety_dat$nest.safety)
-#129
 
 ### convert traits of interest to numeric
 UN_NestSafety_dat$Urban <- as.numeric(UN_NestSafety_dat$Urban)
@@ -827,9 +793,9 @@ phyglm_UN_nest_safety_scale <- phyloglm( Urban ~ scale(nest.safety) + scale(Mass
                                          data = UN_NestSafety_dat, 
                                          phy = UN_NestSafety_phy, 
                                          boot = 1000) 
-summary(phyglm_UN_nest_safety_scale)
-# this model converges
-# this is a positive trend for nest.safety based on bootstrapped 95% CI
+summary(phyglm_UN_nest_safety_scale) # this model converges
+confint(phyglm_UN_nest_safety_scale)
+
 
 # save model
 saveRDS(phyglm_UN_nest_safety_scale, here("Models/UN", "phyglm_UN_nest_safety_scale.rds"))
