@@ -41,7 +41,7 @@ colnames(C_LifeHist_dat2)
 UAI_Brood <- C_LifeHist_dat2 %>% filter(!is.na(aveUAI)) %>% 
   filter(!is.na(brood_value)) %>% as.data.frame()
 length(UAI_Brood$brood_value)
-#480 species with UAI and brood_value
+# 477 species with UAI and brood_value
 
 ###### add and pair tree
 
@@ -50,14 +50,14 @@ row.names(UAI_Brood) <- UAI_Brood$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_Brood_phydat <- treedata(tree_out, UAI_Brood, sort=T)
+UAI_Brood_phydat <- geiger::treedata(tree_out, UAI_Brood, sort=T)
 
 UAI_Brood_phy <- UAI_Brood_phydat$phy
 UAI_Brood_dat <- as.data.frame(UAI_Brood_phydat$data)
 
 str(UAI_Brood_dat)
 length(UAI_Brood_dat$brood_value)
-#480
+# 477
 
 ### convert traits of interest to numeric
 UAI_Brood_dat$aveUAI <- as.numeric(UAI_Brood_dat$aveUAI)
@@ -92,7 +92,7 @@ UAI_Brood_Filtered <- UAI_Brood %>% filter(brood_value >= -5)
 row.names(UAI_Brood_Filtered) <- UAI_Brood_Filtered$Species_Jetz
 
 # Pair with the tree
-UAI_Brood_Fil_phydat <- treedata(tree_out, UAI_Brood_Filtered, sort=T)
+UAI_Brood_Fil_phydat <- geiger::treedata(tree_out, UAI_Brood_Filtered, sort=T)
 
 UAI_Brood_Fil_phy <- UAI_Brood_Fil_phydat$phy
 UAI_Brood_Fil_dat <- as.data.frame(UAI_Brood_Fil_phydat$data)
@@ -108,8 +108,8 @@ UAI_GLS_bv_filtered <- gls(aveUAI ~ brood_value + Mass_log, data = UAI_Brood_Fil
                            method = "ML")
 
 # model summary and results
-summary(UAI_GLS_bv_filtered) # still significant (p = 0.0288)
-confint(UAI_GLS_bv_filtered) # still significant (C.I. = (-0.349, -0.0195)
+summary(UAI_GLS_bv_filtered) 
+confint(UAI_GLS_bv_filtered) # still significant at 95%CI
 
 # model diagnostics
 check_model(UAI_GLS_bv_filtered)
@@ -127,7 +127,7 @@ saveRDS(UAI_GLS_bv_filtered, here("Models/UAI", "UAI_GLS_bv_filtered.rds"))
 MUTI_Brood <- C_LifeHist_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(brood_value)) %>% as.data.frame()
 length(MUTI_Brood$brood_value)
-#121 species with MUTI and brood_value
+# 120 species with MUTI and brood_value
 
 ###### add and pair tree
 
@@ -136,14 +136,14 @@ row.names(MUTI_Brood) <- MUTI_Brood$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_Brood_phydat <- treedata(tree_out, MUTI_Brood, sort=T)
+MUTI_Brood_phydat <- geiger::treedata(tree_out, MUTI_Brood, sort=T)
 
 MUTI_Brood_phy <- MUTI_Brood_phydat$phy
 MUTI_Brood_dat <- as.data.frame(MUTI_Brood_phydat$data)
 
 str(MUTI_Brood_dat)
 length(MUTI_Brood_dat$brood_value)
-#121
+# 120
 
 ### convert traits of interest to numeric
 MUTI_Brood_dat$MUTIscore <- as.numeric(MUTI_Brood_dat$MUTIscore)
@@ -176,20 +176,19 @@ UN_Brood <- C_LifeHist_dat2 %>% filter(!is.na(Urban)) %>%
   filter(!is.na(brood_value)) %>%
   column_to_rownames(., var="Species_Jetz")
 length(UN_Brood$brood_value)
-#102 species with UN and brood_value
+# 101 species with UN and brood_value
 
 ###### add and pair tree
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_Brood_phydat <- treedata(tree_out, UN_Brood, sort=T)
+UN_Brood_phydat <- geiger::treedata(tree_out, UN_Brood, sort=T)
 
 UN_Brood_phy <- UN_Brood_phydat$phy
 UN_Brood_dat <- as.data.frame(UN_Brood_phydat$data)
 
 str(UN_Brood_dat)
 length(UN_Brood_dat$brood_value)
-#102
 
 ### convert traits of interest to numeric
 UN_Brood_dat$Urban <- as.numeric(UN_Brood_dat$Urban)
@@ -219,7 +218,7 @@ glm_UN_bv <- logistf(Urban ~ scale(brood_value) + scale(Mass_log),
                      data = UN_Brood)            
 summary(glm_UN_bv)
 # we reach the same conclusions
-# some differences in coefficients though
+# some slight differences in coefficients though
 
 
 # get alpha, t, and half life for the model
@@ -240,7 +239,7 @@ summary(glm_UN_bv)
 UAI_Clutch <- C_LifeHist_dat2 %>% filter(!is.na(aveUAI)) %>% 
   filter(!is.na(clutch_size)) %>% as.data.frame()
 length(UAI_Clutch$clutch_size)
-#738 species with UAI and clutch_size
+# 731 species with UAI and clutch_size
 
 ###### add and pair tree
 
@@ -249,14 +248,14 @@ row.names(UAI_Clutch) <- UAI_Clutch$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_Clutch_phydat <- treedata(tree_out, UAI_Clutch, sort=T)
+UAI_Clutch_phydat <- geiger::treedata(tree_out, UAI_Clutch, sort=T)
 
 UAI_Clutch_phy <- UAI_Clutch_phydat$phy
 UAI_Clutch_dat <- as.data.frame(UAI_Clutch_phydat$data)
 
 str(UAI_Clutch_dat)
 length(UAI_Clutch_dat$clutch_size)
-#738
+
 
 ### convert traits of interest to numeric
 UAI_Clutch_dat$aveUAI <- as.numeric(UAI_Clutch_dat$aveUAI)
@@ -289,7 +288,7 @@ saveRDS(UAI_GLS_clutch, here("Models/UAI", "UAI_GLS_clutch.rds"))
 MUTI_Clutch <- C_LifeHist_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(clutch_size)) %>% as.data.frame()
 length(MUTI_Clutch$clutch_size)
-# 126 species with MUTI and clutch_size
+# 124 species with MUTI and clutch_size
 
 ###### add and pair tree
 
@@ -298,14 +297,13 @@ row.names(MUTI_Clutch) <- MUTI_Clutch$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_Clutch_phydat <- treedata(tree_out, MUTI_Clutch, sort=T)
+MUTI_Clutch_phydat <- geiger::treedata(tree_out, MUTI_Clutch, sort=T)
 
 MUTI_Clutch_phy <- MUTI_Clutch_phydat$phy
 MUTI_Clutch_dat <- as.data.frame(MUTI_Clutch_phydat$data)
 
 str(MUTI_Clutch_dat)
 length(MUTI_Clutch_dat$clutch_size)
-# 126
 
 ### convert traits of interest to numeric
 MUTI_Clutch_dat$MUTIscore <- as.numeric(MUTI_Clutch_dat$MUTIscore)
@@ -338,20 +336,19 @@ saveRDS(MUTI_GLS_clutch, here("Models/MUTI", "MUTI_GLS_clutch.rds"))
 UN_Clutch <- C_LifeHist_dat2 %>% filter(!is.na(Urban)) %>% 
   filter(!is.na(clutch_size)) %>% column_to_rownames(., var = "Species_Jetz")
 length(UN_Clutch$clutch_size)
-#122 species with UN and clutch_size
+# 121 species with UN and clutch_size
 
 ###### add and pair tree
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_Clutch_phydat <- treedata(tree_out, UN_Clutch, sort=T)
+UN_Clutch_phydat <- geiger::treedata(tree_out, UN_Clutch, sort=T)
 
 UN_Clutch_phy <- UN_Clutch_phydat$phy
 UN_Clutch_dat <- as.data.frame(UN_Clutch_phydat$data)
 
 str(UN_Clutch_dat)
 length(UN_Clutch_dat$clutch_size)
-#122
 
 ### convert traits of interest to numeric
 UN_Clutch_dat$Urban <- as.numeric(UN_Clutch_dat$Urban)
@@ -381,14 +378,14 @@ for (i in seq(0, 4, by = 0.1)) {
 # AIC values support models with larger values of alpha (low phylo signal)
 
 
-# fix alpha at upper bounds
-set.seed(770)
+# fix alpha near upper bounds
+set.seed(747)
 phyglm_UN_clutch_fix <- phyloglm(Urban ~ scale(clutch_size) + scale(Mass_log), 
-                                  data = UN_Clutch_dat, 
-                                  phy = UN_Clutch_phy,
-                                  log.alpha.bound = 4,
-                                  start.alpha = 0.53,
-                                  boot = 1000) 
+                                 data = UN_Clutch_dat, 
+                                 phy = UN_Clutch_phy,
+                                 log.alpha.bound = 4,
+                                 start.alpha = 0.5,
+                                 boot = 1000) 
 
 summary(phyglm_UN_clutch_fix)
 
@@ -424,7 +421,7 @@ summary(glm_UN_clutch)
 UAI_Long <- C_LifeHist_dat2 %>% filter(!is.na(aveUAI)) %>% 
   filter(!is.na(longevity)) %>% as.data.frame()
 length(UAI_Long$longevity)
-# 796 species with UAI and longevity
+# 789 species with UAI and longevity
 
 ###### add and pair tree
 
@@ -433,14 +430,13 @@ row.names(UAI_Long) <- UAI_Long$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_Long_phydat <- treedata(tree_out, UAI_Long, sort=T)
+UAI_Long_phydat <- geiger::treedata(tree_out, UAI_Long, sort=T)
 
 UAI_Long_phy <- UAI_Long_phydat$phy
 UAI_Long_dat <- as.data.frame(UAI_Long_phydat$data)
 
 str(UAI_Long_dat)
 length(UAI_Long_dat$longevity)
-# 796
 
 ### convert traits of interest to numeric
 UAI_Long_dat$aveUAI <- as.numeric(UAI_Long_dat$aveUAI)
@@ -455,6 +451,7 @@ UAI_GLS_long <- gls(aveUAI~ longevity + Mass_log, data = UAI_Long_dat,
 # model summary and results
 summary(UAI_GLS_long) 
 confint(UAI_GLS_long)
+confint(UAI_GLS_long, level=0.85)
 
 # model diagnostics
 check_model(UAI_GLS_long) 
@@ -472,7 +469,7 @@ saveRDS(UAI_GLS_long, here("Models/UAI", "UAI_GLS_long.rds"))
 MUTI_Long <- C_LifeHist_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(longevity)) %>% as.data.frame()
 length(MUTI_Long$longevity)
-# 130 species with MUTI and longevity
+# 128 species with MUTI and longevity
 
 ###### add and pair tree
 
@@ -481,14 +478,14 @@ row.names(MUTI_Long) <- MUTI_Long$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_Long_phydat <- treedata(tree_out, MUTI_Long, sort=T)
+MUTI_Long_phydat <- geiger::treedata(tree_out, MUTI_Long, sort=T)
 
 MUTI_Long_phy <- MUTI_Long_phydat$phy
 MUTI_Long_dat <- as.data.frame(MUTI_Long_phydat$data)
 
 str(MUTI_Long_dat)
 length(MUTI_Long_dat$longevity)
-# 130
+# 128
 
 ### convert traits of interest to numeric
 MUTI_Long_dat$MUTIscore <- as.numeric(MUTI_Long_dat$MUTIscore)
@@ -520,20 +517,19 @@ saveRDS(MUTI_GLS_long, here("Models/MUTI", "MUTI_GLS_long.rds"))
 UN_Long <- C_LifeHist_dat2 %>% filter(!is.na(Urban)) %>% 
   filter(!is.na(longevity)) %>% column_to_rownames(., var="Species_Jetz")
 length(UN_Long$longevity)
-#129 species with UAI and longevity
+# 128 species with UAI and longevity
 
 ###### add and pair tree
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_Long_phydat <- treedata(tree_out, UN_Long, sort=T)
+UN_Long_phydat <- geiger::treedata(tree_out, UN_Long, sort=T)
 
 UN_Long_phy <- UN_Long_phydat$phy
 UN_Long_dat <- as.data.frame(UN_Long_phydat$data)
 
 str(UN_Long_dat)
 length(UN_Long_dat$longevity)
-#129
 
 ### convert traits of interest to numeric
 UN_Long_dat$Urban <- as.numeric(UN_Long_dat$Urban)
@@ -546,7 +542,7 @@ UN_Long_dat$longevity <- as.numeric(UN_Long_dat$longevity)
 # we will also scale and center the response variable to help with convergence
 phyglm_UN_long_scale <- phyloglm( Urban ~ scale(longevity) + scale(Mass_log), 
                                   data = UN_Long_dat, 
-                                  phy = UN_Long_phy, 
+                                  phy = UN_Long_phy,
                                   boot = 1000) 
 
 # this model fails to converge
@@ -564,7 +560,7 @@ for (i in seq(0, 4, by = 0.1)) {
 # AIC values support models with larger values of alpha (low phylo signal)
 
 
-# try fixing alpha at upper bounds
+# try fixing alpha near upper bounds
 set.seed(989)
 phyglm_UN_long_fix <- phyloglm( Urban ~ scale(longevity) + scale(Mass_log), 
                                 data = UN_Long_dat, 
@@ -607,7 +603,7 @@ summary(glm_UN_long)
 UAI_Develop <- C_LifeHist_dat2 %>% filter(!is.na(aveUAI)) %>% 
   filter(!is.na(developmental_mode)) %>% as.data.frame()
 length(UAI_Develop$developmental_mode)
-#766 species with UAI and developmental_mode
+# 760 species with UAI and developmental_mode
 
 ###### add and pair tree
 
@@ -616,14 +612,13 @@ row.names(UAI_Develop) <- UAI_Develop$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_Develop_phydat <- treedata(tree_out, UAI_Develop, sort=T)
+UAI_Develop_phydat <- geiger::treedata(tree_out, UAI_Develop, sort=T)
 
 UAI_Develop_phy <- UAI_Develop_phydat$phy
 UAI_Develop_dat <- as.data.frame(UAI_Develop_phydat$data)
 
 str(UAI_Develop_dat)
 length(UAI_Develop_dat$developmental_mode)
-#766
 
 ### convert traits of interest to numeric
 UAI_Develop_dat$aveUAI <- as.numeric(UAI_Develop_dat$aveUAI)
@@ -655,7 +650,7 @@ saveRDS(UAI_GLS_develop, here("Models/UAI", "UAI_GLS_develop.rds"))
 MUTI_Develop <- C_LifeHist_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(developmental_mode)) %>% as.data.frame()
 length(MUTI_Develop$developmental_mode)
-# 127 species with MUTI and developmental_mode
+# 125 species with MUTI and developmental_mode
 
 ###### add and pair tree
 
@@ -664,14 +659,14 @@ row.names(MUTI_Develop) <- MUTI_Develop$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_Develop_phydat <- treedata(tree_out, MUTI_Develop, sort=T)
+MUTI_Develop_phydat <- geiger::treedata(tree_out, MUTI_Develop, sort=T)
 
 MUTI_Develop_phy <- MUTI_Develop_phydat$phy
 MUTI_Develop_dat <- as.data.frame(MUTI_Develop_phydat$data)
 
 str(MUTI_Develop_dat)
 length(MUTI_Develop_dat$developmental_mode)
-# 127
+
 
 ### convert traits of interest to numeric
 MUTI_Develop_dat$MUTIscore <- as.numeric(MUTI_Develop_dat$MUTIscore)
@@ -704,19 +699,18 @@ saveRDS(MUTI_GLS_develop, here("Models/MUTI", "MUTI_GLS_develop.rds"))
 UN_Develop <- C_LifeHist_dat2 %>% filter(!is.na(Urban)) %>% 
   filter(!is.na(developmental_mode)) %>% column_to_rownames(., var = "Species_Jetz")
 length(UN_Develop$developmental_mode)
-#129 species with MUTI and developmental_mode
+# 128 species with MUTI and developmental_mode
 
 ###### add and pair tree
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_Develop_phydat <- treedata(tree_out, UN_Develop, sort=T)
+UN_Develop_phydat <- geiger::treedata(tree_out, UN_Develop, sort=T)
 
 UN_Develop_phy <- UN_Develop_phydat$phy
 UN_Develop_dat <- as.data.frame(UN_Develop_phydat$data)
 
 str(UN_Develop_dat)
 length(UN_Develop_dat$developmental_mode)
-#129
 
 ### convert traits of interest to numeric
 UN_Develop_dat$Urban <- as.numeric(UN_Develop_dat$Urban)
@@ -727,54 +721,25 @@ UN_Develop_dat$developmental_mode <- as.numeric(UN_Develop_dat$developmental_mod
 # default method ="logistic_MPLE"
 # we will also scale and center the response variable to help with convergence
 # not scaling developmental mode as it is 0/1 binary variable
+set.seed(434)
 phyglm_UN_develop_scale <- phyloglm( Urban ~ developmental_mode + scale(Mass_log), 
                                      data = UN_Develop_dat, 
                                      phy = UN_Develop_phy,
                                      boot = 1000) 
-# this fails to converge
-summary(phyglm_UN_develop_scale)
-
-
-# print AIC values for models with different upper bounds
-# intervals of 0.1 from 0 up to 4
-for (i in seq(0, 4, by = 0.1)) {
-  print(phyloglm(Urban ~ developmental_mode + scale(Mass_log), 
-                 data = UN_Develop_dat, 
-                 phy = UN_Develop_phy,
-                 log.alpha.bound = i)$aic)
-}
-# AIC values support models with larger values of alpha (low phylo signal)
-
-
-# try fixing model at upper bounds for alpha
-set.seed(434)
-phyglm_UN_develop_fix <- phyloglm( Urban ~ developmental_mode + scale(Mass_log), 
-                                   data = UN_Develop_dat, 
-                                   phy = UN_Develop_phy,
-                                   log.alpha.bound = 4,
-                                   start.alpha = 0.557,
-                                   boot = 1000) 
-
 # this converges
-summary(phyglm_UN_develop_fix)
-# 95% bootstrapped CI for developmental mode does not overlap 0, but p-value is 0.12
-# I ran the model without the bootstrapping and it gives the exact same p-value
-# I suspect p-values are derived from the original data (although I can't find anything in package documentation)
-# while the 95% CI is derived from bootstrapping process and thus more reliable
-# mark as a significant trend based on our criteria to use 95% CI
-
+summary(phyglm_UN_develop_scale)
+confint(phyglm_UN_develop_scale)
 
 # save model
-saveRDS(phyglm_UN_develop_fix, here("Models/UN", "phyglm_UN_develop_fix.rds"))
+saveRDS(phyglm_UN_develop_fix, here("Models/UN", "phyglm_UN_develop_scale.rds"))
 # load model
-phyglm_UN_develop_fix <- readRDS(here("Models/UN", "phyglm_UN_develop_fix.rds"))
+phyglm_UN_develop_fix <- readRDS(here("Models/UN", "phyglm_UN_develop_scale.rds"))
 
 # compare results with a non-phylogenetic logistic model
 glm_UN_develop <- logistf(Urban ~ developmental_mode + scale(Mass_log), 
                           data = UN_Develop)
 
-summary(glm_UN_develop) # similar coefficients
-
+summary(glm_UN_develop)
 
 # get alpha, t, and half life for the model
 (phyglm_UN_develop_fix$mean.tip.height) # t
