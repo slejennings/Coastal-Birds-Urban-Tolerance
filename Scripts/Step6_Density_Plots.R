@@ -29,7 +29,7 @@ species_with_all_indexes <- AllIndexesCoastal %>%
   filter(!is.na(MUTIscore)) 
 
 nrow(species_with_all_indexes)
-#49 species that are represented by all three indexes
+# there are only 49 species that are represented by all three indexes
 unique(species_with_all_indexes$Species_Jetz)
 
 
@@ -54,7 +54,7 @@ AllBirds_UAI <- AllIndexes_AllBirds %>%
 nrow(AllBirds_UAI) #4347
 
 # find the average UAI score for all bird species
-mean(AllBirds_UAI$aveUAI) #1.182
+mean(AllBirds_UAI$aveUAI) # 1.182
 
 AllBirds_UAI_2 <- AllBirds_UAI %>% 
   select(aveUAI, Group)
@@ -69,16 +69,14 @@ CoastalBirds_UAI <- AllIndexesCoastal %>%
   filter(!is.na(aveUAI) & is.finite(aveUAI))
 
 # find the average UAI score for coastal bird species
-mean(CoastalBirds_UAI$aveUAI) #1.428
+mean(CoastalBirds_UAI$aveUAI) # 1.433
 
 CoastalBirds_UAI_2 <- CoastalBirds_UAI %>% 
   select(aveUAI, Group)
 
 ### combine data for UAI to make plot
 combined_UAI_for_density <- bind_rows(AllBirds_UAI_2, CoastalBirds_UAI_2)
-nrow(combined_UAI_for_density) #5145
-4347 + 798 # = 5145
-# this is the correct number of rows 
+nrow(combined_UAI_for_density) 
 
 # Create the plot
 UAI_density <- ggplot() + 
@@ -128,11 +126,11 @@ print(UAI_density)
 # simplify all bird species list to only those with a MUTI score
 AllBirds_MUTI <- AllIndexes_AllBirds %>% 
   filter(!is.na(MUTIscore) & is.finite(MUTIscore))
-nrow(AllBirds_MUTI) #431
+nrow(AllBirds_MUTI) # 431
 
 AllBirds_MUTI_2 <- AllBirds_MUTI %>% 
   select(MUTIscore, Group)
-nrow(AllBirds_MUTI_2) #431, looks good! 
+nrow(AllBirds_MUTI_2) # 431 looks good! 
 
 # find the average MUTI score for all bird species
 mean(AllBirds_MUTI_2$MUTIscore) #-0.0051
@@ -140,20 +138,18 @@ mean(AllBirds_MUTI_2$MUTIscore) #-0.0051
 # simplify the coastal species list to only those with a MUTI score
 CoastalBirds_MUTI <- AllIndexesCoastal %>% 
   filter(!is.na(MUTIscore) & is.finite(MUTIscore))
-nrow(CoastalBirds_MUTI) #130
+nrow(CoastalBirds_MUTI) # 128
 
 CoastalBirds_MUTI_2 <- CoastalBirds_MUTI %>% 
   select(MUTIscore, Group)
-nrow(CoastalBirds_MUTI_2) #130, looks good! 
+nrow(CoastalBirds_MUTI_2) # 128
 
 # find the average MUTI score for coastal species
-mean(CoastalBirds_MUTI_2$MUTIscore) #-0.0124
+mean(CoastalBirds_MUTI_2$MUTIscore) # 0.0176
 
 ### combine data for MUTI to make plot
 combined_MUTI_for_density <- bind_rows(AllBirds_MUTI_2, CoastalBirds_MUTI_2)
-nrow(combined_MUTI_for_density) #561
-431 + 130 # = 561
-# this is the correct number of rows 
+nrow(combined_MUTI_for_density) 
 
 # Create the plot
 MUTI_density <- ggplot() + 
@@ -204,33 +200,33 @@ print(MUTI_density)
 # simplify all bird species list to only those with a UN score
 AllBirds_UN <- AllIndexes_AllBirds %>% 
   filter(!is.na(Urban) & is.finite(Urban))
-nrow(AllBirds_UN) #533
+nrow(AllBirds_UN) # 533
 
 AllBirds_UN_2 <- AllBirds_UN %>% 
   select(Urban, Group)
-nrow(AllBirds_UN_2) #533, looks good! 
+nrow(AllBirds_UN_2)
 
 # How many species are Urban? 
-sum(AllBirds_UN_2$Urban == 1, na.rm = TRUE) # out of 533 total species
+sum(AllBirds_UN_2$Urban == 1, na.rm = TRUE) # 206 out of 533 total species
+sum(AllBirds_UN_2$Urban == 1, na.rm = TRUE)/nrow(AllBirds_UN_2) # 38.6% are urban
 
 # simplify the coastal species list to only those with a UN score
 CoastalBirds_UN <- AllIndexesCoastal %>% 
   filter(!is.na(Urban) & is.finite(Urban))
-nrow(CoastalBirds_UN) #129
+nrow(CoastalBirds_UN) # 128
 
 CoastalBirds_UN_2 <- CoastalBirds_UN %>% 
   select(Urban, Group)
-nrow(CoastalBirds_UN_2) #129, looks good! 
+nrow(CoastalBirds_UN_2) # 128
 
 # How many coastal species are Urban? 
-sum(CoastalBirds_UN_2$Urban == 1, na.rm = TRUE) #41 
-41/129 # = 0.318 --> 31.8% of coastal species urban 
+sum(CoastalBirds_UN_2$Urban == 1, na.rm = TRUE) # 41
+sum(CoastalBirds_UN_2$Urban == 1, na.rm = TRUE)/nrow(CoastalBirds_UN_2) # 32% are urban for coastal species
+1-(sum(CoastalBirds_UN_2$Urban == 1, na.rm = TRUE)/nrow(CoastalBirds_UN_2)) # 68% are non-urban for coastal species
 
 ### combine data for UN to make plot
 combined_UN_for_density <- bind_rows(AllBirds_UN_2, CoastalBirds_UN_2)
-nrow(combined_UN_for_density) #662
-533 + 129 # = 662
-# this is the correct number of rows 
+nrow(combined_UN_for_density) # 661
 
 combined_UN_for_density_summary <- combined_UN_for_density %>%
   group_by(Group, Urban) %>%

@@ -20,23 +20,20 @@ library(stringi)
 Coastal_Birds_list <- readRDS (here("Outputs", "Coastal_Birds_List.rds"))
 head(Coastal_Birds_list)
 nrow(Coastal_Birds_list)
-#807 total coastal species 
 
 # how many birds have UAI scores, MUTI scores, and UN scores?
 Coastal_birds_UAI <- Coastal_Birds_list %>% 
   filter(!is.na(aveUAI))
-nrow(Coastal_birds_UAI)
-#798 species with UAI 
+nrow(Coastal_birds_UAI) # number of species with UAI
 
 Coastal_birds_MUTI <- Coastal_Birds_list %>% 
   filter(!is.na(MUTIscore))
-nrow(Coastal_birds_MUTI)
-#130 species with MUTI
+nrow(Coastal_birds_MUTI) # number of species with MUTI
+
 
 Coastal_birds_UN <- Coastal_Birds_list %>% 
   filter(!is.na(Urban))
-nrow(Coastal_birds_UN)
-#129 species with UN
+nrow(Coastal_birds_UN) # number of species with UN
 
 ################# JOIN BODY MASS #################
 # body mass from avonet (Tobias et al. 2022 Ecol Letters)
@@ -59,7 +56,7 @@ head(AVONET.2)
 
 Coastal_Bodymass <- left_join(Coastal_Birds_list, AVONET.2, by="Species_BirdLife")
 head(Coastal_Bodymass)
-nrow(Coastal_Bodymass) #807, looks good. 
+nrow(Coastal_Bodymass)
 
 # Body mass in birds is typically very skewed. Check that for coastal birds
 hist(Coastal_Bodymass$Mass)
@@ -75,7 +72,7 @@ Coastal_Bodymass <- Coastal_Bodymass %>%
 Mass_test <- Coastal_Bodymass %>% 
   filter(!is.na(Mass))
 nrow(Mass_test)
-# all 807 species have a body mass value from AVONET
+# all species have a body mass value from AVONET
 
 #save Coastal_Bodymass as .rds for use in subsequent models
 saveRDS(Coastal_Bodymass, here("Outputs", "Coastal_Species_w_Mass.rds"))
@@ -128,7 +125,6 @@ Coastal_freq <- MIKULA %>%
 freq_count <- Coastal_freq %>% 
   filter(!is.na(peak_freq))
 nrow(freq_count)
-# 210 
 
 # how many species have peak freq measurements for each urban tolerance index?
 # for UAI?
@@ -166,7 +162,6 @@ nrow(Coastal_Bodymass) == nrow(Coastal_Sensory) # should be "TRUE"
 CT_count <- Coastal_Sensory %>% 
   filter(!is.na(C.T))
 nrow(CT_count)
-#237 
 
 # how many species have dim light vision values?
 # for UAI?
@@ -204,7 +199,7 @@ head(ELTON_DIET2)
 # join diet traits with species
 Coastal_Diet_Traits <- left_join(Coastal_Bodymass, ELTON_DIET2)
 
-nrow(Coastal_Diet_Traits) #807, as it should be 
+nrow(Coastal_Diet_Traits)
 
 
 # Check to see if we have NAs for Diet traits (test using Diet.Inv)
@@ -212,7 +207,7 @@ nrow(Coastal_Diet_Traits) #807, as it should be
 Diet_test <- Coastal_Diet_Traits %>% 
   filter(!is.na(Diet.Inv))
 nrow(Diet_test)
-# all 807 species have diet traits from Wilman et al. 2014 (elton traits)
+# all species have diet traits from Wilman et al. 2014 (elton traits)
 
 # Next, we will simplify the Diet Traits into fewer categories
 
@@ -308,7 +303,6 @@ nrow(Coastal_Bodymass) == nrow(Coastal_Longevity)
 longev_count <- Coastal_Longevity %>% 
   filter(!is.na(longevity))
 nrow(longev_count)
-# 805 
 
 # how many species have longevity values?
 # for UAI?
@@ -396,7 +390,6 @@ nrow(Coastal_Bodymass) == nrow(Coastal_Clutch)
 clutch_count <- Coastal_Clutch %>% 
   filter(!is.na(clutch_size))
 nrow(clutch_count)
-# 746
 
 
 # how many species have clutch size values?
@@ -414,7 +407,7 @@ Coastal_Clutch %>% filter(!is.na(clutch_size)) %>% filter(!is.na(Urban)) %>% nro
 # check the variables (clutches per year and longevity) that will be used for the calculation
 clutch.yr <- Coastal_Clutch %>% filter(!is.na(clutches_per_y)) %>% select(clutches_per_y)
 range(clutch.yr$clutches_per_y) # 21 seems high. Need to inspect
-hist(clutch.yr$clutches_per_y, breaks=50)
+hist(as.numeric(clutch.yr$clutches_per_y), breaks=50)
 # clutches per yr for Australian Brushturkey and Killdeer seem potentially inaccurate
 # Check values on Birds of the World
 
@@ -443,7 +436,6 @@ Coastal_BroodValue <- Coastal_Clutch %>%
 broodvalue_count <- Coastal_BroodValue %>% 
   filter(!is.na(brood_value))
 nrow(broodvalue_count)
-# 484
 
 # how many species have brood values?
 # for UAI?
@@ -475,7 +467,6 @@ nrow(Coastal_LifeHistory) == nrow(Coastal_Bodymass)
 developmental_count <- Coastal_LifeHistory %>% 
   filter(!is.na(developmental_mode))
 nrow(developmental_count)
-# 775
 
 
 # how many species have developmental mode?
@@ -598,18 +589,17 @@ nrow(Coastal_Nest_Str) == nrow(Coastal_Bodymass)
 nest_strat_count <- Coastal_Nest_Str %>% 
   filter(!is.na(NestStr))
 nrow(nest_strat_count)
-# 741
 
 
 # how many species have nest strategy data ?
 # for UAI? 
 # Print numbers for Open and Enclosed (Open = 1, Enclosed = 0)
 Coastal_Nest_Str %>% filter(!is.na(NestStr)) %>% filter(!is.na(aveUAI)) %>% group_by(NestStr) %>% count()
-118 + 615
+118 + 609
 # for MUTI? 
 # Print numbers for Open and Enclosed (Open = 1, Enclosed = 0)
 Coastal_Nest_Str %>% filter(!is.na(NestStr)) %>% filter(!is.na(MUTIscore)) %>% group_by(NestStr) %>% count()
-10 + 107
+10 + 105
 # for UN? 
 # Print numbers for Open and Enclosed (Open = 1, Enclosed = 0)
 Coastal_Nest_Str %>% filter(!is.na(NestStr)) %>% filter(!is.na(Urban)) %>% group_by(NestStr) %>% count()
@@ -647,31 +637,34 @@ colnames(Coastal_Nest_StrSite)
 nest_site_count <- Coastal_Nest_StrSite %>% 
   filter(!is.na(NestSite_Low))
 nrow(nest_site_count)
-# 801
 
 # how many species have nest site high data ?
 # for UAI? 
 # Print numbers for both groups. A value of 1 is High nests.
 Coastal_Nest_StrSite %>% filter(!is.na(NestSite_High)) %>% filter(!is.na(aveUAI)) %>% group_by(NestSite_High) %>% count()
+282+503
 # for MUTI? 
 # Print numbers for both groups. A value of 1 is High nests.
 Coastal_Nest_StrSite %>% filter(!is.na(NestSite_High)) %>% filter(!is.na(MUTIscore)) %>% group_by(NestSite_High) %>% count()
+53+75
 # for UN? 
 # Print numbers for both groups. A value of 1 is High nests.
 Coastal_Nest_StrSite %>% filter(!is.na(NestSite_High)) %>% filter(!is.na(Urban)) %>% group_by(NestSite_High) %>% count()
-
+79+49
 
 # how many species have nest site low data ?
 # for UAI? 
 # Print numbers for both groups. A value of 1 is for Low nests.
 Coastal_Nest_StrSite %>% filter(!is.na(NestSite_Low)) %>% filter(!is.na(aveUAI)) %>% group_by(NestSite_Low) %>% count()
+282 + 503
 # for MUTI? 
 # Print numbers for both groups. A value of 1 is for Low nests.
 Coastal_Nest_StrSite %>% filter(!is.na(NestSite_Low)) %>% filter(!is.na(MUTIscore)) %>% group_by(NestSite_Low) %>% count()
+36 + 92
 # for UN? 
 # Print numbers for both groups. A value of 1 is for Low nests.
 Coastal_Nest_StrSite %>% filter(!is.na(NestSite_Low)) %>% filter(!is.na(Urban)) %>% group_by(NestSite_Low) %>% count()
-
+24 + 104
 
 ########### Nest Safety ###########
 
@@ -694,8 +687,6 @@ nrow(Coastal_Nest_Traits) == nrow(Coastal_Bodymass)
 nest_safety_count <- Coastal_Nest_Traits %>% 
   filter(!is.na(nest.safety))
 nrow(nest_safety_count)
-# 775
-
 
 # how many species have nest safety values?
 # for UAI?
@@ -738,23 +729,19 @@ Coastal_SS_Traits <- left_join(Coastal_Bodymass, DELHEY_ss, by="Species_Jetz")
 
 # view to check in on it 
 #View(Coastal_SS_Traits)
-nrow(Coastal_SS_Traits) #807
+nrow(Coastal_SS_Traits) 
 
 # check how many species (across all indexes) have ssf 
 ssf_count <- Coastal_SS_Traits %>% 
   filter(!is.na(sex.sel.f))
 nrow(ssf_count)
-# 775
 
 # check how many species (across all indexes) have ssm  
 ssm_count <- Coastal_SS_Traits %>% 
   filter(!is.na(sex.sel.m))
 nrow(ssm_count)
-# 775
 
 Coastal_SS_Traits %>% filter(is.na(sex.sel.f)) %>% nrow()
-807 - 32
-#checks out 
 
 # how many species have values for sex.sel for males ?
 # for UAI?
@@ -805,20 +792,18 @@ Coastal_SS_Traits.2 <- left_join(Coastal_SS_Traits, DUNN.4)
 
 # view to check in on it 
 #View(Coastal_SS_Traits.2)
-nrow(Coastal_SS_Traits.2) # 807 
+nrow(Coastal_SS_Traits.2)
 
 
 # Check how many species (across all indexes) have dichromatism (BRIGHT) 
 brightness_count <- Coastal_SS_Traits.2 %>% 
   filter(!is.na(Dichrom_bright))
 nrow(brightness_count)
-# 202
 
 # Check how many species (across all indexes) have dichromatism (HUE) 
 hue_count <- Coastal_SS_Traits.2 %>% 
   filter(!is.na(Dichrom_hue))
 nrow(hue_count)
-# 202
 
 # Check to see if we have NAs for sexual dichromatism and hue 
 Coastal_SS_Traits.2 %>% filter(is.na(Dichrom_bright)) %>% nrow()
@@ -868,20 +853,17 @@ Coastal_Social_Traits <- left_join(Coastal_Bodymass, DELHEY_social)
 
 # view to check in on it 
 #View(Coastal_Social_Traits)
-nrow(Coastal_Social_Traits) # 807 
+nrow(Coastal_Social_Traits) 
 
 # check how many species (across all indexes) have cooperative breeding scores  
 cooperative_count <- Coastal_Social_Traits %>% 
   filter(!is.na(cooperative))
 nrow(cooperative_count)
-# 775
-
 
 # check how many species (across all indexes) have territoriality scores  
 territorial_count <- Coastal_Social_Traits %>% 
   filter(!is.na(territoriality))
 nrow(territorial_count)
-# 775
 
 # check to see if we have NAs for cooperative breeding and territoriality
 Coastal_Social_Traits %>% filter(is.na(cooperative)) %>% nrow()
@@ -900,14 +882,15 @@ Coastal_Social_Traits %>% filter(!is.na(cooperative)) %>% filter(!is.na(Urban)) 
 # how many species have territoriality scores?
 # for UAI?
 Coastal_Social_Traits %>% filter(!is.na(territoriality)) %>% filter(!is.na(aveUAI)) %>% group_by(territoriality) %>% count()
-405 + 290 + 71 # = 766
+404 + 287 + 69
 # for MUTI?
 Coastal_Social_Traits %>% filter(!is.na(territoriality)) %>% filter(!is.na(MUTIscore)) %>% group_by(territoriality) %>% count()
-# NOT enough territoriality = 2 (4 sp) - filter in social traits results script and examine only scores of 0 and 1
+# NOT enough territoriality = 2 (4 species) - filter in social traits results script and examine only scores of 0 and 1
+68 + 53
 # for UN?
 Coastal_Social_Traits %>% filter(!is.na(territoriality)) %>% filter(!is.na(Urban)) %>% group_by(territoriality) %>% count()
-# NOT enough territoriality = 2 (7 sp) -  filter in social traits results script and examine only scores of 0 and 1
-
+# NOT enough territoriality = 2 (6 species) -  filter in social traits results script and examine only scores of 0 and 1
+57 + 65
 
 # save joined Social traits and Coastal Species as an .rds file 
 saveRDS(Coastal_Social_Traits, here("Outputs", "Coastal_Species_Social.rds"))

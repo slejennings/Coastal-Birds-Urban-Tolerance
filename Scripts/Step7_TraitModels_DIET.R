@@ -42,7 +42,7 @@ colnames(C_Diet_dat2)
 UAI_DietInvert <- C_Diet_dat2 %>% filter(!is.na(aveUAI)) %>% 
   filter(!is.na(Diet.Inv)) %>% as.data.frame()
 length(UAI_DietInvert$Diet.Inv)
-#798 species with UAI and Diet Invert
+# 791 species with UAI and Diet Invert
 
 ###### add and pair tree
 
@@ -58,7 +58,7 @@ UAI_DietInvert_dat <- as.data.frame(UAI_DietInvert_phydat$data)
 
 str(UAI_DietInvert_dat)
 length(UAI_DietInvert_dat$Diet.Inv)
-#798
+
 
 ### convert traits of interest to numeric
 UAI_DietInvert_dat$aveUAI <- as.numeric(UAI_DietInvert_dat$aveUAI)
@@ -90,7 +90,7 @@ saveRDS(UAI_GLS_invert, here("Models/UAI", "UAI_GLS_invert.rds"))
 MUTI_DietInvert <- C_Diet_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(Diet.Inv)) %>% as.data.frame()
 length(MUTI_DietInvert$Diet.Inv)
-# 130 species with MUTI and Diet Invert
+# 128 species with MUTI and Diet Invert
 
 ###### add and pair tree
 
@@ -106,7 +106,7 @@ MUTI_DietInvert_dat <- as.data.frame(MUTI_DietInvert_phydat$data)
 
 str(MUTI_DietInvert_dat)
 length(MUTI_DietInvert_dat$Diet.Inv)
-# 130
+
 
 ### convert traits of interest to numeric
 MUTI_DietInvert_dat$MUTIscore <- as.numeric(MUTI_DietInvert_dat$MUTIscore)
@@ -122,7 +122,6 @@ MUTI_GLS_invert <- gls(MUTIscore ~ Diet.Inv + Mass_log, data = MUTI_DietInvert_d
 # model summary and results
 summary(MUTI_GLS_invert) 
 confint(MUTI_GLS_invert)
-confint(MUTI_GLS_invert, level = 0.85)
 
 # model diagnostics
 check_model(MUTI_GLS_invert) 
@@ -140,19 +139,18 @@ UN_DietInvert <- C_Diet_dat2 %>% filter(!is.na(Urban)) %>%
   filter(!is.na(Diet.Inv)) %>%
   column_to_rownames(., var="Species_Jetz")
 length(UN_DietInvert$Diet.Inv)
-#129 species with UN and Diet Invert
+# 128 species with UN and Diet Invert
 
 ###### add and pair tree
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_DietInvert_phydat <- treedata(tree_out, UN_DietInvert, sort=T)
+UN_DietInvert_phydat <- geiger::treedata(tree_out, UN_DietInvert, sort=T)
 
 UN_DietInvert_phy <- UN_DietInvert_phydat$phy
 UN_DietInvert_dat <- as.data.frame(UN_DietInvert_phydat$data)
 
 str(UN_DietInvert_dat)
 length(UN_DietInvert_dat$Diet.Inv)
-#129
 
 ### convert traits of interest to numeric
 UN_DietInvert_dat$Urban <- as.numeric(UN_DietInvert_dat$Urban)
@@ -163,76 +161,25 @@ UN_DietInvert_dat$Diet.Inv <- as.numeric(UN_DietInvert_dat$Diet.Inv)
 # Run the model using phyloglm(), which performs a logistic phylogenetic model to account for binary UN index
 # default method ="logistic_MPLE"
 # we will also scale and center the response variable to help with convergence
+set.seed(568)
 phyglm_UN_Invert_scale <- phyloglm( Urban ~ scale(Diet.Inv) + scale(Mass_log), 
                                     data = UN_DietInvert_dat, 
                                     phy = UN_DietInvert_phy, 
                                     boot = 1000)
 
 summary(phyglm_UN_Invert_scale) 
-# this fails to converge
-# we also get a warning that alpha reached upper bounds
 
+saveRDS(phyglm_UN_Invert_scale, here("Models/UN", "phyglm_UN_Invert_scale.rds"))
 
-# print AIC values for models with different upper bounds
-# intervals of 0.1 from 0 up to 4 for log.alpha.bound
-# I tried saving these to a vector but I am only able to get it to save AIC for models where it converged
-# so a lot of values are lost and it's hard to know which AIC corresponds to which value of log.alpha.bound 
-# this is not super sophisticated but it works for what we need it for
-for (i in seq(0, 4, by = 0.1)) {
-  print(phyloglm(Urban ~ scale(Diet.Inv) + scale(Mass_log), 
-                 data = UN_DietInvert_dat, 
-                 phy = UN_DietInvert_phy,
-                 log.alpha.bound = i)$aic)
-}
-
-# higher support for larger alpha values (later in the printed list) that correspond to low phylogenetic signal
-
-
-# try to fix alpha at exp(4)/t (at the default upper bounds)
-# this fails to converge
-phyglm_UN_Invert_fix_4 <- phyloglm( Urban ~ scale(Diet.Inv) + scale(Mass_log), 
-                                    data = UN_DietInvert_dat, 
-                                    phy = UN_DietInvert_phy,
-                                    start.alpha = 0.55,
-                                    log.alpha.bound = 4)
-
-# try increasing upper bounds a small amount over 4
-# both these models converge
-set.seed(568)
-phyglm_UN_Invert_fix_4.05 <- phyloglm( Urban ~ scale(Diet.Inv) + scale(Mass_log), 
-                                       data = UN_DietInvert_dat, 
-                                       phy = UN_DietInvert_phy, 
-                                       start.alpha = 0.55,
-                                       log.alpha.bound = 4.05, boot=1000)
-
-summary(phyglm_UN_Invert_fix_4.05) # this converges
-
-phyglm_UN_Invert_fix_4.1 <- phyloglm( Urban ~ scale(Diet.Inv) + scale(Mass_log), 
-                                      data = UN_DietInvert_dat, 
-                                      phy = UN_DietInvert_phy,
-                                      start.alpha = 0.55,
-                                      log.alpha.bound = 4.1, boot=1000)
-summary(phyglm_UN_Invert_fix_4.1) # also converges
-
-# coefficients fairly stable across 4.05 and 4.1 models
-# save model with log.alpha.bound = 4.05
-saveRDS(phyglm_UN_Invert_fix_4.05, here("Models/UN", "phyglm_UN_Invert_fix.rds"))
 # load model
-phyglm_UN_Invert_fix_4.05 <- readRDS(here("Models/UN", "phyglm_UN_Invert_fix.rds"))
+phyglm_UN_Invert_scale <- readRDS(here("Models/UN", "phyglm_UN_Invert_scale.rds"))
 
-# as alpha is at upper bounds, we can also compare results to a non-phylogenetic logistic model
-glm_UN_Invert <- logistf(Urban ~ scale(Diet.Inv) + scale(Mass_log), 
-                         data = UN_DietInvert)
-summary(glm_UN_Invert)
-# we reach similar conclusions as two models above
 
 # get alpha, t, and half life for the model
-# using phyglm_UN_Invert_fix_4.05 as final model
-(phyglm_UN_Invert_fix_4.05$mean.tip.height) # t
-(alpha_invert <- phyglm_UN_Invert_fix_4.05$alpha) # alpha
+(phyglm_UN_Invert_scale$mean.tip.height) # t
+(alpha_invert <- phyglm_UN_Invert_scale$alpha) # alpha
 (hl_invert <- log(2)/alpha_invert) # half life
 # small half life -> low phylogenetic signal
-
 
 #############################################################################
 #############################################################################
@@ -243,7 +190,7 @@ summary(glm_UN_Invert)
 UAI_DietVert <- C_Diet_dat2 %>% filter(!is.na(aveUAI))  %>% 
   filter(!is.na(Diet.Vert)) %>% as.data.frame()
 length(UAI_DietVert$Diet.Vert)
-#798 species with UAI and Diet Vert
+# 791 species with UAI and Diet Vert
 
 ###### add and pair tree
 
@@ -252,14 +199,13 @@ row.names(UAI_DietVert) <- UAI_DietVert$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_DietVert_phydat <- treedata(tree_out, UAI_DietVert, sort=T)
+UAI_DietVert_phydat <- geiger::treedata(tree_out, UAI_DietVert, sort=T)
 
 UAI_DietVert_phy <- UAI_DietVert_phydat$phy
 UAI_DietVert_dat <- as.data.frame(UAI_DietVert_phydat$data)
 
 str(UAI_DietVert_dat)
 length(UAI_DietVert_dat$Diet.Vert)
-#798
 
 ### convert traits of interest to numeric
 UAI_DietVert_dat$aveUAI <- as.numeric(UAI_DietVert_dat$aveUAI)
@@ -291,7 +237,7 @@ saveRDS(UAI_GLS_vert, here("Models/UAI", "UAI_GLS_vert.rds"))
 MUTI_DietVert <- C_Diet_dat2 %>% filter(!is.na(MUTIscore))  %>% 
   filter(!is.na(Diet.Vert)) %>% as.data.frame()
 length(MUTI_DietVert$Diet.Vert)
-# 130 species with MUTI and Diet Vert
+# 128 species with MUTI and Diet Vert
 
 ###### add and pair tree
 
@@ -300,14 +246,13 @@ row.names(MUTI_DietVert) <- MUTI_DietVert$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_DietVert_phydat <- treedata(tree_out, MUTI_DietVert, sort=T)
+MUTI_DietVert_phydat <- geiger::treedata(tree_out, MUTI_DietVert, sort=T)
 
 MUTI_DietVert_phy <- MUTI_DietVert_phydat$phy
 MUTI_DietVert_dat <- as.data.frame(MUTI_DietVert_phydat$data)
 
 str(MUTI_DietVert_dat)
 length(MUTI_DietVert_dat$Diet.Vert)
-#798
 
 ### convert traits of interest to numeric
 MUTI_DietVert_dat$MUTIscore <- as.numeric(MUTI_DietVert_dat$MUTIscore)
@@ -339,19 +284,19 @@ UN_DietVert <- C_Diet_dat2 %>% filter(!is.na(Urban)) %>%
   filter(!is.na(Diet.Vert)) %>%
   column_to_rownames(., var="Species_Jetz")
 length(UN_DietVert$Diet.Vert)
-#129 species with UN and Diet Vert
+# 128 species with UN and Diet Vert
 
 ###### add and pair tree
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_DietVert_phydat <- treedata(tree_out, UN_DietVert, sort=T)
+UN_DietVert_phydat <- geiger::treedata(tree_out, UN_DietVert, sort=T)
 
 UN_DietVert_phy <- UN_DietVert_phydat$phy
 UN_DietVert_dat <- as.data.frame(UN_DietVert_phydat$data)
 
 str(UN_DietVert_dat)
 length(UN_DietVert_dat$Diet.Vert)
-#129
+
 
 ### convert traits of interest to numeric
 UN_DietVert_dat$Urban <- as.numeric(UN_DietVert_dat$Urban)
@@ -380,39 +325,19 @@ for (i in seq(0, 4, by = 0.1)) {
 # AIC values support models with larger values of alpha (low phylo signal)
 
 # try to fix alpha at upper bounds
+set.seed(351)
 phyglm_UN_Vert_fix <- phyloglm( Urban ~ scale(Diet.Vert) + scale(Mass_log), 
                                 data = UN_DietVert_dat, 
                                 phy = UN_DietVert_phy, 
                                 start.alpha = 0.55,
                                 log.alpha.bound = 4, boot = 1000)
-summary(phyglm_UN_Vert_fix) # this fails to converge
+summary(phyglm_UN_Vert_fix) # this converges
 
 
-
-# try increasing upper bounds a small amount over 4
-# both these models converge
-set.seed(351)
-phyglm_UN_Vert_fix_4.05 <- phyloglm( Urban ~ scale(Diet.Vert) + scale(Mass_log), 
-                                       data = UN_DietVert_dat, 
-                                       phy = UN_DietVert_phy,  
-                                       start.alpha = 0.55,
-                                       log.alpha.bound = 4.05, boot=1000)
-
-summary(phyglm_UN_Vert_fix_4.05) # this converges
-
-phyglm_UN_Vert_fix_4.1 <- phyloglm( Urban ~ scale(Diet.Vert) + scale(Mass_log), 
-                                      data = UN_DietVert_dat, 
-                                      phy = UN_DietVert_phy, 
-                                      start.alpha = 0.55,
-                                      log.alpha.bound = 4.1, boot=1000)
-summary(phyglm_UN_Vert_fix_4.1) # also converges
-
-
-# coefficients fairly stable across 4.05 and 4.1 models
-# save model with log.alpha.bound = 4.05
-saveRDS(phyglm_UN_Vert_fix_4.05, here("Models/UN", "phyglm_UN_Vert_fix.rds"))
+# save model
+saveRDS(phyglm_UN_Vert_fix, here("Models/UN", "phyglm_UN_Vert_fix.rds"))
 # load model
-phyglm_UN_Vert_fix_4.05 <- readRDS(here("Models/UN", "phyglm_UN_Vert_fix.rds"))
+phyglm_UN_Vert_fix <- readRDS(here("Models/UN", "phyglm_UN_Vert_fix.rds"))
 
 # as alpha is at upper bound, look at a non-phylogenetic model
 glm_UN_Vert <- logistf(Urban ~ scale(Diet.Vert) + scale(Mass_log), 
@@ -436,7 +361,7 @@ summary(glm_UN_Vert)
 UAI_DietPS <- C_Diet_dat2 %>% filter(!is.na(aveUAI))  %>% 
   filter(!is.na(Diet.PS)) %>% as.data.frame()
 length(UAI_DietPS$Diet.PS)
-#798 species with UAI and Diet Plant/Seed
+# 791 species with UAI and Diet Plant/Seed
 
 ###### add and pair tree
 
@@ -445,14 +370,13 @@ row.names(UAI_DietPS) <- UAI_DietPS$Species_Jetz
 
 tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_DietPS_phydat <- treedata(tree_out, UAI_DietPS, sort=T)
+UAI_DietPS_phydat <- geiger::treedata(tree_out, UAI_DietPS, sort=T)
 
 UAI_DietPS_phy <- UAI_DietPS_phydat$phy
 UAI_DietPS_dat <- as.data.frame(UAI_DietPS_phydat$data)
 
 str(UAI_DietPS_dat)
 length(UAI_DietPS_dat$Diet.PS)
-#798
 
 ### convert traits of interest to numeric
 UAI_DietPS_dat$aveUAI <- as.numeric(UAI_DietPS_dat$aveUAI)
@@ -483,7 +407,7 @@ saveRDS(UAI_GLS_PS, here("Models/UAI", "UAI_GLS_PS.rds"))
 MUTI_DietPS <- C_Diet_dat2 %>% filter(!is.na(MUTIscore))  %>% 
   filter(!is.na(Diet.PS)) %>% as.data.frame()
 length(MUTI_DietPS$Diet.PS)
-# 130 species with MUTI and Diet Plant/Seed
+# 128 species with MUTI and Diet Plant/Seed
 
 ###### add and pair tree
 
@@ -492,14 +416,13 @@ row.names(MUTI_DietPS) <- MUTI_DietPS$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_DietPS_phydat <- treedata(tree_out, MUTI_DietPS, sort=T)
+MUTI_DietPS_phydat <- geiger::treedata(tree_out, MUTI_DietPS, sort=T)
 
 MUTI_DietPS_phy <- MUTI_DietPS_phydat$phy
 MUTI_DietPS_dat <- as.data.frame(MUTI_DietPS_phydat$data)
 
 str(MUTI_DietPS_dat)
 length(MUTI_DietPS_dat$Diet.PS)
-#130
 
 ### convert traits of interest to numeric
 MUTI_DietPS_dat$MUTIscore <- as.numeric(MUTI_DietPS_dat$MUTIscore)
@@ -532,19 +455,18 @@ saveRDS(MUTI_GLS_PS, here("Models/MUTI", "MUTI_GLS_PS.rds"))
 UN_DietPS <- C_Diet_dat2 %>% filter(!is.na(Urban)) %>%
   filter(!is.na(Diet.PS)) %>% column_to_rownames(., var = "Species_Jetz")
 length(UN_DietPS$Diet.PS)
-#129 species with UN and Diet Plant/Seed
+# 128 species with UN and Diet Plant/Seed
 
 ###### add and pair tree
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_DietPS_phydat <- treedata(tree_out, UN_DietPS, sort=T)
+UN_DietPS_phydat <- geiger::treedata(tree_out, UN_DietPS, sort=T)
 
 UN_DietPS_phy <- UN_DietPS_phydat$phy
 UN_DietPS_dat <- as.data.frame(UN_DietPS_phydat$data)
 
 str(UN_DietPS_dat)
 length(UN_DietPS_dat$Diet.PS)
-#129
 
 ### convert traits of interest to numeric
 UN_DietPS_dat$Urban <- as.numeric(UN_DietPS_dat$Urban)
@@ -562,6 +484,8 @@ phyglm_UN_PS_scale <- phyloglm( Urban ~ scale(Diet.PS) + scale(Mass_log),
 
 # this converges
 summary(phyglm_UN_PS_scale)
+confint(phyglm_UN_PS_scale, level=0.95)
+confint(phyglm_UN_PS_scale, level=0.85)
 
 # save model
 saveRDS(phyglm_UN_PS_scale, here("Models/UN", "phyglm_UN_PS_scale.rds"))
@@ -584,7 +508,7 @@ phyglm_UN_PS_scale <- readRDS(here("Models/UN", "phyglm_UN_PS_scale.rds"))
 UAI_DietFN <- C_Diet_dat2 %>% filter(!is.na(aveUAI))  %>% 
   filter(!is.na(Diet.FN)) %>% as.data.frame()
 length(UAI_DietFN$Diet.FN)
-#798 species with UAI and and Diet Fruit Nectar
+# 791 species with UAI and and Diet Fruit Nectar
 
 ###### add and pair tree
 
@@ -594,14 +518,13 @@ row.names(UAI_DietFN) <- UAI_DietFN$Species_Jetz
 # import tree
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_DietFN_phydat <- treedata(tree_out, UAI_DietFN, sort=T)
+UAI_DietFN_phydat <- geiger::treedata(tree_out, UAI_DietFN, sort=T)
 
 UAI_DietFN_phy <- UAI_DietFN_phydat$phy
 UAI_DietFN_dat <- as.data.frame(UAI_DietFN_phydat$data)
 
 str(UAI_DietFN_dat)
 length(UAI_DietFN_dat$Diet.FN)
-#798
 
 ### convert traits of interest to numeric
 UAI_DietFN_dat$aveUAI <- as.numeric(UAI_DietFN_dat$aveUAI)
@@ -636,7 +559,7 @@ saveRDS(UAI_GLS_FN, here("Models/UAI", "UAI_GLS_FN.rds"))
 MUTI_DietFN <- C_Diet_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(Diet.FN)) %>% as.data.frame()
 length(MUTI_DietFN$Diet.FN)
-#130 species with MUTI and Diet Fruit Nectar
+# 128 species with MUTI and Diet Fruit Nectar
 
 ###### add and pair tree
 
@@ -645,14 +568,13 @@ row.names(MUTI_DietFN) <- MUTI_DietFN$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_DietFN_phydat <- treedata(tree_out, MUTI_DietFN, sort=T)
+MUTI_DietFN_phydat <- geiger::treedata(tree_out, MUTI_DietFN, sort=T)
 
 MUTI_DietFN_phy <- MUTI_DietFN_phydat$phy
 MUTI_DietFN_dat <- as.data.frame(MUTI_DietFN_phydat$data)
 
 str(MUTI_DietFN_dat)
 length(MUTI_DietFN_dat$Diet.FN)
-#798
 
 ### convert traits of interest to numeric
 MUTI_DietFN_dat$MUTIscore <- as.numeric(MUTI_DietFN_dat$MUTIscore)
@@ -684,20 +606,19 @@ saveRDS(MUTI_GLS_FN, here("Models/MUTI", "MUTI_GLS_FN.rds"))
 UN_DietFN <- C_Diet_dat2 %>% filter(!is.na(Urban))  %>% filter(!is.na(Diet.FN)) %>%
   column_to_rownames(., var="Species_Jetz")
 length(UN_DietFN$Diet.FN)
-#129 species with UN and Diet Fruit/Nectar
+# 128 species with UN and Diet Fruit/Nectar
 
 ###### add and pair tree
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_DietFN_phydat <- treedata(tree_out, UN_DietFN, sort=T)
+UN_DietFN_phydat <- geiger::treedata(tree_out, UN_DietFN, sort=T)
 
 UN_DietFN_phy <- UN_DietFN_phydat$phy
 UN_DietFN_dat <- as.data.frame(UN_DietFN_phydat$data)
 
 str(UN_DietFN_dat)
 length(UN_DietFN_dat$Diet.FN)
-#129
 
 ### convert traits of interest to numeric
 UN_DietFN_dat$Urban <- as.numeric(UN_DietFN_dat$Urban)

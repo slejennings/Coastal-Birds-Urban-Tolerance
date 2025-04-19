@@ -17,6 +17,7 @@ library(picante)
 library(phytools)
 library(phyr) 
 library(ggtree)
+#devtools::install_github("xiangpin/ggtreeExtra")
 library(ggtreeExtra)
 library(ggnewscale)
 library(colorspace)
@@ -34,7 +35,7 @@ library(treeio)
 Coastal <- readRDS(here("Outputs", "Coastal_Birds_List.rds"))
 head(Coastal)
 colnames(Coastal)
-nrow(Coastal) #807
+nrow(Coastal) # 800 species
 
 # Reformat Species_Jetz column so that it is in Aaaa_aaaa format
 # Put into a new column called Species
@@ -44,15 +45,15 @@ head(Coastal)
 
 # get coastal UAI species
 CoastalUAI <- Coastal %>% filter(!is.na(aveUAI))
-nrow(CoastalUAI) # 798 species
+nrow(CoastalUAI)
 
 # get coastal UN species
 CoastalUN <- Coastal %>% filter(!is.na(Urban))
-nrow(CoastalUN) # 129 species
+nrow(CoastalUN)
 
 # get coastal MUTI species
 CoastalMUTI <- Coastal %>% filter(!is.na(MUTIscore))
-nrow(CoastalMUTI) # 130 species
+nrow(CoastalMUTI) 
 
 # import Jetz phylogeny
 
@@ -82,7 +83,7 @@ View(ForPD)
 
 # prune the Jetz phylogeny to get only coastal bird species
 coastal_jetz <- prune.sample(ForPD, jetztree)
-coastal_jetz #807 tips 
+coastal_jetz 
 
 # make sure the list of species in ForPD and the species in the pruned tree are in the same order
 ForPD <- ForPD[, coastal_jetz$tip.label]
@@ -93,7 +94,8 @@ PD
 # The pd function returns two values for each community, the PD and the species richness (SR)
 # Faith’s PD is defined as the total branch length spanned by the tree for the species in the group
 
-# It is interesting that UN is less phylogenetically diverse than MUTI, although they have almost = # of sp 
+# Note: decided not to report Faith's PD in the manuscript
+# using alternative measures described below which are easier to interpret
 
 
 ###########
@@ -126,7 +128,7 @@ PD
 PSV <- psv(ForPD, coastal_jetz, compute.var=F)
 PSV
 # UAI - 0.804
-# UN - 0.761
+# UN - 0.760
 # MUTI - 0.797
 
 # PSR = phylogenetic species richness
@@ -135,9 +137,9 @@ PSV
 PSR <- psr(ForPD, coastal_jetz, compute.var=F)
 PSR
 # PSR column gives the phylogenetic species richness and SR gives the actual species richness
-# UAI - 641.99
-# UN - 98.13 
-# MUTI - 103.62
+# UAI - 637
+# UN - 97
+# MUTI - 102
 
 #### how many bird families are there for each urban index?
 
@@ -166,19 +168,7 @@ nrow(familiesUN) # gives number of families in UN = 24
 # MUTI
 familiesMUTI <- families %>% filter(MUTI==1) %>% 
   distinct(Family_Sci) # this will print a list of families in MUTI
-nrow(familiesMUTI) # gives number of families in MUTI = 33
-
-
-# combine the family counts with PD, PSV, PSR, and Species Richness (SR)
-PD$Family <- as.vector(c(nrow(familiesUAI), nrow(familiesUN), nrow(familiesMUTI)))
-
-phy_measures <- PD %>% rownames_to_column(., var="index") %>%
-  left_join(., PSV) %>% left_join(., PSR) %>%
-  select(Family, SR, PD, PSVs, PSR) %>%
-  mutate(across(c("PSVs", "PSR")), (round(., 3)))
-  
-phy_measures
-
+nrow(familiesMUTI) # gives number of families in MUTI = 32
 
 ##########################################################################################
 ################## Make phylo tree figure with species-specific UT index values ##########
@@ -216,7 +206,7 @@ print(spp_order, n=Inf)
 
 # what percentage are Passeriformes?
 orders %>% filter(order=="Passeriformes") %>% nrow()
-98/807 # % 12% are passerines
+96/807 # % 12% are passerines
 # this means that 88% of the coastal species list are non-passerines
 
 # extract phylogeny and convert into tibble

@@ -40,8 +40,6 @@ colnames(C_mass_dat2)
 UAI_Mass <- C_mass_dat2 %>% filter(!is.na(aveUAI)) %>% filter(!is.na(Mass_log)) %>%
   as.data.frame()
 length(UAI_Mass$Mass_log)
-#798 species with UAI and Mass_log
-
 
 ###### add and pair tree
 
@@ -58,8 +56,6 @@ UAI_Mass_dat <- as.data.frame(UAI_Mass_phydat$data)
 
 str(UAI_Mass_dat)
 length(UAI_Mass_dat$Mass_log)
-#798
-
 
 ### convert traits of interest to numeric
 UAI_Mass_dat$aveUAI <- as.numeric(UAI_Mass_dat$aveUAI)
@@ -74,7 +70,6 @@ UAI_GLS_mass <- gls(aveUAI~ Mass_log, data = UAI_Mass_dat,
 # model summary
 summary(UAI_GLS_mass) 
 confint(UAI_GLS_mass) # 95% CI
-confint(UAI_GLS_mass, level = 0.85) # 85% CI
 
 # model diagnostics
 check_model(UAI_GLS_mass) 
@@ -91,7 +86,7 @@ saveRDS(UAI_GLS_mass, here("Models/UAI", "UAI_GLS_mass.rds"))
 MUTI_Mass <- C_mass_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(Mass_log)) %>% as.data.frame()
 length(MUTI_Mass$Mass_log)
-#130 species with MUTI and Mass_log
+# 128 species with MUTI and Mass_log
 
 ###### add and pair tree
 
@@ -108,7 +103,6 @@ MUTI_Mass_dat <- as.data.frame(MUTI_Mass_phydat$data)
 
 str(MUTI_Mass_dat)
 length(MUTI_Mass_dat$Mass_log)
-#130
 
 ### convert traits of interest to numeric
 MUTI_Mass_dat$MUTIscore <- as.numeric(MUTI_Mass_dat$MUTIscore)
@@ -141,7 +135,7 @@ saveRDS(MUTI_GLS_mass, here("Models/MUTI", "MUTI_GLS_mass.rds"))
 UN_Mass <- C_mass_dat2 %>% filter(!is.na(Urban)) %>% filter(!is.na(Mass_log)) %>%
   column_to_rownames(., var="Species_Jetz")
 length(UN_Mass$Mass_log)
-#129 species with UN and Mass_log
+# 128 species with UN and Mass_log
 
 ###### add and pair tree
 
@@ -154,8 +148,6 @@ UN_Mass_dat <- as.data.frame(UN_Mass_phydat$data)
 
 str(UN_Mass_dat)
 length(UN_Mass_dat$Mass_log)
-#129
-
 
 ### convert traits of interest to numeric
 UN_Mass_dat$Urban <- as.numeric(UN_Mass_dat$Urban)
@@ -198,14 +190,13 @@ exp(-4)/t # this is the lower bound = 0.0001877
 # using log.alpha.bound = 4 in phyloglm() sets the upper bound at this value (0.5596332)
 # we can also set start.alpha, the alpha value where the model begins its search
 # we can't set start.alpha to exactly 0.5596332 and have the run model (so it won't let us actually fix the value of alpha)
-# instead, we can give a start.alpha value very close to the upper bound (e.g., 0.557)
+# instead, we can give a start.alpha value very close to the upper bound (e.g., 0.55)
 # this will constrains the model's search area for the optimal alpha value within a very small range of values (similar to fixing it)
 set.seed(848)
 phyglm_UN_Mass_fix <- phyloglm(Urban ~ scale(Mass_log), 
                                data = UN_Mass_dat, 
                                phy = UN_Mass_phy, 
-                               start.alpha = 0.557,
-                               log.alpha.bound = 4, 
+                               start.alpha = 0.55,
                                boot=1000)
 summary(phyglm_UN_Mass_fix)
 
@@ -227,7 +218,7 @@ summary(phyglm_UN_Mass_fix) # compare estimates
 
 # get values for results table for the fixed alpha model with scale(Mass_log)
 summary(phyglm_UN_Mass_fix)
-# use the bootstrapped CIs in the summary
+confint(phyglm_UN_Mass_fix)
 
 # get alpha, t, and the half life for the model
 (phyglm_UN_Mass_fix$mean.tip.height) # this is t (mean tip height) of the tree

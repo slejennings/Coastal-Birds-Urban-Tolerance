@@ -1,171 +1,275 @@
-,CommonName_eBird,Coastal,Notes
-1,Pearl Kite,No,dry savanna and woodland
-2,Black-winged Kite,No,savanna and arid steppes
-3,Black-shouldered Kite,Yes,coastal sand dunes
-4,White-tailed Kite,No,grassland
-5,African Harrier-Hawk,No,forest
-6,Hook-billed Kite,Yes,coastal mangroves
-7,Gray-headed Kite,No,no mention of coastal
-8,Swallow-tailed Kite,Yes,coastal plains
-9,Square-tailed Kite,No,no mention of coastal
-10,Jerdon's Baza,Yes,coastal swamp forest
-11,Pacific Baza,Yes,"mangroves, almost always by coast"
-12,Black Baza,Yes,mangroves  
-13,Cinereous Vulture,No,no mention of coastal
-14,Hooded Vulture,Yes,coastal areas
-15,White-backed Vulture,No,no mention of coastal
-16,Rüppell's Griffon,No,no mention of coastal
-17,Eurasian Griffon,No,no mention of coastal
-18,Andaman Serpent-Eagle,No,mostly inland
-19,Short-toed Snake-Eagle,Yes,mangroves
-20,Crowned Eagle,No,no mention of coastal
-21,Blyth's Hawk-Eagle,No,higher elevation
-22,Changeable Hawk-Eagle,No,no mention of coastal
-23,Black Hawk-Eagle,No,tropical forests
-24,Ornate Hawk-Eagle,No,forest
-25,Black-and-chestnut Eagle,No,higher elevation
-26,Black Eagle,No,no mention of coastal
-27,Lesser Spotted Eagle,No,no mention of coastal
-28,Indian Spotted Eagle,No,no mention of coastal
-29,Wahlberg's Eagle,No,no mention of coastal
-30,Booted Eagle,No,no mention of coastal
-31,Little Eagle,No,no mention of coastal
-32,Spanish Eagle,No,no mention of coastal
-33,Imperial Eagle,No,no mention of coastal
-34,Golden Eagle,Yes,coastlines
-35,Wedge-tailed Eagle,No,no mention of coastal
-36,Verreaux's Eagle,No,no mention of coastal
-37,Bonelli's Eagle,No,no mention of coastal
-38,Lizard Buzzard,No,no mention of coastal
-39,Snail Kite,No,freshwater
-40,Double-toothed Kite,No,no mention of coastal
-41,Mississippi Kite,No,woodlands
-42,Plumbeous Kite,No,no mention of coastal
-43,White-eyed Buzzard,No,no mention of coastal
-44,Gray-faced Buzzard,Yes,migrate along coast of Japan 
-45,African Marsh-Harrier,No,no mention of coastal
-46,Long-winged Harrier,No,no mention of coastal
-47,Spotted Harrier,Yes,coastal flats
-48,Black Harrier,Yes,coastal dunes
-49,Cinereous Harrier,Yes,coastal marshes
-50,Hen Harrier,No,no mention of coastal
-51,Northern Harrier,Yes,coastal dunes
-52,Pallid Harrier,No,no mention of coastal
-53,Pied Harrier,No,no mention of coastal
-54,Montagu's Harrier,No,no mention of coastal
-55,Crested Goshawk,No,no mention of coastal
-56,African Goshawk,Yes,mangroves
-57,Shikra,No,no mention of coastal
-58,Levant Sparrowhawk,No,no mention of coastal
-59,Chinese Sparrowhawk,No,no mention of coastal
-60,Gray Goshawk,No,no mention of coastal
-61,Brown Goshawk,No,no mention of coastal
-62,Japanese Sparrowhawk,No,no mention of coastal
-63,Besra,Yes,mangroves
-64,Collared Sparrowhawk,No,no mention of coastal
-65,Ovambo Sparrowhawk,No,no mention of coastal
-66,Eurasian Sparrowhawk,No,no mention of coastal
-67,Rufous-breasted Sparrowhawk,No,no mention of coastal
-68,Sharp-shinned Hawk,No,no mention of coastal
-69,Cooper's Hawk,No,no mention of coastal
-70,Bicolored Hawk,No,no mention of coastal
-71,Black Goshawk,No,no mention of coastal
-72,Northern Goshawk,No,no mention of coastal
-73,Red Kite,No,no mention of coastal
-74,Crane Hawk,Yes,mangroves
-75,Slate-colored Hawk,Yes,mangroves
-76,Rufous Crab Hawk,Yes,only on coasts
-77,Roadside Hawk,No,no mention of coastal
-78,Harris's Hawk,No,no mention of coastal
-79,White-tailed Hawk,No,no mention of coastal
-80,Variable Hawk,Yes,coastal areas
-81,Black-chested Buzzard-Eagle,No,open country
-82,Gray-backed Hawk,No,higher elevation
-83,Semiplumbeous Hawk,No,no mention of coastal
-84,Gray Hawk,No,no mention of coastal
-85,Gray-lined Hawk,No,no mention of coastal
-86,Red-shouldered Hawk,No,no mention of coastal
-87,Ridgway's Hawk,No,no mention of coastal
-88,Broad-winged Hawk,No,no mention of coastal
-89,Short-tailed Hawk,Yes,mangroves and tidal marshes (overwinter)
-90,White-throated Hawk,No,no mention of coastal
-91,Swainson's Hawk,Yes,salt marshes
-92,Zone-tailed Hawk,Yes,coastal plains
-93,Red-tailed Hawk,Yes,coastlines
-94,Ferruginous Hawk,No,no mention of coastal
-95,Common Buzzard,No,no mention of coastal
-96,Eastern Buzzard,No,no mention of coastal
-97,Madagascar Buzzard,No,no mention of coastal
-98,Long-legged Buzzard,Yes,breeds along coast
-99,Augur Buzzard,No,no mention of coastal
-100,Jackal Buzzard,No,no explicit mention of coasta
-101,Spotted Kingfisher,No,no mention of coastal
-102,Ashy-headed Goose,Yes,sea coasts
-103,Eurasian Thick-knee,Yes,coastal dunes
-104,Indian Thick-knee,No,dry forests
-105,Spotted Thick-knee,Yes,beaches
-106,Double-striped Thick-knee,Yes,coastal plains and salt marshes
-107,Peruvian Thick-knee,Yes,restricted to coastal hills
-108,Bush Thick-knee,Yes,mangroves and saltmarsh
-109,California Condor,Yes,beaches
-110,Andean Condor,Yes,forage along shoreline 
-111,King Vulture,Yes,coastal grassland
-112,Turkey Vulture,Yes,shorelines
-113,Lesser Yellow-headed Vulture,Yes,mangroves
-114,Greater Yellow-headed Vulture,Yes,coastal palm swamp
-115,Black-bellied Plover,Yes,beaches and mudflats
-116,European Golden-Plover,Yes,estuaries
-117,American Golden-Plover,Yes,coastal habitats
-118,Pacific Golden-Plover,Yes,shorelines
-119,Northern Lapwing,No,no mention of coastal
-120,Yellow-wattled Lapwing,No,no mention of coastal
-121,Crowned Lapwing,No,no mention of coastal
-122,Wattled Lapwing,No,no mention of coastal
-123,Gray-headed Lapwing,No,no mention of coastal
-124,Red-wattled Lapwing,Yes,brackish water
-125,Banded Lapwing,Yes,along coast
-126,Masked Lapwing,Yes,sheltered coastal areas
-127,Andean Lapwing,No,avoids saline water
-128,Greater Sand-Plover,Yes,sometimes on coast
-129,Common Ringed Plover,Yes,estuaries and other coastal habitats
-130,Semipalmated Plover,Yes,shorelines
-131,Killdeer,Yes,shorelines
-132,Oriental Plover,Yes,beaches
-133,Rufous-chested Dotterel,Yes,beaches
-134,Hooded Plover,Yes,coastal lagoons 
-135,Shore Plover,Yes,beaches
-136,Mangrove Cuckoo,Yes,mangroves
-137,Laughing Falcon,No,no mention of coastal
-138,Spot-winged Falconet,No,no mention of coastal
-139,Crested Caracara,Yes,coastal grasslands and beaches
-140,Red-throated Caracara,No,no mention of coastal
-141,Philippine Falconet,No,no mention of coastal
-142,Lesser Kestrel,No,no mention of coastal
-143,Eurasian Kestrel,Yes,winter in coastal areas
-144,Rock Kestrel,Yes,winter in coastal areas
-145,Malagasy Kestrel,No,no mention of coastal
-146,Nankeen Kestrel,Yes,winter in coastal areas
-147,American Kestrel,No,no mention of coastal
-148,Red-necked Falcon,Yes,coastal plains
-149,Amur Falcon,Yes,trans-ocean flights but no mention of COASTS
-150,Merlin,Yes,tidal flats and marshes (hunts shorebirds)
-151,Eurasian Hobby,No,no mention of coastal
-152,African Hobby,No,no mention of coastal
-153,Australian Hobby,Yes,winters in coastal areas
-154,New Zealand Falcon,No,no mention of coastal
-155,Brown Falcon,No,no mention of coastal
-156,Aplomado Falcon,Yes,various coastal habitats
-157,Peregrine Falcon,Yes,coastal beaches
-158,Variable Oystercatcher,Yes,coastal habitats
-159,American Oystercatcher,Yes,coastal habitats
-160,African Oystercatcher,Yes,coastal habitats
-161,Blackish Oystercatcher,Yes,coastal habitats
-162,Magellanic Oystercatcher,Yes,coastal habitats
-163,Little Curlew,Yes,rare on coast
-164,Ruddy Turnstone,Yes,coastal habitats
-165,Black Turnstone,Yes,coastal habitats
-166,Great Knot,Yes,coastal habitats
-167,Surfbird,Yes,coastal habitats
-168,Buff-breasted Sandpiper,Yes,coastal grasslands and beaches
-169,Latham's Snipe,Yes,migrate through coast
-170,Pin-tailed Snipe,Yes,shorelines
+,CommonName_eBird,Coastal,Notes_Species
+1,African Goshawk,Yes,mangroves
+2,African Harrier-Hawk,No,forest
+3,African Hobby,No,no mention of coastal
+4,African Marsh-Harrier,No,no mention of coastal
+5,African Oystercatcher,Yes,coastal habitats
+6,African Palm Swift,Yes,coastal plains 
+7,American Golden-Plover,Yes,coastal habitats
+8,American Kestrel,No,no mention of coastal
+9,American Oystercatcher,Yes,coastal habitats
+10,Amur Falcon,Yes,trans-ocean flights but no mention of coastal habitat use
+11,Andaman Serpent-Eagle,No,mostly inland
+12,Andean Condor,Yes,forage along shoreline 
+13,Andean Ibis,No,little known but no indicated of coastal use
+14,Andean Lapwing,No,avoids saline water
+15,Aplomado Falcon,Yes,various coastal habitats
+16,Aquatic Warbler,Yes,estuaries
+17,Arctic Warbler,Yes,mangroves
+18,Ash-throated Crake,No,"habitat is freshwater flood plains associated with Amazon river, not coastal"
+19,Ashy-headed Goose,Yes,sea coasts
+20,Asian House-Martin,Yes,sea coasts  
+21,Asian Palm Swift,Yes,mangroves
+22,Augur Buzzard,No,no mention of coastal
+23,Australian Brushturkey,Yes,Coastal Rainforest and mangroves
+24,Australian Hobby,Yes,winters in coastal areas
+25,Bahama Mockingbird,Yes,Coastal Strand
+26,Bahama Oriole,Yes,coastal areas  
+27,Bahama Swallow,Yes,along the coast
+28,Bahama Woodstar,Yes,coastal habitats
+29,Banded Lapwing,Yes,along coast
+30,Bank Swallow,Yes,coastal banks
+31,Barred Forest-Falcon,Yes,tidal swamp forests
+32,Barred Rail,Yes,habitat includes coastal swamps
+33,Bay-breasted Warbler,Yes,coastal habitats
+34,Baya Weaver,Yes,mangroves
+35,Besra,Yes,mangroves
+36,Bicolored Hawk,No,no mention of coastal
+37,Black Baza,Yes,mangroves  
+38,Black Eagle,No,no mention of coastal
+39,Black Goshawk,No,no mention of coastal
+40,Black Harrier,Yes,coastal dunes
+41,Black Hawk-Eagle,No,tropical forests
+42,Black Turnstone,Yes,coastal habitats
+43,Black-and-chestnut Eagle,No,higher elevation
+44,Black-bellied Plover,Yes,beaches and mudflats
+45,Black-chested Buzzard-Eagle,No,open country
+46,Black-crowned Palm-Tanager,Yes,mangroves
+47,Black-faced Ibis,Yes,"found in sandy habitats and coastal hills, marine molluscs found in diet"
+48,Black-shouldered Kite,Yes,coastal sand dunes
+49,Black-winged Kite,No,savanna and arid steppes
+50,Blackish Oystercatcher,Yes,coastal habitats
+51,Blue Rock-Thrush,Yes,rocky coasts
+52,Blyth's Hawk-Eagle,No,higher elevation
+53,Bonelli's Eagle,No,no mention of coastal
+54,Booted Eagle,No,no mention of coastal
+55,Broad-winged Hawk,No,no mention of coastal
+56,Brown Falcon,No,no mention of coastal
+57,Brown Goshawk,No,no mention of coastal
+58,Brush Bronzewing,Yes,coastal heathlands 
+59,Brush Cuckoo,Yes,mangroves  
+60,Buff-breasted Sandpiper,Yes,coastal grasslands and beaches
+61,Buff-necked Ibis,No,"""often far from water"""
+62,Bush Thick-knee,Yes,mangroves and saltmarsh
+63,California Condor,Yes,beaches
+64,California Scrub-Jay,Yes,coastal scrub and mangroves
+65,Cape Bulbul,Yes,coastal scrub
+66,Cape Canary,Yes,beaches
+67,Cape Grassbird,Yes,coastal macchia scrub 
+68,Cape May Warbler,Yes,mangroves and coastal vegetation
+69,Cape Robin-Chat,Yes,forages in intertidal zone
+70,Cape Rock-Thrush,Yes,forages in intertidal zone
+71,Cape Siskin,Yes,coastal scrub
+72,Cape Sparrow,Yes,coastal cliffs
+73,Cape White-eye,Yes,coastal habitats
+74,Caribbean Martin,Yes,sea coasts and beaches
+75,Carrion Crow,Yes,coastal cliffs and estuarine flats
+76,Changeable Hawk-Eagle,No,no mention of coastal
+77,Chestnut-collared Longspur,No,range map is entirely inland
+78,Chinese Sparrowhawk,No,no mention of coastal
+79,Cinereous Harrier,Yes,coastal marshes
+80,Cinereous Vulture,No,no mention of coastal
+81,Coastal Miner,Yes,coastal plains 
+82,Coconut Lorikeet,Yes,mangroves
+83,Collared Forest-Falcon,Yes,Mangroves
+84,Collared Sparrowhawk,No,no mention of coastal
+85,Common Buzzard,No,no mention of coastal
+86,Common House-Martin,Yes,coastal cliffs  
+87,Common Reed Warbler,Yes,breed only in coastal mangroves
+88,Common Ringed Plover,Yes,estuaries and other coastal habitats
+89,Cooper's Hawk,No,no mention of coastal
+90,Crane Hawk,Yes,mangroves
+91,Crested Caracara,Yes,coastal grasslands and beaches
+92,Crested Goshawk,No,no mention of coastal
+93,Crowned Eagle,No,no mention of coastal
+94,Crowned Lapwing,No,no mention of coastal
+95,Curve-billed Reedhaunter,Yes,coastal lagoons
+96,Double-striped Thick-knee,Yes,coastal plains and salt marshes
+97,Double-toothed Kite,No,no mention of coastal
+98,Eastern Buzzard,No,no mention of coastal
+99,Eastern Subalpine Warbler,Yes,coastal mangroves
+100,Eurasian Griffon,No,no mention of coastal
+101,Eurasian Hobby,No,no mention of coastal
+102,Eurasian Kestrel,Yes,winter in coastal areas
+103,Eurasian Sparrowhawk,No,no mention of coastal
+104,Eurasian Thick-knee,Yes,coastal dunes
+105,European Golden-Plover,Yes,estuaries
+106,Ferruginous Hawk,No,no mention of coastal
+107,Fish Crow,Yes,"coast, beaches, estuaries"
+108,Golden Eagle,Yes,coastlines
+109,Gray Goshawk,No,no mention of coastal
+110,Gray Hawk,No,no mention of coastal
+111,Gray-backed Hawk,No,higher elevation
+112,Gray-faced Buzzard,Yes,migrate along coast of Japan 
+113,Gray-headed Kite,No,no mention of coastal
+114,Gray-headed Lapwing,No,no mention of coastal
+115,Gray-lined Hawk,No,no mention of coastal
+116,Great Knot,Yes,coastal habitats
+117,Greater Sand-Plover,Yes,sometimes on coast
+118,Greater Yellow-headed Vulture,Yes,coastal palm swamp
+119,Hadada Ibis,Yes,wide habitat use that includes mangroves and beaches
+120,Harris's Hawk,No,no mention of coastal
+121,Hen Harrier,No,no mention of coastal
+122,Hooded Plover,Yes,coastal lagoons 
+123,Hooded Vulture,Yes,coastal areas
+124,Hook-billed Kite,Yes,coastal mangroves
+125,Imperial Eagle,No,no mention of coastal
+126,Indian Spotted Eagle,No,no mention of coastal
+127,Indian Thick-knee,No,dry forests
+128,Jackal Buzzard,No,no explicit mention of coasta
+129,Japanese Sparrowhawk,No,no mention of coastal
+130,Jerdon's Baza,Yes,coastal swamp forest
+131,Karoo Scrub-Robin,Yes,coastal scrub and sandy beaches
+132,Killdeer,Yes,shorelines
+133,King Vulture,Yes,coastal grassland
+134,Lapland Longspur,Yes,"habitats inlcude coast, beach, shores"
+135,Latham's Snipe,Yes,migrate through coast
+136,Laughing Falcon,No,no mention of coastal
+137,Lesser Kestrel,No,no mention of coastal
+138,Lesser Spotted Eagle,No,no mention of coastal
+139,Lesser Yellow-headed Vulture,Yes,mangroves
+140,Levant Sparrowhawk,No,no mention of coastal
+141,Little Curlew,Yes,rare on coast
+142,Little Eagle,No,no mention of coastal
+143,Little Rush Warbler,Yes,estuaries
+144,Lizard Buzzard,No,no mention of coastal
+145,Long-legged Buzzard,Yes,breeds along coast
+146,Long-winged Harrier,No,no mention of coastal
+147,Madagascar Buzzard,No,no mention of coastal
+148,Madagascar Swamp Warbler,Yes,mangroves
+149,Magellanic Oystercatcher,Yes,coastal habitats
+150,Malagasy Brush-Warbler,Yes,coastal thickets
+151,Malagasy Kestrel,No,no mention of coastal
+152,Mangrove Blue Flycatcher,Yes,coastal mangroves
+153,Mangrove Cuckoo,Yes,mangroves
+154,Mangrove Fantail,Yes,mangroves
+155,Mangrove Gerygone,Yes,mangroves
+156,Mangrove Honeyeater,Yes,mangroves and estuaries
+157,Mangrove Pitta,Yes,mangroves
+158,Mangrove Robin,Yes,mangroves
+159,Mangrove Swallow,Yes,mangroves and coastal beaches
+160,Mangrove Vireo,Yes,mangroves
+161,Mangrove Whistler,Yes,mangroves
+162,Marsh Antwren,Yes,mangroves
+163,Marsh Warbler,Yes,mangroves
+164,Marsh Wren,Yes,coastal tidal salt marshes
+165,Masked Lapwing,Yes,sheltered coastal areas
+166,Merlin,Yes,tidal flats and marshes (hunts shorebirds)
+167,Mississippi Kite,No,woodlands
+168,Montagu's Harrier,No,no mention of coastal
+169,Nankeen Kestrel,Yes,winter in coastal areas
+170,New Zealand Falcon,No,no mention of coastal
+171,North Island Saddleback,Yes,restricted to coastal forests
+172,Northern Goshawk,No,no mention of coastal
+173,Northern Harrier,Yes,coastal dunes
+174,Northern Lapwing,No,no mention of coastal
+175,Northern Scrub-Flycatcher,Yes,mangroves
+176,Oasis Hummingbird,Yes,coastal fog vegetation
+177,Oriental Plover,Yes,beaches
+178,Ornate Hawk-Eagle,No,forest
+179,Ovambo Sparrowhawk,No,no mention of coastal
+180,Pacific Baza,Yes,"mangroves, almost always by coast"
+181,Pacific Emerald Dove,Yes,mangroves and coasral heaths 
+182,Pacific Golden-Plover,Yes,shorelines
+183,Pacific Screech-Owl,Yes,mangroves
+184,Pacific Swallow,Yes,rocky coasts
+185,Pacific-slope Flycatcher,Yes,coastal scrub
+186,Pallid Harrier,No,no mention of coastal
+187,Palm Warbler,Yes,coastal stands
+188,Pearl Kite,No,dry savanna and woodland
+189,Peregrine Falcon,Yes,coastal beaches
+190,Peruvian Thick-knee,Yes,restricted to coastal hills
+191,Philippine Falconet,No,no mention of coastal
+192,Pied Harrier,No,no mention of coastal
+193,Pin-tailed Snipe,Yes,shorelines
+194,Plumbeous Kite,No,no mention of coastal
+195,Rüppell's Griffon,No,no mention of coastal
+196,Red Kite,No,no mention of coastal
+197,Red-necked Falcon,Yes,coastal plains
+198,Red-shouldered Hawk,No,no mention of coastal
+199,Red-tailed Hawk,Yes,coastlines
+200,Red-throated Caracara,No,no mention of coastal
+201,Red-wattled Lapwing,Yes,brackish water
+202,Ridgway's Hawk,No,no mention of coastal
+203,Roadside Hawk,No,no mention of coastal
+204,Rock Kestrel,Yes,winter in coastal areas
+205,Rock Martin,Yes,coasts
+206,Rock Parrot,Yes,"coastal dunes, mangroves, saltflats"
+207,Rock Pigeon,Yes,sea cliffs
+208,Rock Wren,Yes,oceanic cliffs
+209,Rockwarbler,Yes,seacliffs
+210,Ruddy Turnstone,Yes,coastal habitats
+211,Rufous Crab Hawk,Yes,only on coasts
+212,Rufous-breasted Sparrowhawk,No,no mention of coastal
+213,Rufous-chested Dotterel,Yes,beaches
+214,Saltmarsh Sparrow,Yes,coastal marshes
+215,Sand Lark,Yes,coastal areas such as mudflats
+216,Scrub Blackbird,Yes,coastal areas  
+217,Seaside Sparrow,Yes,tidal marshes
+218,Sedge Wren,Yes,coastal marshes  
+219,Semipalmated Plover,Yes,shorelines
+220,Semiplumbeous Hawk,No,no mention of coastal
+221,Sharp-shinned Hawk,No,no mention of coastal
+222,Shikra,No,no mention of coastal
+223,Shore Plover,Yes,beaches
+224,Short-tailed Hawk,Yes,mangroves and tidal marshes (overwinter)
+225,Short-toed Snake-Eagle,Yes,mangroves
+226,Slate-colored Hawk,Yes,mangroves
+227,Slaty-legged Crake,Yes,habitat mentions mangroves
+228,Smith's Longspur,Yes,breeds along Hudson Bay coastline
+229,Snail Kite,No,freshwater
+230,Snow Bunting,Yes,"sometimes nests on cliffs with seabirds, flocks gather postbreeding on beaches"
+231,Snowy-bellied Hummingbird,Yes,mangroves
+232,South Island Takahe,No,no coastal habitat mentioned
+233,Southern Scrub-Robin,Yes,coastal tea tree 
+234,Spanish Eagle,No,no mention of coastal
+235,Spot-winged Falconet,No,no mention of coastal
+236,Spotted Harrier,Yes,coastal flats
+237,Spotted Kingfisher,No,no mention of coastal
+238,Spotted Thick-knee,Yes,beaches
+239,Square-tailed Kite,No,no mention of coastal
+240,Surf Cinclodes,Yes,intertidal zone
+241,Surfbird,Yes,coastal habitats
+242,Swainson's Hawk,Yes,salt marshes
+243,Swallow-tailed Kite,Yes,coastal plains
+244,Swamp Sparrow,Yes,coastal marshes
+245,Tasmanian Nativehen,No,"""rarely round saline wetlands"""
+246,Tasmanian Scrubwren,Yes,coastal shrubland
+247,Thick-billed Longspur,No,range map is entirely inland
+248,Tropical Gnatcatcher,Yes,mangroves
+249,Tropical Kingbird,Yes,mangroves and coastal promontories 
+250,Tropical Mockingbird,Yes,coastal scrubland
+251,Tropical Parula,Yes,mangroves
+252,Turkey Vulture,Yes,shorelines
+253,Variable Hawk,Yes,coastal areas
+254,Variable Oystercatcher,Yes,coastal habitats
+255,Verreaux's Eagle,No,no mention of coastal
+256,Wahlberg's Eagle,No,no mention of coastal
+257,Water Pipit,Yes,coastal saltings
+258,Wattled Ibis,No,"""restricted to highlands"""
+259,Wattled Lapwing,No,no mention of coastal
+260,Wedge-tailed Eagle,No,no mention of coastal
+261,Western Subalpine Warbler,Yes,coastal mangroves
+262,White-backed Vulture,No,no mention of coastal
+263,White-browed Scrubwren,Yes,coastal heathlands and dunes 
+264,White-eyed Buzzard,No,no mention of coastal
+265,White-tailed Hawk,No,no mention of coastal
+266,White-tailed Kite,No,grassland
+267,White-throated Hawk,No,no mention of coastal
+268,Worm-eating Warbler,Yes,coastal plains 
+269,Wren-like Rushbird,Yes,brackish marshes
+270,Yellow-breasted Chat,Yes,mangroves
+271,Yellow-headed Warbler,Yes,ranges from coast to inland forests
+272,Yellow-throated Scrubwren,Yes,coastal habitats 
+273,Yellow-wattled Lapwing,No,no mention of coastal
+274,Zone-tailed Hawk,Yes,coastal plains
