@@ -47,7 +47,7 @@ colnames(C_Sensory_dat2)
 CT_UAI_Data <- C_Sensory_dat2 %>% filter(!is.na(aveUAI))  %>% 
   filter(!is.na(C.T)) %>% as.data.frame()
 length(CT_UAI_Data$C.T)
-#237 species with UAI and CT
+# 235 species with UAI and CT
 
 ###### add and pair tree
 
@@ -56,14 +56,13 @@ row.names(CT_UAI_Data) <- CT_UAI_Data$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-CT_UAI_phydat <- treedata(tree_out, CT_UAI_Data, sort=T)
+CT_UAI_phydat <- geiger::treedata(tree_out, CT_UAI_Data, sort=T)
 
 CT_UAI_phy <- CT_UAI_phydat$phy
 CT_UAI_dat <- as.data.frame(CT_UAI_phydat$data)
 
 str(CT_UAI_dat)
 length(CT_UAI_dat$C.T)
-#237
 
 ### convert traits of interest to numeric
 CT_UAI_dat$aveUAI <- as.numeric(CT_UAI_dat$aveUAI)
@@ -128,14 +127,13 @@ row.names(CT_MUTI_Data) <- CT_MUTI_Data$Species_Jetz
 ###### add and pair tree
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-CT_MUTI_phydat <- treedata(tree_out, CT_MUTI_Data, sort=T)
+CT_MUTI_phydat <- geiger::treedata(tree_out, CT_MUTI_Data, sort=T)
 
 CT_MUTI_phy <- CT_MUTI_phydat$phy
 CT_MUTI_dat <- as.data.frame(CT_MUTI_phydat$data)
 
 str(CT_MUTI_dat)
 length(CT_MUTI_dat$C.T)
-#69
 
 ### convert traits of interest to numeric
 CT_MUTI_dat$MUTIscore <- as.numeric(CT_MUTI_dat$MUTIscore)
@@ -189,7 +187,7 @@ saveRDS(MUTI_GLS_C.T, here("Models/MUTI", "MUTI_GLS_C.T.rds"))
 CT_UN_Data <- C_Sensory_dat2 %>% filter(!is.na(Urban)) %>% filter(!is.na(C.T)) %>%
   column_to_rownames(., var="Species_Jetz")
 length(CT_UN_Data$C.T)
-# 38 species with UN and CT
+# 37 species with UN and CT
 
 ###### add and pair tree
 
@@ -197,14 +195,13 @@ length(CT_UN_Data$C.T)
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
 # combine tree with data
-CT_UN_phydat <- treedata(tree_out, CT_UN_Data, sort=T)
+CT_UN_phydat <- geiger::treedata(tree_out, CT_UN_Data, sort=T)
 
 CT_UN_phy <- CT_UN_phydat$phy
 CT_UN_dat <- as.data.frame(CT_UN_phydat$data)
 
 str(CT_UN_dat)
 length(CT_UN_dat$C.T)
-#38
 
 ### convert traits of interest to numeric
 CT_UN_dat$Urban <- as.numeric(CT_UN_dat$Urban)
@@ -244,7 +241,7 @@ phyglm_UN_CT_scale <- readRDS(here("Models/UN", "phyglm_UN_CT_scale.rds"))
 UAI_PeakFreq <- C_Sensory_dat2 %>% filter(!is.na(aveUAI)) %>% 
   filter(!is.na(peak_freq)) %>% as.data.frame()
 length(UAI_PeakFreq$peak_freq_kHz)
-#202 species with UAI and peak freq
+# 199 species with UAI and peak freq
 
 ###### add and pair tree
 
@@ -253,14 +250,13 @@ row.names(UAI_PeakFreq) <- UAI_PeakFreq$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_PeakFreq_phydat <- treedata(tree_out, UAI_PeakFreq, sort=T)
+UAI_PeakFreq_phydat <- geiger::treedata(tree_out, UAI_PeakFreq, sort=T)
 
 UAI_PeakFreq_phy <- UAI_PeakFreq_phydat$phy
 UAI_PeakFreq_dat <- as.data.frame(UAI_PeakFreq_phydat$data)
 
 str(UAI_PeakFreq_dat)
 length(UAI_PeakFreq_dat$peak_freq_kHz)
-#202
 
 ### convert traits of interest to numeric
 UAI_PeakFreq_dat$aveUAI <- as.numeric(UAI_PeakFreq_dat$aveUAI)
@@ -291,7 +287,7 @@ saveRDS(UAI_GLS_pf, here("Models/UAI", "UAI_GLS_pf.rds"))
 MUTI_PeakFreq <- C_Sensory_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(peak_freq)) %>% as.data.frame()
 length(MUTI_PeakFreq$peak_freq_kHz)
-# 68 species with MUTI and peak frequency
+# 66 species with MUTI and peak frequency
 
 ###### add and pair tree
 
@@ -300,14 +296,13 @@ row.names(MUTI_PeakFreq) <- MUTI_PeakFreq$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_PeakFreq_phydat <- treedata(tree_out, MUTI_PeakFreq, sort=T)
+MUTI_PeakFreq_phydat <- geiger::treedata(tree_out, MUTI_PeakFreq, sort=T)
 
 MUTI_PeakFreq_phy <- MUTI_PeakFreq_phydat$phy
 MUTI_PeakFreq_dat <- as.data.frame(MUTI_PeakFreq_phydat$data)
 
 str(MUTI_PeakFreq_dat)
 length(MUTI_PeakFreq_dat$peak_freq_kHz)
-#68
 
 ### convert traits of interest to numeric
 MUTI_PeakFreq_dat$MUTIscore <- as.numeric(MUTI_PeakFreq_dat$MUTIscore)
@@ -363,20 +358,19 @@ UN_PeakFreq <- C_Sensory_dat2 %>% filter(!is.na(Urban))  %>%
   filter(!is.na(peak_freq)) %>%
   column_to_rownames(., var="Species_Jetz")
 length(UN_PeakFreq$peak_freq_kHz)
-#129 species with UN and peak frequency
+# 128 species with UN and peak frequency
 
 ###### add and pair tree
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_PeakFreq_phydat <- treedata(tree_out, UN_PeakFreq, sort=T)
+UN_PeakFreq_phydat <- geiger::treedata(tree_out, UN_PeakFreq, sort=T)
 
 UN_PeakFreq_phy <- UN_PeakFreq_phydat$phy
 UN_PeakFreq_dat <- as.data.frame(UN_PeakFreq_phydat$data)
 
 str(UN_PeakFreq_dat)
 length(UN_PeakFreq_dat$peak_freq_kHz)
-#129
 
 ### convert traits of interest to numeric
 UN_PeakFreq_dat$Urban <- as.numeric(UN_PeakFreq_dat$Urban)
@@ -386,27 +380,46 @@ UN_PeakFreq_dat$peak_freq_kHz <- as.numeric(UN_PeakFreq_dat$peak_freq_kHz)
 # Run the model using phyloglm(), which performs a logistic phylogenetic model to account for binary UN index
 # default method ="logistic_MPLE"
 # we will also scale and center the response variable to help with convergence
-set.seed(649)
 phyglm_UN_pf_scale <- phyloglm( Urban ~ scale(peak_freq_kHz) + scale(Mass_log), 
                                 data = UN_PeakFreq_dat, 
                                 phy = UN_PeakFreq_phy, 
                                 boot = 1000)
-# alpha reached upper bound but model does converge
+# fails to converge
 summary(phyglm_UN_pf_scale)
 
+
+# print AIC values for models with different upper bounds
+# intervals of 0.1 from 0 up to 4
+for (i in seq(0, 4, by = 0.1)) {
+  print(phyloglm(Urban ~  scale(peak_freq_kHz) + scale(Mass_log), 
+                 data = UN_PeakFreq_dat, 
+                 phy = UN_PeakFreq_phy,
+                 log.alpha.bound = i)$aic)
+}
+
+# try fixing alpha at upper bounds
+set.seed(109)
+phyglm_UN_pf_fix <- phyloglm( Urban ~ scale(peak_freq_kHz) + scale(Mass_log), 
+                                    data = UN_PeakFreq_dat, 
+                                    phy = UN_PeakFreq_phy,
+                                    start.alpha = 0.55,
+                                    boot = 1000)
+
+summary(phyglm_UN_pf_fix)
+
 # save model
-saveRDS(phyglm_UN_pf_scale, here("Models/UN", "phyglm_UN_pf_scale.rds"))
+saveRDS(phyglm_UN_pf_fix, here("Models/UN", "phyglm_UN_pf_fix.rds"))
 # load model
-phyglm_UN_pf_scale <- readRDS(here("Models/UN", "phyglm_UN_pf_scale.rds"))
+phyglm_UN_pf_fix <- readRDS(here("Models/UN", "phyglm_UN_pf_fix.rds"))
 
 # as alpha is at upper bound, also look at regular logistic model
 glm_UN_pf_scale <- logistf(Urban ~ scale(peak_freq_kHz) + scale(Mass_log), 
                            data = UN_PeakFreq)
 summary(glm_UN_pf_scale)
-# coefficient for peak freq is quite different, but we reach the same conclusions
+# we reach the same conclusions
 
 # get alpha, t, and half life for the model
-(phyglm_UN_pf_scale$mean.tip.height) # t
-(alpha_pfreq <- phyglm_UN_pf_scale$alpha) # alpha
+(phyglm_UN_pf_fix$mean.tip.height) # t
+(alpha_pfreq <- phyglm_UN_pf_fix$alpha) # alpha
 (hl_pfreq<- log(2)/alpha_pfreq) # half life
 # low half life relative to mean tip height -> low phylogenetic signal
