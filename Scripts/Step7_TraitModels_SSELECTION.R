@@ -42,7 +42,7 @@ colnames(C_SSelect_dat2)
 UAI_Bright <- C_SSelect_dat2 %>% filter(!is.na(aveUAI)) %>% 
   filter(!is.na(Dichrom_bright)) %>% as.data.frame()
 length(UAI_Bright$Dichrom_bright)
-#201 species with UAI and Dichrom_bright
+# 199 species with UAI and Dichrom_bright
 
 ###### add and pair tree
 
@@ -51,14 +51,13 @@ row.names(UAI_Bright) <- UAI_Bright$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_Bright_phydat <- treedata(tree_out, UAI_Bright, sort=T)
+UAI_Bright_phydat <- geiger::treedata(tree_out, UAI_Bright, sort=T)
 
 UAI_Bright_phy <- UAI_Bright_phydat$phy
 UAI_Bright_dat <- as.data.frame(UAI_Bright_phydat$data)
 
 str(UAI_Bright_dat)
 length(UAI_Bright_dat$Dichrom_bright)
-#201
 
 ### convert traits of interest to numeric
 UAI_Bright_dat$aveUAI <- as.numeric(UAI_Bright_dat$aveUAI)
@@ -89,7 +88,7 @@ saveRDS(UAI_GLS_bright, here("Models/UAI", "UAI_GLS_bright.rds"))
 MUTI_Bright <- C_SSelect_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(Dichrom_bright)) %>% as.data.frame()
 length(MUTI_Bright$Dichrom_bright)
-#67 species with MUTI and Dichrom_bright
+# 65 species with MUTI and Dichrom_bright
 
 
 ###### add and pair tree
@@ -99,14 +98,14 @@ row.names(MUTI_Bright) <- MUTI_Bright$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_Bright_phydat <- treedata(tree_out, MUTI_Bright, sort=T)
+MUTI_Bright_phydat <- geiger::treedata(tree_out, MUTI_Bright, sort=T)
 
 MUTI_Bright_phy <- MUTI_Bright_phydat$phy
 MUTI_Bright_dat <- as.data.frame(MUTI_Bright_phydat$data)
 
 str(MUTI_Bright_dat)
 length(MUTI_Bright_dat$Dichrom_bright)
-#67
+
 
 ### convert traits of interest to numeric
 MUTI_Bright_dat$MUTIscore <- as.numeric(MUTI_Bright_dat$MUTIscore)
@@ -133,7 +132,7 @@ for (i in seq(0, 1, by = 0.1)) {
 
 # Print AIC values
 print(AIC_values)
-#0.4 = best AIC score 
+# 0.4 = best AIC score 
 
 
 # Run phylogenetic linear model with fixed lambda value
@@ -163,20 +162,19 @@ saveRDS(MUTI_GLS_bright, here("Models/MUTI", "MUTI_GLS_bright.rds"))
 UN_Bright <- C_SSelect_dat2 %>% filter(!is.na(Urban)) %>% 
   filter(!is.na(Dichrom_bright)) %>% column_to_rownames(., var = "Species_Jetz")
 length(UN_Bright$Dichrom_bright)
-#61 species with UN and Dichrom_bright
+# 61 species with UN and Dichrom_bright
 
 ###### add and pair tree
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_Bright_phydat <- treedata(tree_out, UN_Bright, sort=T)
+UN_Bright_phydat <- geiger::treedata(tree_out, UN_Bright, sort=T)
 
 UN_Bright_phy <- UN_Bright_phydat$phy
 UN_Bright_dat <- as.data.frame(UN_Bright_phydat$data)
 
 str(UN_Bright_dat)
 length(UN_Bright_dat$Dichrom_bright)
-#61
 
 
 ### convert traits of interest to numeric
@@ -219,7 +217,7 @@ phyglm_UN_brightness_scale <- readRDS(here("Models/UN", "phyglm_UN_brightness_sc
 UAI_Hue <- C_SSelect_dat2 %>% filter(!is.na(aveUAI)) %>% 
   filter(!is.na(Dichrom_hue)) %>% as.data.frame()
 length(UAI_Hue$Dichrom_hue)
-#201 species with UAI and Dichrom_hue
+# 199 species with UAI and Dichrom_hue
 
 ###### add and pair tree
 
@@ -228,14 +226,13 @@ row.names(UAI_Hue) <- UAI_Hue$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_Hue_phydat <- treedata(tree_out, UAI_Hue, sort=T)
+UAI_Hue_phydat <- geiger::treedata(tree_out, UAI_Hue, sort=T)
 
 UAI_Hue_phy <- UAI_Hue_phydat$phy
 UAI_Hue_dat <- as.data.frame(UAI_Hue_phydat$data)
 
 str(UAI_Hue_dat)
 length(UAI_Hue_dat$Dichrom_hue)
-#201
 
 
 ### convert traits of interest to numeric
@@ -269,7 +266,7 @@ saveRDS(UAI_GLS_hue, here("Models/UAI", "UAI_GLS_hue.rds"))
 MUTI_Hue <- C_SSelect_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(Dichrom_hue)) %>% as.data.frame()
 length(MUTI_Hue$Dichrom_hue)
-#67 species with MUTI and Dichrom_hue
+# 65 species with MUTI and Dichrom_hue
 
 ###### add and pair tree
 
@@ -278,14 +275,13 @@ row.names(MUTI_Hue) <- MUTI_Hue$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_Hue_phydat <- treedata(tree_out, MUTI_Hue, sort=T)
+MUTI_Hue_phydat <- geiger::treedata(tree_out, MUTI_Hue, sort=T)
 
 MUTI_Hue_phy <- MUTI_Hue_phydat$phy
 MUTI_Hue_dat <- as.data.frame(MUTI_Hue_phydat$data)
 
 str(MUTI_Hue_dat)
 length(MUTI_Hue_dat$Dichrom_hue)
-#67
 
 ### convert traits of interest to numeric
 MUTI_Hue_dat$MUTIscore <- as.numeric(MUTI_Hue_dat$MUTIscore)
@@ -318,20 +314,19 @@ saveRDS(MUTI_GLS_hue, here("Models/MUTI", "MUTI_GLS_hue.rds"))
 UN_Hue <- C_SSelect_dat2 %>% filter(!is.na(Urban)) %>% 
   filter(!is.na(Dichrom_hue)) %>% column_to_rownames(., var = "Species_Jetz")
 length(UN_Hue$Dichrom_hue)
-#61 species with UN and Dichrom_hue
+# 61 species with UN and Dichrom_hue
 
 ###### add and pair tree
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_Hue_phydat <- treedata(tree_out, UN_Hue, sort=T)
+UN_Hue_phydat <- geiger::treedata(tree_out, UN_Hue, sort=T)
 
 UN_Hue_phy <- UN_Hue_phydat$phy
 UN_Hue_dat <- as.data.frame(UN_Hue_phydat$data)
 
 str(UN_Hue_dat)
 length(UN_Hue_dat$Dichrom_hue)
-#61
 
 ### convert traits of interest to numeric
 UN_Hue_dat$Urban <- as.numeric(UN_Hue_dat$Urban)
@@ -349,6 +344,7 @@ phyglm_UN_hue_scale <- phyloglm( Urban ~ scale(Dichrom_hue) + scale(Mass_log),
                                  boot = 1000)
 
 summary(phyglm_UN_hue_scale) # this model converges successfully
+confint(phyglm_UN_hue_scale)
 
 # save model
 saveRDS(phyglm_UN_hue_scale, here("Models/UN", "phyglm_UN_hue_scale.rds"))
@@ -363,7 +359,6 @@ phyglm_UN_hue_scale <- readRDS(here("Models/UN", "phyglm_UN_hue_scale.rds"))
 # small half life compared with t -> low phylogenetic signal
 
 
-
 ##############################################################################
 ##############################################################################
 
@@ -373,7 +368,7 @@ phyglm_UN_hue_scale <- readRDS(here("Models/UN", "phyglm_UN_hue_scale.rds"))
 UAI_SSM <- C_SSelect_dat2 %>% filter(!is.na(aveUAI))  %>% 
   filter(!is.na(sex.sel.m)) %>% as.data.frame()
 length(UAI_SSM$sex.sel.m)
-#766 species with UAI and sex.sel.m
+# 760 species with UAI and sex.sel.m
 
 ###### add and pair tree
 
@@ -382,15 +377,13 @@ row.names(UAI_SSM) <- UAI_SSM$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_SSM_phydat <- treedata(tree_out, UAI_SSM, sort=T)
+UAI_SSM_phydat <- geiger::treedata(tree_out, UAI_SSM, sort=T)
 
 UAI_SSM_phy <- UAI_SSM_phydat$phy
 UAI_SSM_dat <- as.data.frame(UAI_SSM_phydat$data)
 
 str(UAI_SSM_dat)
 length(UAI_SSM_dat$sex.sel.m)
-#766
-
 
 ### convert traits of interest to numeric
 UAI_SSM_dat$aveUAI <- as.numeric(UAI_SSM_dat$aveUAI)
@@ -422,7 +415,7 @@ saveRDS(UAI_GLS_ssm, here("Models/UAI", "UAI_GLS_ssm.rds"))
 MUTI_SSM <- C_SSelect_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(sex.sel.m)) %>% as.data.frame()
 length(MUTI_SSM$sex.sel.m)
-#127 species with MUTI and sex.sel.m
+# 125 species with MUTI and sex.sel.m
 
 colnames(MUTI_SSM)
 
@@ -433,14 +426,13 @@ row.names(MUTI_SSM) <- MUTI_SSM$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_SSM_phydat <- treedata(tree_out, MUTI_SSM, sort=T)
+MUTI_SSM_phydat <- geiger::treedata(tree_out, MUTI_SSM, sort=T)
 
 MUTI_SSM_phy <- MUTI_SSM_phydat$phy
 MUTI_SSM_dat <- as.data.frame(MUTI_SSM_phydat$data)
 
 str(MUTI_SSM_dat)
 length(MUTI_SSM_dat$sex.sel.m)
-#127
 
 
 ### convert traits of interest to numeric
@@ -475,21 +467,19 @@ saveRDS(MUTI_GLS_ssm, here("Models/MUTI", "MUTI_GLS_ssm.rds"))
 UN_SSM <- C_SSelect_dat2 %>% filter(!is.na(Urban)) %>% 
   filter(!is.na(sex.sel.m)) %>% column_to_rownames(., var = "Species_Jetz")
 length(UN_SSM$sex.sel.m)
-# 129 species with UN and sex.sel.m
+# 128 species with UN and sex.sel.m
 
 
 ###### add and pair tree
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_SSM_phydat <- treedata(tree_out, UN_SSM, sort=T)
+UN_SSM_phydat <- geiger::treedata(tree_out, UN_SSM, sort=T)
 
 UN_SSM_phy <- UN_SSM_phydat$phy
 UN_SSM_dat <- as.data.frame(UN_SSM_phydat$data)
 
 str(UN_SSM_dat)
 length(UN_SSM_dat$sex.sel.m)
-#129
-
 
 ### convert traits of interest to numeric
 UN_SSM_dat$Urban <- as.numeric(UN_SSM_dat$Urban)
@@ -500,43 +490,20 @@ UN_SSM_dat$sex.sel.m <- as.numeric(UN_SSM_dat$sex.sel.m)
 # Run the model using phyloglm(), which performs a logistic phylogenetic model to account for binary UN index
 # default method ="logistic_MPLE"
 # we will also scale and center the response variable to help with convergence
+set.seed(641)
 phyglm_UN_ssm_scale <- phyloglm( Urban ~ scale(sex.sel.m) + scale(Mass_log), 
                                  data = UN_SSM_dat, 
                                  phy = UN_SSM_phy, 
                                  boot = 1000) 
-# this fails to converge
+
 summary(phyglm_UN_ssm_scale)
-
-
-# print AIC values for models with different upper bounds
-# intervals of 0.1 from 0 up to 4
-for (i in seq(0, 4, by = 0.1)) {
-  print(phyloglm(Urban ~ scale(sex.sel.m) + scale(Mass_log), 
-                 data = UN_SSM_dat, 
-                 phy = UN_SSM_phy, 
-                 log.alpha.bound = i)$aic)
-}
-# AIC values support models with larger values of alpha (low phylo signal)
-
-
-# try model with restricted alpha 
-# give the model a little more searching space for alpha because AIC is actually lowest slightly below log.alpha.bounds = 4
-exp(3.8)/(phyglm_UN_ssm_scale$mean.tip.height) # equals 0.45. Using this as start.alpha
-
-set.seed(641)
-phyglm_UN_ssm_fix <- phyloglm( Urban ~ scale(sex.sel.m) + scale(Mass_log), 
-                               data = UN_SSM_dat, 
-                               phy = UN_SSM_phy, 
-                               log.alpha.bound = 4,
-                               start.alpha = 0.45,
-                               boot = 1000)
-summary(phyglm_UN_ssm_fix)
+confint(phyglm_UN_ssm_scale)
 
 
 # save model
-saveRDS(phyglm_UN_ssm_fix, here("Models/UN", "phyglm_UN_ssm_fix.rds"))
+saveRDS(phyglm_UN_ssm_scale, here("Models/UN", "phyglm_UN_ssm_scale.rds"))
 # load model
-phyglm_UN_ssm_fix <- readRDS(here("Models/UN", "phyglm_UN_ssm_fix.rds"))
+phyglm_UN_ssm_scale <- readRDS(here("Models/UN", "phyglm_UN_ssm_scale.rds"))
 
 
 # compare results with a non-phylogenetic logistic model
@@ -546,11 +513,10 @@ summary(glm_UN_ssm)
 
 
 # get alpha, t, and half life for the model
-(phyglm_UN_ssm_fix$mean.tip.height) # t
-(alpha_ssm <- phyglm_UN_ssm_fix$alpha) # alpha
+(phyglm_UN_ssm_scale$mean.tip.height) # t
+(alpha_ssm <- phyglm_UN_ssm_scale$alpha) # alpha
 (hl_ssm <- log(2)/alpha_ssm) # half life  
 # small half life relative to t
-
 
 
 ##############################################################################
@@ -563,7 +529,7 @@ summary(glm_UN_ssm)
 UAI_SSF <- C_SSelect_dat2 %>% filter(!is.na(aveUAI)) %>% 
   filter(!is.na(sex.sel.f)) %>% as.data.frame()
 length(UAI_SSF$sex.sel.f)
-#766 species with UAI and sex.sel.f
+# 760 species with UAI and sex.sel.f
 
 ###### add and pair tree
 
@@ -572,21 +538,18 @@ row.names(UAI_SSF) <- UAI_SSF$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_SSF_phydat <- treedata(tree_out, UAI_SSF, sort=T)
+UAI_SSF_phydat <- geiger::treedata(tree_out, UAI_SSF, sort=T)
 
 UAI_SSF_phy <- UAI_SSF_phydat$phy
 UAI_SSF_dat <- as.data.frame(UAI_SSF_phydat$data)
 
 str(UAI_SSF_dat)
 length(UAI_SSF_dat$sex.sel.f)
-#766
-
 
 ### convert traits of interest to numeric
 UAI_SSF_dat$aveUAI <- as.numeric(UAI_SSF_dat$aveUAI)
 UAI_SSF_dat$Mass_log <- as.numeric(UAI_SSF_dat$Mass_log)
 UAI_SSF_dat$sex.sel.f <- as.numeric(UAI_SSF_dat$sex.sel.f)
-
 
 # Run phylogenetic linear model
 UAI_GLS_ssf <- gls(aveUAI~ sex.sel.f + Mass_log, data = UAI_SSF_dat, 
@@ -594,7 +557,7 @@ UAI_GLS_ssf <- gls(aveUAI~ sex.sel.f + Mass_log, data = UAI_SSF_dat,
                     method = "ML") 
 
 # model summary and results
-summary(UAI_GLS_ssf) 
+summary(UAI_GLS_ssf)
 confint(UAI_GLS_ssf)
 
 # model diagnostics
@@ -613,8 +576,7 @@ saveRDS(UAI_GLS_ssf, here("Models/UAI", "UAI_GLS_ssf.rds"))
 MUTI_SSF <- C_SSelect_dat2 %>% filter(!is.na(MUTIscore)) %>% 
   filter(!is.na(sex.sel.f)) %>% as.data.frame()
 length(MUTI_SSF$sex.sel.f)
-#127 species with MUTI and sex.sel.f
-
+# 125 species with MUTI and sex.sel.f
 
 ###### add and pair tree
 
@@ -623,14 +585,13 @@ row.names(MUTI_SSF) <- MUTI_SSF$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_SSF_phydat <- treedata(tree_out, MUTI_SSF, sort=T)
+MUTI_SSF_phydat <- geiger::treedata(tree_out, MUTI_SSF, sort=T)
 
 MUTI_SSF_phy <- MUTI_SSF_phydat$phy
 MUTI_SSF_dat <- as.data.frame(MUTI_SSF_phydat$data)
 
 str(MUTI_SSF_dat)
 length(MUTI_SSF_dat$sex.sel.f)
-#127
 
 
 ### convert traits of interest to numeric
@@ -664,22 +625,19 @@ saveRDS(MUTI_GLS_ssf, here("Models/MUTI", "MUTI_GLS_ssf.rds"))
 UN_SSF <- C_SSelect_dat2 %>% filter(!is.na(Urban)) %>% 
   filter(!is.na(sex.sel.f)) %>% column_to_rownames(., var="Species_Jetz")
 length(UN_SSF$sex.sel.f)
-#129 species with UN and sex.sel.f
-
+# 128 species with UN and sex.sel.f
 
 ###### add and pair tree
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_SSF_phydat <- treedata(tree_out, UN_SSF, sort=T)
+UN_SSF_phydat <- geiger::treedata(tree_out, UN_SSF, sort=T)
 
 UN_SSF_phy <- UN_SSF_phydat$phy
 UN_SSF_dat <- as.data.frame(UN_SSF_phydat$data)
 
 str(UN_SSF_dat)
 length(UN_SSF_dat$sex.sel.f)
-#129
-
 
 ### convert traits of interest to numeric
 UN_SSF_dat$Urban <- as.numeric(UN_SSF_dat$Urban)
@@ -690,66 +648,23 @@ UN_SSF_dat$sex.sel.f <- as.numeric(UN_SSF_dat$sex.sel.f)
 # Run the model using phyloglm(), which performs a logistic phylogenetic model to account for binary UN index
 # default method ="logistic_MPLE"
 # we will also scale and center the response variable to help with convergence
+set.seed(205)
 phyglm_UN_ssf_scale <- phyloglm( Urban ~ scale(sex.sel.f) + Mass_log, 
                                  data = UN_SSF_dat, 
-                                 phy = UN_SSF_phy, 
+                                 phy = UN_SSF_phy,
                                  boot = 1000) 
 
 summary(phyglm_UN_ssf_scale) 
-# this version fails to converge
-# alpha at upper bounds
-
-
-# print AIC values for models with different upper bounds
-# intervals of 0.1 from 0 up to 4
-for (i in seq(0, 4, by = 0.1)) {
-  print(phyloglm(Urban ~ scale(sex.sel.f) + scale(Mass_log), 
-                 data = UN_SSF_dat, 
-                 phy = UN_SSF_phy, 
-                 log.alpha.bound = i)$aic)
-}
-# AIC values support models with larger values of alpha (low phylo signal)
-
-
-# try fixing alpha at upper bounds
-# had to go slightly above log.alpha.bound of 4 to get models that would converge
-set.seed(786)
-phyglm_UN_ssf_fix_4.05 <- phyloglm( Urban ~ scale(sex.sel.f) + scale(Mass_log), 
-                                    data = UN_SSF_dat, 
-                                    phy = UN_SSF_phy, 
-                                    log.alpha.bound = 4.05,
-                                    start.alpha = 0.56,
-                                    boot = 1000
-)
-
-phyglm_UN_ssf_fix_4.1 <- phyloglm( Urban ~ scale(sex.sel.f) + scale(Mass_log), 
-                                   data = UN_SSF_dat, 
-                                   phy = UN_SSF_phy, 
-                                   log.alpha.bound = 4.1,
-                                   start.alpha = 0.6,
-                                   boot = 1000
-)
-summary(phyglm_UN_ssf_fix_4.05)
-summary(phyglm_UN_ssf_fix_4.1)
-# both model converge and produce similar estimates
-
+confint(phyglm_UN_ssf_scale)
 
 # save model
-saveRDS(phyglm_UN_ssf_fix_4.05, here("Models/UN", "phyglm_UN_ssf_fix.rds"))
+saveRDS(phyglm_UN_ssf_scale, here("Models/UN", "phyglm_UN_ssf_scale.rds"))
 # load model
-phyglm_UN_ssf_fix_4.05 <- readRDS(here("Models/UN", "phyglm_UN_ssf_fix.rds"))
-
-
-# look at non-phylogenetic model
-glm_UN_ssf <- logistf(Urban ~ scale(sex.sel.f) + scale(Mass_log), 
-                      data = UN_SSF)
-summary(glm_UN_ssf)
-# agrees with two models above
+phyglm_UN_ssf_scale <- readRDS(here("Models/UN", "phyglm_UN_ssf_scale.rds"))
 
 
 # get alpha, t, and half life for the model
-(phyglm_UN_ssf_fix_4.05$mean.tip.height) # t
-(alpha_ssf <- phyglm_UN_ssf_fix_4.05$alpha) # alpha
+(phyglm_UN_ssf_scale$mean.tip.height) # t
+(alpha_ssf <- phyglm_UN_ssf_scale$alpha) # alpha
 (hl_ssf <- log(2)/alpha_ssf) # half life
 # small half life compared to t
-
