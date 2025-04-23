@@ -543,7 +543,7 @@ nrow(Coastal_Nest_StrBoth)
 # this may occur if they use an mix of open and enclosed nests and there is no obvious preference described in Birds of World species page
 
 # export for editing
-write.csv(Coastal_Nest_StrBoth, here("Notes", "nest_structure_both.csv"))
+#write.csv(Coastal_Nest_StrBoth, here("Notes", "nest_structure_both.csv"))
 
 # import the edited version
 Coastal_Nest_Str_edited <- read.csv(here("Notes", "nest_structure_both_edited.csv"), header=T)
@@ -607,16 +607,38 @@ Coastal_Nest_Str %>% filter(!is.na(NestStr)) %>% filter(!is.na(Urban)) %>% group
 
 ########### NEST SITE ###########
 # sort nest sites into the bins "low" (on or underground) and "high" (above the ground)
-# low nest sites include ground, underground, waterbody
+# low nest sites include ground, underground, waterbody, mound
 # high nest sites include tree, nontree, cliff_bank, termite_ant
+# flexible species use both high and low nest sites
+# nest parasites need to be removed
+# create 3 columns to classify each species
+# then use those 3 columns to make 3 groupings for models
 Coastal_Nest_Site <-  Coastal_Nest_Str %>% 
-  mutate(NestSite_Low = ifelse(NestSite_ground > 0 | NestSite_underground > 0 | NestSite_waterbody > 0, 1, 0),
-         NestSite_High = ifelse(NestSite_tree > 0 | NestSite_nontree > 0 | NestSite_cliff_bank > 0 | NestSite_termite_ant > 0, 1, 0),
-         LowAndHigh = ifelse( NestSite_Low == 1 & NestSite_High == 1, "both", "one"))
+  mutate(NestSite_Low = case_when (NestSite_ground > 0 | NestSite_underground > 0 | NestSite_waterbody > 0 | Mound >0 ~ "1", # mark low as 1
+                                   Parasite == 1 ~ NA, # mark parasite as NA
+                                   NestSite_ground == 0 & NestSite_underground== 0 & NestSite_waterbody == 0 & Mound ==0 & Parasite == 0 ~ "0"), # mark high as 0
+         NestSite_High = case_when(NestSite_tree > 0 | NestSite_nontree > 0 | NestSite_cliff_bank > 0 | NestSite_termite_ant > 0 ~ "1", # mark high as 1
+                                   Parasite == 1 ~ NA, # mark parasite as NA
+                                   NestSite_tree == 0 & NestSite_nontree == 0 & NestSite_cliff_bank == 0 & NestSite_termite_ant == 0 & Parasite == 0  ~ "0"), # mark low as 0
+         NestSite_Flex = case_when( NestSite_Low == 1 & NestSite_High == 1 ~ "1", # identify flexible species that use high and low nest sites as 1
+                                    NestSite_Low == 0 & NestSite_High == 1 ~"0", # exclusively high species as 0
+                                    NestSite_Low == 1 & NestSite_High == 0 ~ "0", # exclusively low species as 0
+                                    Parasite == 1 ~ NA), # nest parasites as NA
+         NestSite_LowHigh = case_when(NestSite_Low == 0 & NestSite_High == 1 ~ "1", # exclusively high species as 1
+                                      NestSite_Low == 1 & NestSite_High == 0 ~  "0", # exclusively low species as 0
+                                      NestSite_Low == 1 & NestSite_High == 1 ~ NA, # flexible species are excluded by using NA
+                                      Parasite == 1 ~ NA), # nest parasites as NA
+         NestSite_LowplusFlex = case_when(NestSite_Low == 0 & NestSite_High == 1 ~ "1", # exclusively high species as 1
+                                      NestSite_Low == 1 & NestSite_High == 1 ~  "0", # flexible species as 0 (with low)
+                                      NestSite_Low == 1 & NestSite_High == 0 ~ "0", # exclusively low species as 0
+                                      Parasite == 1 ~ NA), # nest parasites as NA
+         NestSite_HighplusFlex = case_when(NestSite_Low == 0 & NestSite_High == 1 ~ "1", # exclusively high species as 1
+                                          NestSite_Low == 1 & NestSite_High == 1 ~  "1", # flexible species as 1 (with high)
+                                          NestSite_Low == 1 & NestSite_High == 0 ~ "0", # exclusively low species as 0
+                                          Parasite == 1 ~ NA))  # nest parasites as NA
 
-# which species and how many were assigned to both Low and High groups?
-Coastal_Nest_SiteBoth <- Coastal_Nest_Site %>% filter(NestSite_Low == 1 & NestSite_High == 1)
-nrow(Coastal_Nest_SiteBoth) # many! --> 222 
+# how many species were flexible (assigned to both low and high groups)?
+Coastal_Nest_Site %>% filter(NestSite_Flex == "1") %>% nrow() # many! --> 222 
 
 # Many coastal species nest on the ground and on cliffs/banks.
 # This phenomenon is likely driving such a high number of species falling into both nest site types
@@ -624,47 +646,50 @@ nrow(Coastal_Nest_SiteBoth) # many! --> 222
 # Instead, we will use two models one to examine Low species and one to examine High species
 
 # remove all unnecessary columns to keep data frame clean and organized
-# we will also check for any species with NestSite_Low == 0 & NestSite_High == 0, which are species missing nest site information
-# these will get changed to NAs
 Coastal_Nest_StrSite <- Coastal_Nest_Site %>% 
- mutate(NestSite_Low = ifelse(NestSite_Low == 0 & NestSite_High == 0, NA, NestSite_Low),
-        NestSite_High = ifelse(is.na(NestSite_Low) & NestSite_High == 0, NA, NestSite_High)) %>%
-  select(Species_Jetz:Mass_log, NestStr, NestSite_High, NestSite_Low)
+  select(Species_Jetz:Mass_log, NestStr, NestSite_LowHigh, NestSite_LowplusFlex, NestSite_HighplusFlex)
 
 colnames(Coastal_Nest_StrSite)
 
-# check how many species (across all indexes) have nest site data (testing with NestSite_Low), but both high and low should be the same count
-nest_site_count <- Coastal_Nest_StrSite %>% 
-  filter(!is.na(NestSite_Low))
-nrow(nest_site_count)
+# check how many species (across all indexes) have nest site data?
+Coastal_Nest_StrSite %>% filter(!is.na(NestSite_LowplusFlex)) %>% nrow() # 795
+Coastal_Nest_StrSite %>% filter(!is.na(NestSite_HighplusFlex)) %>% nrow() # 795
+Coastal_Nest_StrSite %>% filter(!is.na(NestSite_LowHigh)) %>% nrow() # 573 when excluding flexible species
 
-# how many species have nest site high data ?
+# how many species have nest site data for low vs high EXCLUDING flexible species?
+# Print numbers for both groups. A value of 1 is High nests and 0 is low nests.
 # for UAI? 
-# Print numbers for both groups. A value of 1 is High nests.
-Coastal_Nest_StrSite %>% filter(!is.na(NestSite_High)) %>% filter(!is.na(aveUAI)) %>% group_by(NestSite_High) %>% count()
-282+503
+Coastal_Nest_StrSite %>% filter(!is.na(NestSite_LowHigh)) %>% filter(!is.na(aveUAI)) %>% group_by(NestSite_LowHigh) %>% count()
+283 + 282 # 565
 # for MUTI? 
-# Print numbers for both groups. A value of 1 is High nests.
-Coastal_Nest_StrSite %>% filter(!is.na(NestSite_High)) %>% filter(!is.na(MUTIscore)) %>% group_by(NestSite_High) %>% count()
-53+75
-# for UN? 
-# Print numbers for both groups. A value of 1 is High nests.
-Coastal_Nest_StrSite %>% filter(!is.na(NestSite_High)) %>% filter(!is.na(Urban)) %>% group_by(NestSite_High) %>% count()
-79+49
+Coastal_Nest_StrSite %>% filter(!is.na(NestSite_LowHigh)) %>% filter(!is.na(MUTIscore)) %>% group_by(NestSite_LowHigh) %>% count()
+53 + 36 # 89
+Coastal_Nest_StrSite %>% filter(!is.na(NestSite_LowHigh)) %>% filter(!is.na(Urban)) %>% group_by(NestSite_LowHigh) %>% count()
+79 + 24 # 103
 
-# how many species have nest site low data ?
+# how many species have nest site data for low vs high plus flexible species?
+# Print numbers for both groups. A value of 1 is High and flexible nests and a value of 0 is low nests
 # for UAI? 
-# Print numbers for both groups. A value of 1 is for Low nests.
-Coastal_Nest_StrSite %>% filter(!is.na(NestSite_Low)) %>% filter(!is.na(aveUAI)) %>% group_by(NestSite_Low) %>% count()
-282 + 503
+Coastal_Nest_StrSite %>% filter(!is.na(NestSite_HighplusFlex)) %>% filter(!is.na(aveUAI)) %>% group_by(NestSite_HighplusFlex) %>% count()
+283+503 # 786
 # for MUTI? 
-# Print numbers for both groups. A value of 1 is for Low nests.
-Coastal_Nest_StrSite %>% filter(!is.na(NestSite_Low)) %>% filter(!is.na(MUTIscore)) %>% group_by(NestSite_Low) %>% count()
-36 + 92
+Coastal_Nest_StrSite %>% filter(!is.na(NestSite_HighplusFlex)) %>% filter(!is.na(MUTIscore)) %>% group_by(NestSite_HighplusFlex) %>% count()
+53 + 75 # 128
 # for UN? 
-# Print numbers for both groups. A value of 1 is for Low nests.
-Coastal_Nest_StrSite %>% filter(!is.na(NestSite_Low)) %>% filter(!is.na(Urban)) %>% group_by(NestSite_Low) %>% count()
-24 + 104
+Coastal_Nest_StrSite %>% filter(!is.na(NestSite_HighplusFlex)) %>% filter(!is.na(Urban)) %>% group_by(NestSite_HighplusFlex) %>% count()
+79 + 49 # 128
+
+# how many species have nest site low plus flexible vs high data ?
+# Print numbers for both groups. A value of 0 is low and flexible nests and a value of 1 is high nests
+# for UAI? 
+Coastal_Nest_StrSite %>% filter(!is.na(NestSite_LowplusFlex)) %>% filter(!is.na(aveUAI)) %>% group_by(NestSite_LowplusFlex) %>% count()
+282 + 504 # 786
+# for MUTI? 
+Coastal_Nest_StrSite %>% filter(!is.na(NestSite_LowplusFlex)) %>% filter(!is.na(MUTIscore)) %>% group_by(NestSite_LowplusFlex) %>% count()
+92 + 36 # 128
+# for UN? 
+Coastal_Nest_StrSite %>% filter(!is.na(NestSite_LowplusFlex)) %>% filter(!is.na(Urban)) %>% group_by(NestSite_LowplusFlex) %>% count()
+104 + 24 # 128
 
 ########### Nest Safety ###########
 

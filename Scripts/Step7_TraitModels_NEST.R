@@ -32,7 +32,7 @@ str(C_Nest_dat2)
 
 
 C_Nest_dat2$Urban <- ifelse(C_Nest_dat2$Urban == "U", 1, 0)
-View(C_Nest_dat2)
+#View(C_Nest_dat2)
 colnames(C_Nest_dat2)
 
 
@@ -156,189 +156,275 @@ UN_NestStr %>% filter(!is.na(NestStr)) %>%
 ##########################################################################
 ##########################################################################
 
-######################## UAI and Nest Site LOW ##########################
-# 0 = not low
-# 1 = low
+######################## UAI and Nest Site Low vs High + Flexible ##########################
+# 0 = low
+# 1 = high and flexible species
 
-# create a new data frame that contains only species with both UAI and nest site low
-UAI_NestLow <- C_Nest_dat2 %>% filter(!is.na(aveUAI))  %>% 
-  filter(!is.na(NestSite_Low)) %>% as.data.frame()
-length(UAI_NestLow$NestSite_Low)
-# 785 species with UAI and NestSite_Low
+UAI_NestHighplusFlex <- C_Nest_dat2 %>% 
+  filter(!is.na(aveUAI)) %>% 
+  filter(!is.na(NestSite_HighplusFlex)) %>% as.data.frame()
+length(UAI_NestHighplusFlex$NestSite_HighplusFlex)
+# 786 species 
 
 ###### add and pair tree
 
 # add rownames to data
-row.names(UAI_NestLow) <- UAI_NestLow$Species_Jetz
+row.names(UAI_NestHighplusFlex) <- UAI_NestHighplusFlex$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_NestLow_phydat <- geiger::treedata(tree_out, UAI_NestLow, sort=T)
+UAI_NestHighplusFlex_phydat <- geiger::treedata(tree_out, UAI_NestHighplusFlex, sort=T)
 
-UAI_NestLow_phy <- UAI_NestLow_phydat$phy
-UAI_NestLow_dat <- as.data.frame(UAI_NestLow_phydat$data)
+UAI_NestHighplusFlex_phy <- UAI_NestHighplusFlex_phydat$phy
+UAI_NestHighplusFlex_dat <- as.data.frame(UAI_NestHighplusFlex_phydat$data)
 
-str(UAI_NestLow_dat)
-length(UAI_NestLow_dat$NestSite_Low)
+str(UAI_NestHighplusFlex_dat)
+length(UAI_NestHighplusFlex_dat$NestSite_HighplusFlex)
 
 # convert traits of interest to numeric
-UAI_NestLow_dat$aveUAI <- as.numeric(UAI_NestLow_dat$aveUAI)
-UAI_NestLow_dat$Mass_log <- as.numeric(UAI_NestLow_dat$Mass_log)
-UAI_NestLow_dat$NestSite_Low <- as.numeric(UAI_NestLow_dat$NestSite_Low)
+UAI_NestHighplusFlex_dat$aveUAI <- as.numeric(UAI_NestHighplusFlex_dat$aveUAI)
+UAI_NestHighplusFlex_dat$Mass_log <- as.numeric(UAI_NestHighplusFlex_dat$Mass_log)
+UAI_NestHighplusFlex_dat$NestSite_HighplusFlex <- as.numeric(UAI_NestHighplusFlex_dat$NestSite_HighplusFlex)
 
 # run a phylogenetic linear model
-UAI_GLS_nest_low <- gls(aveUAI~ NestSite_Low + Mass_log, data = UAI_NestLow_dat, 
-                       correlation = corPagel(0.5, phy = UAI_NestLow_phy, fixed = F, form = ~Species_Jetz), 
+UAI_GLS_nest_highplusflex <- gls(aveUAI~ NestSite_HighplusFlex + Mass_log, data = UAI_NestHighplusFlex_dat, 
+                       correlation = corPagel(0.5, phy = UAI_NestHighplusFlex_phy, fixed = F, form = ~Species_Jetz), 
                        method = "ML") 
 
 # model summary and results
-summary(UAI_GLS_nest_low) 
-confint(UAI_GLS_nest_low)
-confint(UAI_GLS_nest_low, level = 0.85)
+summary(UAI_GLS_nest_highplusflex) 
+confint(UAI_GLS_nest_highplusflex)
 
 # model diagnostics
-check_model(UAI_GLS_nest_low) 
-qqnorm(resid(UAI_GLS_nest_low)) 
-qqline(resid(UAI_GLS_nest_low))
-hist(resid(UAI_GLS_nest_low))
+check_model(UAI_GLS_nest_highplusflex) 
+qqnorm(resid(UAI_GLS_nest_highplusflex)) 
+qqline(resid(UAI_GLS_nest_highplusflex))
+hist(resid(UAI_GLS_nest_highplusflex))
 
 # save model
-saveRDS(UAI_GLS_nest_low, here("Models/UAI", "UAI_GLS_nest_low.rds"))
+saveRDS(UAI_GLS_nest_highplusflex, here("Models/UAI", "UAI_GLS_nest_highplusflex.rds"))
 
-#########################################
-# Filter out all species that use both HIGH and LOW nest sites 
-# we are doing this to test whether the "non-ambiguous" nesting species the ones driving the significant relationship in the previous section
+######################## UAI and Nest Site Low + Flexible vs High ##########################
+# 0 = low and flexible species
+# 1 = high species
 
-
-# apply filter 
-UAI_NestLow_only <- C_Nest_dat2 %>% filter(!is.na(aveUAI)) %>% 
-  filter(!is.na(NestSite_Low)) %>% 
-  filter(!(NestSite_Low == 1 & NestSite_High == 1)) %>% as.data.frame()
-length(UAI_NestLow_only$NestSite_Low)
-# 571 species with UAI and ONLY NestSite_Low (not also high nesters)
-785-571 # = 214 --> there are 214 species that were both High and Low nesters and had UAI scores 
+UAI_NestLowplusFlex <- C_Nest_dat2 %>% 
+  filter(!is.na(aveUAI)) %>% 
+  filter(!is.na(NestSite_LowplusFlex)) %>% as.data.frame()
+length(UAI_NestLowplusFlex$NestSite_LowplusFlex)
+# 786 species
 
 ###### add and pair tree
 
 # add rownames to data
-row.names(UAI_NestLow_only) <- UAI_NestLow_only$Species_Jetz
+row.names(UAI_NestLowplusFlex) <- UAI_NestLowplusFlex$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UAI_NestLow_only_phydat <- geiger::treedata(tree_out, UAI_NestLow_only, sort=T)
+UAI_NestLowplusFlex_phydat <- geiger::treedata(tree_out, UAI_NestLowplusFlex, sort=T)
 
-UAI_NestLow_only_phy <- UAI_NestLow_only_phydat$phy
-UAI_NestLow_only_dat <- as.data.frame(UAI_NestLow_only_phydat$data)
+UAI_NestLowplusFlex_phy <- UAI_NestLowplusFlex_phydat$phy
+UAI_NestLowplusFlex_dat <- as.data.frame(UAI_NestLowplusFlex_phydat$data)
 
-str(UAI_NestLow_only_dat)
-length(UAI_NestLow_only_dat$NestSite_Low) # 571
+str(UAI_NestLowplusFlex_dat)
+length(UAI_NestLowplusFlex_dat$NestSite_LowplusFlex)
 
 # convert traits of interest to numeric
-UAI_NestLow_only_dat$aveUAI <- as.numeric(UAI_NestLow_only_dat$aveUAI)
-UAI_NestLow_only_dat$Mass_log <- as.numeric(UAI_NestLow_only_dat$Mass_log)
-UAI_NestLow_only_dat$NestSite_Low <- as.numeric(UAI_NestLow_only_dat$NestSite_Low)
+UAI_NestLowplusFlex_dat$aveUAI <- as.numeric(UAI_NestLowplusFlex_dat$aveUAI)
+UAI_NestLowplusFlex_dat$Mass_log <- as.numeric(UAI_NestLowplusFlex_dat$Mass_log)
+UAI_NestLowplusFlex_dat$NestSite_LowplusFlex <- as.numeric(UAI_NestLowplusFlex_dat$NestSite_LowplusFlex)
 
 # run a phylogenetic linear model
-UAI_GLS_nest_low_only <- gls(aveUAI~ NestSite_Low + Mass_log, data = UAI_NestLow_only_dat, 
-                          correlation = corPagel(0.5, phy = UAI_NestLow_only_phy, fixed = F, form = ~Species_Jetz), 
+UAI_GLS_nest_lowplusflex <- gls(aveUAI~ NestSite_LowplusFlex + Mass_log, data = UAI_NestLowplusFlex_dat, 
+                                 correlation = corPagel(0.5, phy = UAI_NestLowplusFlex_phy, fixed = F, form = ~Species_Jetz), 
+                                 method = "ML") 
+
+# model summary and results
+summary(UAI_GLS_nest_lowplusflex) 
+confint(UAI_GLS_nest_lowplusflex, level = 0.95)
+confint(UAI_GLS_nest_lowplusflex, level = 0.85)
+
+# model diagnostics
+check_model(UAI_GLS_nest_lowplusflex) 
+qqnorm(resid(UAI_GLS_nest_lowplusflex)) 
+qqline(resid(UAI_GLS_nest_lowplusflex))
+hist(resid(UAI_GLS_nest_lowplusflex))
+
+# save model
+saveRDS(UAI_GLS_nest_lowplusflex, here("Models/UAI", "UAI_GLS_nest_lowplusflex.rds"))
+
+############################### UAI and High vs Low (flexible species excluded) ########################
+# Run model with all flexible species excluded that focuses only on species that use either HIGH or LOW nest sites 
+
+UAI_NestLowHigh <- C_Nest_dat2 %>% filter(!is.na(aveUAI)) %>% 
+  filter(!is.na(NestSite_LowHigh)) 
+nrow(UAI_NestLowHigh)
+# 565 species 
+
+###### add and pair tree
+
+# add rownames to data
+row.names(UAI_NestLowHigh) <- UAI_NestLowHigh$Species_Jetz
+
+tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
+
+UAI_NestLowHigh_phydat <- geiger::treedata(tree_out, UAI_NestLowHigh, sort=T)
+
+UAI_NestLowHigh_phy <- UAI_NestLowHigh_phydat$phy
+UAI_NestLowHigh_dat <- as.data.frame(UAI_NestLowHigh_phydat$data)
+
+str(UAI_NestLowHigh_dat)
+length(UAI_NestLowHigh_dat$NestSite_LowHigh) # 565
+
+# convert traits of interest to numeric
+UAI_NestLowHigh_dat$aveUAI <- as.numeric(UAI_NestLowHigh_dat$aveUAI)
+UAI_NestLowHigh_dat$Mass_log <- as.numeric(UAI_NestLowHigh_dat$Mass_log)
+UAI_NestLowHigh_dat$NestSite_LowHigh <- as.numeric(UAI_NestLowHigh_dat$NestSite_LowHigh)
+
+# run a phylogenetic linear model
+UAI_GLS_nest_lowhigh <- gls(aveUAI~ NestSite_LowHigh + Mass_log, data = UAI_NestLowHigh_dat, 
+                          correlation = corPagel(0.5, phy = UAI_NestLowHigh_phy, fixed = F, form = ~Species_Jetz), 
                           method = "ML") 
 
 
 # model summary and results
-summary(UAI_GLS_nest_low_only) 
-confint(UAI_GLS_nest_low_only, level = 0.95)
+summary(UAI_GLS_nest_lowhigh) 
+confint(UAI_GLS_nest_lowhigh, level = 0.95)
 
 # model diagnostics
-check_model(UAI_GLS_nest_low_only) 
-qqnorm(resid(UAI_GLS_nest_low_only)) 
-qqline(resid(UAI_GLS_nest_low_only))
-hist(resid(UAI_GLS_nest_low_only))
+check_model(UAI_GLS_nest_lowhigh) 
+qqnorm(resid(UAI_GLS_nest_lowhigh)) 
+qqline(resid(UAI_GLS_nest_lowhigh))
+hist(resid(UAI_GLS_nest_lowhigh))
 
 # save model
-saveRDS(UAI_GLS_nest_low_only, here("Models/UAI", "UAI_GLS_nest_low_only.rds"))
+saveRDS(UAI_GLS_nest_lowhigh, here("Models/UAI", "UAI_GLS_nest_lowhigh.rds"))
 
+######################## MUTI and Nest Site Low vs High + Flexible ##########################
+# 0 = low
+# 1 = high and flexible species
 
-######################## MUTI and Nest Site LOW ##########################
-# 0 = not low
-# 1 = low
-
-# create a new data frame that contains only species with both MUTI and nest site low
-MUTI_NestLow <- C_Nest_dat2 %>% filter(!is.na(MUTIscore)) %>%
-  filter(!is.na(NestSite_Low)) %>% as.data.frame()
-length(MUTI_NestLow$NestSite_Low)
-# 128 species with MUTIscore and NestSite_Low
+MUTI_NestHighplusFlex <- C_Nest_dat2 %>% 
+  filter(!is.na(MUTIscore)) %>% 
+  filter(!is.na(NestSite_HighplusFlex)) %>% as.data.frame()
+length(MUTI_NestHighplusFlex$NestSite_HighplusFlex)
+# 128 species 
 
 ###### add and pair tree
 
 # add rownames to data
-row.names(MUTI_NestLow) <- MUTI_NestLow$Species_Jetz
+row.names(MUTI_NestHighplusFlex) <- MUTI_NestHighplusFlex$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_NestLow_phydat <- geiger::treedata(tree_out, MUTI_NestLow, sort=T)
+MUTI_NestHighplusFlex_phydat <- geiger::treedata(tree_out, MUTI_NestHighplusFlex, sort=T)
 
-MUTI_NestLow_phy <- MUTI_NestLow_phydat$phy
-MUTI_NestLow_dat <- as.data.frame(MUTI_NestLow_phydat$data)
+MUTI_NestHighplusFlex_phy <- MUTI_NestHighplusFlex_phydat$phy
+MUTI_NestHighplusFlex_dat <- as.data.frame(MUTI_NestHighplusFlex_phydat$data)
 
-str(MUTI_NestLow_dat)
-length(MUTI_NestLow_dat$NestSite_Low)
+str(MUTI_NestHighplusFlex_dat)
+length(MUTI_NestHighplusFlex_dat$NestSite_HighplusFlex)
 
 # convert traits of interest to numeric
-MUTI_NestLow_dat$MUTIscore <- as.numeric(MUTI_NestLow_dat$MUTIscore)
-MUTI_NestLow_dat$Mass_log <- as.numeric(MUTI_NestLow_dat$Mass_log)
-MUTI_NestLow_dat$NestSite_Low <- as.numeric(MUTI_NestLow_dat$NestSite_Low)
+MUTI_NestHighplusFlex_dat$MUTIscore <- as.numeric(MUTI_NestHighplusFlex_dat$MUTIscore)
+MUTI_NestHighplusFlex_dat$Mass_log <- as.numeric(MUTI_NestHighplusFlex_dat$Mass_log)
+MUTI_NestHighplusFlex_dat$NestSite_HighplusFlex <- as.numeric(MUTI_NestHighplusFlex_dat$NestSite_HighplusFlex)
 
 # run a phylogenetic linear model
-MUTI_GLS_nest_low <- gls(MUTIscore~ NestSite_Low + Mass_log, data = MUTI_NestLow_dat, 
-                        correlation = corPagel(0.5, phy = MUTI_NestLow_phy, fixed = F, form = ~Species_Jetz), 
-                        method = "ML") 
+MUTI_GLS_nest_highplusflex <- gls(MUTIscore ~ NestSite_HighplusFlex + Mass_log, data = MUTI_NestHighplusFlex_dat, 
+                                 correlation = corPagel(0.5, phy = MUTI_NestHighplusFlex_phy, fixed = F, form = ~Species_Jetz), 
+                                 method = "ML") 
 
 # model summary and results
-summary(MUTI_GLS_nest_low) 
-confint(MUTI_GLS_nest_low, level = 0.95)
-confint(MUTI_GLS_nest_low, level = 0.85)
+summary(MUTI_GLS_nest_highplusflex) 
+confint(MUTI_GLS_nest_highplusflex)
+
 
 # model diagnostics
-check_model(MUTI_GLS_nest_low) 
-qqnorm(resid(MUTI_GLS_nest_low)) 
-qqline(resid(MUTI_GLS_nest_low))
-hist(resid(MUTI_GLS_nest_low))
+check_model(MUTI_GLS_nest_highplusflex) 
+qqnorm(resid(MUTI_GLS_nest_highplusflex)) 
+qqline(resid(MUTI_GLS_nest_highplusflex))
+hist(resid(MUTI_GLS_nest_highplusflex))
 
-# save model for easy retrieval 
-saveRDS(MUTI_GLS_nest_low, here("Models/MUTI", "MUTI_GLS_nest_low.rds"))
+# save model
+saveRDS(MUTI_GLS_nest_highplusflex, here("Models/MUTI", "MUTI_GLS_nest_highplusflex.rds"))
 
+######################## MUTI and Nest Site Low + Flexible vs High ##########################
+# 0 = low and flexible species
+# 1 = high species
 
-#########################################
-# Filter out all species that use both HIGH and LOW nest sites 
-# we are doing this to test whether the "non-ambiguous" nesting species the ones driving the significant relationship in the previous section
-
-# apply filter 
-MUTI_NestLow_only <- C_Nest_dat2 %>% filter(!is.na(MUTIscore)) %>% 
-  filter(!is.na(NestSite_Low)) %>% 
-  filter(!(NestSite_Low == 1 & NestSite_High == 1)) %>% as.data.frame()
-length(MUTI_NestLow_only$NestSite_Low)
-# 89 species 
-128-89 # = 39 --> there are 39 species that were both High and Low nesters and had MUTI scores 
+MUTI_NestLowplusFlex <- C_Nest_dat2 %>% 
+  filter(!is.na(MUTIscore)) %>% 
+  filter(!is.na(NestSite_LowplusFlex)) %>% as.data.frame()
+length(MUTI_NestLowplusFlex$NestSite_LowplusFlex)
+# 128 species
 
 ###### add and pair tree
 
 # add rownames to data
-row.names(MUTI_NestLow_only) <- MUTI_NestLow_only$Species_Jetz
+row.names(MUTI_NestLowplusFlex) <- MUTI_NestLowplusFlex$Species_Jetz
 
 tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-MUTI_NestLow_only_phydat <- geiger::treedata(tree_out, MUTI_NestLow_only, sort=T)
+MUTI_NestLowplusFlex_phydat <- geiger::treedata(tree_out, MUTI_NestLowplusFlex, sort=T)
 
-MUTI_NestLow_only_phy <- MUTI_NestLow_only_phydat$phy
-MUTI_NestLow_only_dat <- as.data.frame(MUTI_NestLow_only_phydat$data)
+MUTI_NestLowplusFlex_phy <- MUTI_NestLowplusFlex_phydat$phy
+MUTI_NestLowplusFlex_dat <- as.data.frame(MUTI_NestLowplusFlex_phydat$data)
 
-str(MUTI_NestLow_only_dat)
-length(MUTI_NestLow_only_dat$NestSite_Low)
+str(MUTI_NestLowplusFlex_dat)
+length(MUTI_NestLowplusFlex_dat$NestSite_LowplusFlex)
 
 # convert traits of interest to numeric
-MUTI_NestLow_only_dat$MUTIscore <- as.numeric(MUTI_NestLow_only_dat$MUTIscore)
-MUTI_NestLow_only_dat$Mass_log <- as.numeric(MUTI_NestLow_only_dat$Mass_log)
-MUTI_NestLow_only_dat$NestSite_Low <- as.numeric(MUTI_NestLow_only_dat$NestSite_Low)
+MUTI_NestLowplusFlex_dat$MUTIscore <- as.numeric(MUTI_NestLowplusFlex_dat$MUTIscore)
+MUTI_NestLowplusFlex_dat$Mass_log <- as.numeric(MUTI_NestLowplusFlex_dat$Mass_log)
+MUTI_NestLowplusFlex_dat$NestSite_LowplusFlex <- as.numeric(MUTI_NestLowplusFlex_dat$NestSite_LowplusFlex)
+
+# run a phylogenetic linear model
+MUTI_GLS_nest_lowplusflex <- gls(MUTIscore~ NestSite_LowplusFlex + Mass_log, data = MUTI_NestLowplusFlex_dat, 
+                                correlation = corPagel(0.5, phy = MUTI_NestLowplusFlex_phy, fixed = F, form = ~Species_Jetz), 
+                                method = "ML") 
+
+# model summary and results
+summary(MUTI_GLS_nest_lowplusflex) 
+confint(MUTI_GLS_nest_lowplusflex, level = 0.95)
+confint(MUTI_GLS_nest_lowplusflex, level = 0.85)
+
+# model diagnostics
+check_model(MUTI_GLS_nest_lowplusflex) 
+qqnorm(resid(MUTI_GLS_nest_lowplusflex)) 
+qqline(resid(MUTI_GLS_nest_lowplusflex))
+hist(resid(MUTI_GLS_nest_lowplusflex))
+
+# save model
+saveRDS(MUTI_GLS_nest_lowplusflex, here("Models/MUTI", "MUTI_GLS_nest_lowplusflex.rds"))
+
+############################### MUTI and High vs Low (flexible species excluded) ########################
+# Run model with all flexible species excluded that focuses only on species that use either HIGH or LOW nest sites 
+
+MUTI_NestLowHigh <- C_Nest_dat2 %>% filter(!is.na(MUTIscore)) %>% 
+  filter(!is.na(NestSite_LowHigh)) 
+nrow(MUTI_NestLowHigh)
+# 89 species 
+
+###### add and pair tree
+
+# add rownames to data
+row.names(MUTI_NestLowHigh) <- MUTI_NestLowHigh$Species_Jetz
+
+tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
+
+MUTI_NestLowHigh_phydat <- geiger::treedata(tree_out, MUTI_NestLowHigh, sort=T)
+
+MUTI_NestLowHigh_phy <- MUTI_NestLowHigh_phydat$phy
+MUTI_NestLowHigh_dat <- as.data.frame(MUTI_NestLowHigh_phydat$data)
+
+str(MUTI_NestLowHigh_dat)
+length(MUTI_NestLowHigh_dat$NestSite_LowHigh)
+
+# convert traits of interest to numeric
+MUTI_NestLowHigh_dat$MUTIscore <- as.numeric(MUTI_NestLowHigh_dat$MUTIscore)
+MUTI_NestLowHigh_dat$Mass_log <- as.numeric(MUTI_NestLowHigh_dat$Mass_log)
+MUTI_NestLowHigh_dat$NestSite_LowHigh <- as.numeric(MUTI_NestLowHigh_dat$NestSite_LowHigh)
 
 # Model is not working with corPagel starting point = 0.5 and fixed = F
 # we need to find a value of lambda value to fix in the model 
@@ -349,9 +435,9 @@ AIC_values <- numeric()
 # Loop through different values of the parameter for corPagel
 for (i in seq(0, 1, by = 0.1)) {
   # Fit the gls model with the current value of i
-  model <- gls(MUTIscore ~ NestSite_Low + Mass_log, 
-               data = MUTI_NestLow_only_dat, 
-               correlation = corPagel(i, phy = MUTI_NestLow_only_phy, fixed = TRUE, form = ~Species_Jetz), 
+  model <- gls(MUTIscore ~ NestSite_LowHigh + Mass_log, 
+               data = MUTI_NestLowHigh_dat, 
+               correlation = corPagel(i, phy = MUTI_NestLowHigh_phy, fixed = TRUE, form = ~Species_Jetz), 
                method = "ML")
   # Extract AIC value and store it in the vector
   AIC_values <- c(AIC_values, AIC(model))
@@ -359,307 +445,235 @@ for (i in seq(0, 1, by = 0.1)) {
 
 # Print AIC values
 print(AIC_values)
-# 0.4 = best AIC score 
+# 0.3 = best AIC score 
 
-
-# run a phylogenetic linear model
-MUTI_GLS_nest_low_only <- gls(MUTIscore~ NestSite_Low + Mass_log, data = MUTI_NestLow_only_dat, 
-                         correlation = corPagel(0.4, phy = MUTI_NestLow_only_phy, fixed = T, form = ~Species_Jetz), 
-                         method = "ML") 
+# run a phylogenetic linear model with corPagel fixed at 0.3
+MUTI_GLS_nest_lowhigh <- gls(MUTIscore ~ NestSite_LowHigh + Mass_log, data = MUTI_NestLowHigh_dat, 
+                            correlation = corPagel(0.3, phy = MUTI_NestLowHigh_phy, fixed = T, form = ~Species_Jetz), 
+                            method = "ML") 
 
 # model summary and results
-summary(MUTI_GLS_nest_low_only) 
-confint(MUTI_GLS_nest_low_only, level = 0.95)
-confint(MUTI_GLS_nest_low_only, level = 0.85)
+summary(MUTI_GLS_nest_lowhigh) 
+confint(MUTI_GLS_nest_lowhigh, level = 0.95)
+confint(MUTI_GLS_nest_lowhigh, level = 0.85)
 
 # model diagnostics
-check_model(MUTI_GLS_nest_low_only) 
-qqnorm(resid(MUTI_GLS_nest_low_only)) 
-qqline(resid(MUTI_GLS_nest_low_only))
-hist(resid(MUTI_GLS_nest_low_only))
+check_model(MUTI_GLS_nest_lowhigh) 
+qqnorm(resid(MUTI_GLS_nest_lowhigh)) 
+qqline(resid(MUTI_GLS_nest_lowhigh))
+hist(resid(MUTI_GLS_nest_lowhigh))
 
-# save model for easy retrieval 
-saveRDS(MUTI_GLS_nest_low_only, here("Models/MUTI", "MUTI_GLS_nest_low_only.rds"))
+# save model
+saveRDS(MUTI_GLS_nest_lowhigh, here("Models/MUTI", "MUTI_GLS_nest_lowhigh.rds"))
 
 
-######################## UN and Nest Site LOW ##########################
-# 0 = not low
-# 1 = low
+######################## UN and Nest Site Low vs High plus Flexible ##########################
+# 0 = low 
+# 1 = high plus flexible
 
-# create a new data frame that contains only species with both UN and nest site low
-UN_NestLow <- C_Nest_dat2 %>% filter(!is.na(Urban)) %>%
-  filter(!is.na(NestSite_Low)) %>% column_to_rownames(., var = "Species_Jetz")
-length(UN_NestLow$NestSite_Low)
-# 128 species with UN and NestSite_Low
+UN_NestHighplusFlex <- C_Nest_dat2 %>% 
+  filter(!is.na(Urban)) %>%
+  filter(!is.na(NestSite_HighplusFlex)) %>% column_to_rownames(., var = "Species_Jetz")
+length(UN_NestHighplusFlex$NestSite_HighplusFlex)
+# 128 species
 
 ###### add and pair tree
 
 tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_NestLow_phydat <- geiger::treedata(tree_out, UN_NestLow, sort=T)
+UN_NestHighplusFlex_phydat <- geiger::treedata(tree_out, UN_NestHighplusFlex, sort=T)
 
-UN_NestLow_phy <- UN_NestLow_phydat$phy
-UN_NestLow_dat <- as.data.frame(UN_NestLow_phydat$data)
+UN_NestHighplusFlex_phy <- UN_NestHighplusFlex_phydat$phy
+UN_NestHighplusFlex_dat <- as.data.frame(UN_NestHighplusFlex_phydat$data)
 
-str(UN_NestLow_dat)
-length(UN_NestLow_dat$NestSite_Low)
+str(UN_NestHighplusFlex_dat)
+length(UN_NestHighplusFlex_dat$NestSite_HighplusFlex)
 
 # convert traits of interest to numeric
-UN_NestLow_dat$Urban <- as.numeric(UN_NestLow_dat$Urban)
-UN_NestLow_dat$Mass_log <- as.numeric(UN_NestLow_dat$Mass_log)
-UN_NestLow_dat$NestSite_Low <- as.numeric(UN_NestLow_dat$NestSite_Low)
+UN_NestHighplusFlex_dat$Urban <- as.numeric(UN_NestHighplusFlex_dat$Urban)
+UN_NestHighplusFlex_dat$Mass_log <- as.numeric(UN_NestHighplusFlex_dat$Mass_log)
+UN_NestHighplusFlex_dat$NestSite_Low <- as.numeric(UN_NestHighplusFlex_dat$NestSite_HighplusFlex)
 
 # Run the model using phyloglm(), which performs a logistic phylogenetic model to account for binary UN index
 # default method ="logistic_MPLE"
 # we will also scale and center the response variable to help with convergence
-set.seed(238)
-phyglm_UN_nest_low_scale <- phyloglm( Urban ~ NestSite_Low + scale(Mass_log), 
-                                      data = UN_NestLow_dat, 
-                                      phy = UN_NestLow_phy,
+phyglm_UN_nest_highplusflex_scale <- phyloglm(Urban ~ NestSite_HighplusFlex + scale(Mass_log), 
+                                      data = UN_NestHighplusFlex_dat, 
+                                      phy = UN_NestHighplusFlex_phy,
                                       boot = 1000) 
 
-summary(phyglm_UN_nest_low_scale)
+# fails to converge
 
+# print AIC values for models with different upper bounds
+# intervals of 0.1 from 0 up to 4
+for (i in seq(0, 4, by = 0.1)) {
+  print(phyloglm(Urban ~ NestSite_HighplusFlex + scale(Mass_log), 
+                 data = UN_NestHighplusFlex_dat, 
+                 phy = UN_NestHighplusFlex_phy,
+                 log.alpha.bound = i)$aic)
+}
+# AIC values support models with larger values of alpha (low phylogenetic signal)
+
+
+# try fixing alpha near upper bounds
+set.seed(499)
+phyglm_UN_nest_highplusflex_fix <- phyloglm(Urban ~ NestSite_HighplusFlex + scale(Mass_log), 
+                                        data = UN_NestHighplusFlex_dat, 
+                                        phy = UN_NestHighplusFlex_phy,
+                                start.alpha = 0.55,
+                                boot = 1000)
+summary(phyglm_UN_nest_highplusflex_fix) # this model converges
+confint(phyglm_UN_nest_highplusflex_fix)
 
 # save model
-saveRDS(phyglm_UN_nest_low_scale, here("Models/UN", "phyglm_UN_nest_low_scale.rds"))
+saveRDS(phyglm_UN_nest_highplusflex_fix, here("Models/UN", "phyglm_UN_nest_highplusflex_fix.rds"))
 # load model
-phyglm_UN_nest_low_scale <- readRDS(here("Models/UN", "phyglm_UN_nest_low_scale.rds"))
+phyglm_UN_nest_highplusflex_fix <- readRDS(here("Models/UN", "phyglm_UN_nest_highplusflex_fix.rds"))
 
 
 # compare with non-phylogenetic model
-glm_UN_nest_low <- logistf(Urban ~ NestSite_Low + scale(Mass_log), 
-                           data = UN_NestLow)
-summary(glm_UN_nest_low)
-# some differences for coefficients but same conclusions reached
+glm_UN_nest_highplusflex <- logistf(Urban ~ NestSite_HighplusFlex + scale(Mass_log), 
+                           data = UN_NestHighplusFlex)
+summary(glm_UN_nest_highplusflex)
+# some slight differences for coefficients but same conclusions reached
 
 
 # get alpha, t, and half life for the model
-(phyglm_UN_nest_low_scale$mean.tip.height) # t
-(alpha_Nlow <- phyglm_UN_nest_low_scale$alpha) # alpha
+(phyglm_UN_nest_highplusflex_scale$mean.tip.height) # t
+(alpha_Nlow <- phyglm_UN_nest_highplusflex_scale$alpha) # alpha
 (hl_NLow <- log(2)/alpha_Nlow) # half life
 # compared to t, this is a small half life
 
-#########################################
-# Filter out all species that use both HIGH and LOW nest sites 
-# we are doing this to test whether the "non-ambiguous" nesting species the ones driving the significant relationship in the previous section
 
-UN_NestLow_only <- C_Nest_dat2 %>% filter(!is.na(Urban)) %>% 
-  filter(!is.na(NestSite_Low)) %>% 
-  filter(!(NestSite_Low == 1 & NestSite_High == 1)) %>%
+######################## UN and Nest Site Low plus Flexible vs High ##########################
+# 0 = low plus flexible
+# 1 = high 
+
+UN_NestLowplusFlex <- C_Nest_dat2 %>% 
+  filter(!is.na(Urban)) %>%
+  filter(!is.na(NestSite_LowplusFlex)) %>% column_to_rownames(., var = "Species_Jetz")
+length(UN_NestLowplusFlex$NestSite_LowplusFlex)
+# 128 species
+
+###### add and pair tree
+
+tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
+
+UN_NestLowplusFlex_phydat <- geiger::treedata(tree_out, UN_NestLowplusFlex, sort=T)
+
+UN_NestLowplusFlex_phy <- UN_NestLowplusFlex_phydat$phy
+UN_NestLowplusFlex_dat <- as.data.frame(UN_NestLowplusFlex_phydat$data)
+
+str(UN_NestLowplusFlex_dat)
+length(UN_NestLowplusFlex_dat$NestSite_LowplusFlex)
+
+# convert traits of interest to numeric
+UN_NestLowplusFlex_dat$Urban <- as.numeric(UN_NestLowplusFlex_dat$Urban)
+UN_NestLowplusFlex_dat$Mass_log <- as.numeric(UN_NestLowplusFlex_dat$Mass_log)
+UN_NestLowplusFlex_dat$NestSite_LowplusFlex <- as.numeric(UN_NestLowplusFlex_dat$NestSite_LowplusFlex)
+
+# Run the model using phyloglm(), which performs a logistic phylogenetic model to account for binary UN index
+# default method ="logistic_MPLE"
+# we will also scale and center the response variable to help with convergence
+phyglm_UN_nest_lowplusflex_scale <- phyloglm(Urban ~ NestSite_LowplusFlex + scale(Mass_log), 
+                                              data = UN_NestLowplusFlex_dat, 
+                                              phy = UN_NestLowplusFlex_phy,
+                                              boot = 1000) 
+
+# fails to converge
+
+# print AIC values for models with different upper bounds
+# intervals of 0.1 from 0 up to 4
+for (i in seq(0, 4, by = 0.1)) {
+  print(phyloglm(Urban ~ NestSite_LowplusFlex + scale(Mass_log), 
+                 data = UN_NestLowplusFlex_dat, 
+                 phy = UN_NestLowplusFlex_phy,
+                 log.alpha.bound = i)$aic)
+}
+# AIC values support models with larger values of alpha (low phylogenetic signal)
+
+
+# try fixing alpha near upper bounds
+set.seed(273)
+phyglm_UN_nest_lowplusflex_fix <- phyloglm(Urban ~ NestSite_LowplusFlex + scale(Mass_log), 
+                                       data = UN_NestLowplusFlex_dat, 
+                                       phy = UN_NestLowplusFlex_phy,
+                                      log.alpha.bound = 4.05,
+                                       start.alpha = 0.55,
+                                      boot = 1000)
+summary(phyglm_UN_nest_lowplusflex_fix) # this model converges
+confint(phyglm_UN_nest_lowplusflex_fix)
+
+# save model
+saveRDS(phyglm_UN_nest_lowplusflex_fix, here("Models/UN", "phyglm_UN_nest_lowplusflex_fix.rds"))
+# load model
+phyglm_UN_nest_lowplusflex_fix <- readRDS(here("Models/UN", "phyglm_UN_nest_lowplusflex_fix.rds"))
+
+
+# compare with non-phylogenetic model
+glm_UN_nest_lowplusflex <- logistf(Urban ~ NestSite_LowplusFlex + scale(Mass_log), 
+                                    data = UN_NestLowplusFlex)
+summary(glm_UN_nest_lowplusflex)
+# some slight differences for coefficients but same conclusions reached
+
+# get alpha, t, and half life for the model
+(phyglm_UN_nest_lowplusflex_scale$mean.tip.height) # t
+(alpha_Nlow <- phyglm_UN_nest_lowplusflex_scale$alpha) # alpha
+(hl_NLow <- log(2)/alpha_Nlow) # half life
+# compared to t, this is a small half life
+
+############################### UN and High vs Low (flexible species excluded) ########################
+
+# Run model with all flexible species excluded that focuses only on species that use either HIGH or LOW nest sites 
+UN_NestLowHigh<- C_Nest_dat2 %>% 
+  filter(!is.na(Urban)) %>%
+  filter(!is.na(NestSite_LowHigh)) %>% 
   column_to_rownames(., var = "Species_Jetz")
-length(UN_NestLow_only$NestSite_Low)
-# 103 species 
-128-103 # = 25 --> there are 25 species that were both High and Low nesters and had UN scores 
+length(UN_NestLowHigh$NestSite_LowHigh)
+# 103 species
 
 ###### add and pair tree
-
 tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
 
-UN_NestLow_only_phydat <- geiger::treedata(tree_out, UN_NestLow_only, sort=T)
+UN_NestLowHigh_phydat <- geiger::treedata(tree_out, UN_NestLowHigh, sort=T)
 
-UN_NestLow_only_phy <- UN_NestLow_only_phydat$phy
-UN_NestLow_only_dat <- as.data.frame(UN_NestLow_only_phydat$data)
+UN_NestLowHigh_phy <- UN_NestLowHigh_phydat$phy
+UN_NestLowHigh_dat <- as.data.frame(UN_NestLowHigh_phydat$data)
 
-str(UN_NestLow_only_dat)
-length(UN_NestLow_only_dat$NestSite_Low)
-
+str(UN_NestLowHigh_dat)
+length(UN_NestLowHigh_dat$NestSite_LowHigh)
 
 # convert traits of interest to numeric
-UN_NestLow_only_dat$Urban <- as.numeric(UN_NestLow_only_dat$Urban)
-UN_NestLow_only_dat$Mass_log <- as.numeric(UN_NestLow_only_dat$Mass_log)
-UN_NestLow_only_dat$NestSite_Low <- as.numeric(UN_NestLow_only_dat$NestSite_Low)
-
+UN_NestLowHigh_dat$Urban <- as.numeric(UN_NestLowHigh_dat$Urban)
+UN_NestLowHigh_dat$Mass_log <- as.numeric(UN_NestLowHigh_dat$Mass_log)
+UN_NestLowHigh_dat$NestSite_LowHigh <- as.numeric(UN_NestLowHigh_dat$NestSite_LowHigh)
 
 # Run the model using phyloglm(), which performs a logistic phylogenetic model to account for binary UN index
 # default method ="logistic_MPLE"
 # we will also scale and center the response variable to help with convergence
-set.seed(481)
-phyglm_UN_nest_low_only_scale <- phyloglm( Urban ~ NestSite_Low + scale(Mass_log), 
-                                           data = UN_NestLow_only_dat, 
-                                           phy = UN_NestLow_only_phy,
-                                           boot = 1000)
+set.seed(712)
+phyglm_UN_nest_lowhigh_scale <- phyloglm(Urban ~ NestSite_LowHigh + scale(Mass_log), 
+                                             data = UN_NestLowHigh_dat, 
+                                             phy = UN_NestLowHigh_phy,
+                                             boot = 1000) 
 
-
-summary(phyglm_UN_nest_low_only_scale)
-confint(phyglm_UN_nest_low_only_scale)
-
+summary(phyglm_UN_nest_lowhigh_scale)
+confint(phyglm_UN_nest_lowhigh_scale)
 
 # save model
-saveRDS(phyglm_UN_nest_low_only_scale, here("Models/UN", "phyglm_UN_nest_low_only_scale.rds"))
-# load model
-phyglm_UN_nest_low_only_scale <- readRDS(here("Models/UN", "phyglm_UN_nest_low_only_scale.rds"))
+saveRDS(phyglm_UN_nest_lowhigh_scale, here("Models/UN", "phyglm_UN_nest_lowhigh_scale.rds"))
 
+# compare with non-phylogenetic model
+glm_UN_nest_lowhigh <- logistf(Urban ~ NestSite_LowHigh + scale(Mass_log), 
+                                   data = UN_NestLowHigh)
+summary(glm_UN_nest_lowhigh)
+# some slight differences for coefficients but same conclusions reached
 
 # get alpha, t, and half life for the model
-(phyglm_UN_nest_low_only_scale$mean.tip.height) # t
-(alpha_Nlowonly <- phyglm_UN_nest_low_only_scale$alpha) # alpha
-(hl_Nlowonly <- log(2)/alpha_Nlowonly) # half life
-# compared to t, this is a small half-life -> low phylogenetic signal
-
-
-##########################################################################
-##########################################################################
-
-######################## UAI and Nest Site HIGH ##########################
-# 0 = not high
-# 1 = HIGH
-
-# create a new data frame that contains only species with both UAI and nest site high
-UAI_NestHigh <- C_Nest_dat2 %>% filter(!is.na(aveUAI)) %>% 
-  filter(!is.na(NestSite_High)) %>% as.data.frame()
-length(UAI_NestHigh$NestSite_High)
-# 785 species with UAI and NestSite_High
-
-###### add and pair tree
-
-# add rownames to data
-row.names(UAI_NestHigh) <- UAI_NestHigh$Species_Jetz
-
-tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
-
-UAI_NestHigh_phydat <- geiger::treedata(tree_out, UAI_NestHigh, sort=T)
-
-UAI_NestHigh_phy <- UAI_NestHigh_phydat$phy
-UAI_NestHigh_dat <- as.data.frame(UAI_NestHigh_phydat$data)
-
-str(UAI_NestHigh_dat)
-length(UAI_NestHigh_dat$NestSite_High)
-
-# convert traits of interest to numeric
-UAI_NestHigh_dat$aveUAI <- as.numeric(UAI_NestHigh_dat$aveUAI)
-UAI_NestHigh_dat$Mass_log <- as.numeric(UAI_NestHigh_dat$Mass_log)
-UAI_NestHigh_dat$NestSite_High <- as.numeric(UAI_NestHigh_dat$NestSite_High)
-
-# run phylogenetic linear model
-UAI_GLS_nest_high <- gls(aveUAI~ NestSite_High + Mass_log, data = UAI_NestHigh_dat, 
-                         correlation = corPagel(0.5, phy = UAI_NestHigh_phy, fixed = F, form = ~Species_Jetz), 
-                         method = "ML") 
-
-# model summary and results
-summary(UAI_GLS_nest_high) 
-confint(UAI_GLS_nest_high)
-
-# model diagnostics
-check_model(UAI_GLS_nest_high) 
-qqnorm(resid(UAI_GLS_nest_high)) 
-qqline(resid(UAI_GLS_nest_high))
-hist(resid(UAI_GLS_nest_high))
-
-# save model
-saveRDS(UAI_GLS_nest_high, here("Models/UAI", "UAI_GLS_nest_high.rds"))
-
-
-######################## MUTI and Nest Site HIGH ##########################
-# 0 = not high
-# 1 = HIGH
-
-# create a new data frame that contains only species with both MUTI and nest site high
-MUTI_NestHigh <- C_Nest_dat2 %>% filter(!is.na(MUTIscore)) %>% 
-  filter(!is.na(NestSite_High)) %>% as.data.frame()
-length(MUTI_NestHigh$NestSite_High)
-# 128 species with UAI and NestSite_High
-
-###### add and pair tree
-
-# add rownames to data
-row.names(MUTI_NestHigh) <- MUTI_NestHigh$Species_Jetz
-
-tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
-
-MUTI_NestHigh_phydat <- geiger::treedata(tree_out, MUTI_NestHigh, sort=T)
-
-MUTI_NestHigh_phy <- MUTI_NestHigh_phydat$phy
-MUTI_NestHigh_dat <- as.data.frame(MUTI_NestHigh_phydat$data)
-
-str(MUTI_NestHigh_dat)
-length(MUTI_NestHigh_dat$NestSite_High)
-
-# convert traits of interest to numeric
-MUTI_NestHigh_dat$MUTIscore <- as.numeric(MUTI_NestHigh_dat$MUTIscore)
-MUTI_NestHigh_dat$Mass_log <- as.numeric(MUTI_NestHigh_dat$Mass_log)
-MUTI_NestHigh_dat$NestSite_High <- as.numeric(MUTI_NestHigh_dat$NestSite_High)
-
-
-# run phylogenetic linear model
-MUTI_GLS_nest_high <- gls(MUTIscore~ NestSite_High + Mass_log, data = MUTI_NestHigh_dat, 
-                          correlation = corPagel(0.5, phy = MUTI_NestHigh_phy, fixed = F, form = ~Species_Jetz), 
-                          method = "ML") 
-
-# model summary and results
-summary(MUTI_GLS_nest_high) 
-confint(MUTI_GLS_nest_high)
-
-
-# model diagnostics
-check_model(MUTI_GLS_nest_high) 
-qqnorm(resid(MUTI_GLS_nest_high)) 
-qqline(resid(MUTI_GLS_nest_high))
-hist(resid(MUTI_GLS_nest_high))
-
-# save model
-saveRDS(MUTI_GLS_nest_high, here("Models/MUTI", "MUTI_GLS_nest_high.rds"))
-
-
-######################## UN and Nest Site HIGH ##########################
-# 0 = not high
-# 1 = HIGH
-
-# create a new data frame that contains only species with both UN and nest site high
-UN_NestHigh <- C_Nest_dat2 %>% filter(!is.na(Urban)) %>% 
-  filter(!is.na(NestSite_High)) %>% column_to_rownames(., var ="Species_Jetz")
-length(UN_NestHigh$NestSite_High)
-# 128 species with UN and NestSite_High
-
-
-###### add and pair tree
-
-tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
-
-UN_NestHigh_phydat <- geiger::treedata(tree_out, UN_NestHigh, sort=T)
-
-UN_NestHigh_phy <- UN_NestHigh_phydat$phy
-UN_NestHigh_dat <- as.data.frame(UN_NestHigh_phydat$data)
-
-str(UN_NestHigh_dat)
-length(UN_NestHigh_dat$NestSite_High)
-
-
-### convert traits of interest to numeric
-UN_NestHigh_dat$Urban <- as.numeric(UN_NestHigh_dat$Urban)
-UN_NestHigh_dat$Mass_log <- as.numeric(UN_NestHigh_dat$Mass_log)
-UN_NestHigh_dat$NestSite_High <- as.numeric(UN_NestHigh_dat$NestSite_High)
-
-
-# Run the model using phyloglm(), which performs a logistic phylogenetic model to account for binary UN index
-# default method ="logistic_MPLE"
-# we will also scale and center the response variable to help with convergence
-set.seed(499)
-phyglm_UN_nest_high_scale <- phyloglm( Urban ~ NestSite_High + scale(Mass_log), 
-                                       data = UN_NestHigh_dat, 
-                                       phy = UN_NestHigh_phy,
-                                       boot = 1000)
-summary(phyglm_UN_nest_high_scale) 
-
-
-# save model
-saveRDS(phyglm_UN_nest_high_scale, here("Models/UN", "phyglm_UN_nest_high_scale.rds"))
-# load model
-phyglm_UN_nest_high_scale <- readRDS(here("Models/UN", "phyglm_UN_nest_high_scale.rds"))
-
-
-# look at a non-phylogenetic logistic model
-glm_UN_nest_high <- logistf(Urban ~ NestSite_High + scale(Mass_log), 
-                            data = UN_NestHigh)
-
-summary(glm_UN_nest_high) # we reach same conclusions
-
-
-# get alpha, t, and half life for the model
-(phyglm_UN_nest_high_scale$mean.tip.height) # t
-(alpha_Nhigh <- phyglm_UN_nest_high_scale$alpha) # alpha
-(hl_Nhigh <- log(2)/alpha_Nhigh) # half life
-#compared to t, this is a small half life
+(phyglm_UN_nest_lowhigh_scale$mean.tip.height) # t
+(alpha_Nlow <- phyglm_UN_nest_lowhigh_scale$alpha) # alpha
+(hl_NLow <- log(2)/alpha_Nlow) # half life
+# compared to t, this is a small half life
 
 ##########################################################################
 ##########################################################################

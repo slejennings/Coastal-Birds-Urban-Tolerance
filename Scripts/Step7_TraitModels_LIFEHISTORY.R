@@ -731,9 +731,9 @@ summary(phyglm_UN_develop_scale)
 confint(phyglm_UN_develop_scale)
 
 # save model
-saveRDS(phyglm_UN_develop_fix, here("Models/UN", "phyglm_UN_develop_scale.rds"))
+saveRDS(phyglm_UN_develop_scale, here("Models/UN", "phyglm_UN_develop_scale.rds"))
 # load model
-phyglm_UN_develop_fix <- readRDS(here("Models/UN", "phyglm_UN_develop_scale.rds"))
+phyglm_UN_develop_scale <- readRDS(here("Models/UN", "phyglm_UN_develop_scale.rds"))
 
 # compare results with a non-phylogenetic logistic model
 glm_UN_develop <- logistf(Urban ~ developmental_mode + scale(Mass_log), 
@@ -742,8 +742,8 @@ glm_UN_develop <- logistf(Urban ~ developmental_mode + scale(Mass_log),
 summary(glm_UN_develop)
 
 # get alpha, t, and half life for the model
-(phyglm_UN_develop_fix$mean.tip.height) # t
-(alpha_dev <- phyglm_UN_develop_fix$alpha) # alpha
+(phyglm_UN_develop_scale$mean.tip.height) # t
+(alpha_dev <- phyglm_UN_develop_scale$alpha) # alpha
 (hl_dev <- log(2)/alpha_dev) # half life
 #compared to t, this is a small Half-Life
 

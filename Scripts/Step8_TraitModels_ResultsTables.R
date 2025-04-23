@@ -25,7 +25,7 @@ phyglm_UN_CT <- readRDS(here("Models/UN", "phyglm_UN_CT_scale.rds"))
 # Peak freq                                   
 UAI_GLS_pf <- readRDS(here("Models/UAI", "UAI_GLS_pf.rds"))
 MUTI_GLS_pf <- readRDS(here("Models/MUTI", "MUTI_GLS_pf.rds"))
-phyglm_UN_pf <- readRDS(here("Models/UN", "phyglm_UN_pf_scale.rds"))
+phyglm_UN_pf <- readRDS(here("Models/UN", "phyglm_UN_pf_fix.rds"))
 
 #### Create tidy model outputs #####
 # C.T models
@@ -49,13 +49,14 @@ MUTI_CT_tidy <-tidy(MUTI_GLS_C.T, conf.int = T, conf.level = 0.95) %>%
          alpha = as.numeric(NA)) %>%
   select(-p.value)
 
+
 UN_CT_tidy <- as.data.frame(summary(phyglm_UN_CT)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_CT)[,1],
+         conf.high = confint(phyglm_UN_CT)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "sensory",
          predictor_trait = "C.T ratio",
@@ -86,11 +87,11 @@ MUTI_pf_tidy <-tidy(MUTI_GLS_pf, conf.int = T, conf.level = 0.95) %>%
 
 UN_pf_tidy <- as.data.frame(summary(phyglm_UN_pf)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_pf,)[,1],
+         conf.high = confint(phyglm_UN_pf)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "sensory",
          predictor_trait = "peak frequency",
@@ -111,7 +112,7 @@ sensory_tidy <- bind_rows(UAI_CT_tidy, MUTI_CT_tidy, UN_CT_tidy,
 # Diet invert
 UAI_GLS_invert <- readRDS(here("Models/UAI", "UAI_GLS_invert.rds"))
 MUTI_GLS_invert <- readRDS(here("Models/MUTI", "MUTI_GLS_invert.rds"))
-phyglm_UN_invert <- readRDS(here("Models/UN", "phyglm_UN_Invert_fix.rds"))
+phyglm_UN_invert <- readRDS(here("Models/UN", "phyglm_UN_Invert_scale.rds"))
 
 # Diet vert                                 
 UAI_GLS_vert <- readRDS(here("Models/UAI", "UAI_GLS_vert.rds"))
@@ -153,11 +154,11 @@ MUTI_invert_tidy <-tidy(MUTI_GLS_invert, conf.int = T, conf.level = 0.95) %>%
 
 UN_invert_tidy <- as.data.frame(summary(phyglm_UN_invert)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_invert)[,1],
+         conf.high = confint(phyglm_UN_invert)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "diet",
          predictor_trait = "% invertebrates",
@@ -188,11 +189,11 @@ MUTI_vert_tidy <-tidy(MUTI_GLS_vert, conf.int = T, conf.level = 0.95) %>%
 
 UN_vert_tidy <- as.data.frame(summary(phyglm_UN_vert)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_vert)[,1],
+         conf.high = confint(phyglm_UN_vert)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "diet",
          predictor_trait = "% vertebrates",
@@ -223,11 +224,11 @@ MUTI_PS_tidy <-tidy(MUTI_GLS_PS, conf.int = T, conf.level = 0.95) %>%
 
 UN_PS_tidy <- as.data.frame(summary(phyglm_UN_PS)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_PS)[,1],
+         conf.high = confint(phyglm_UN_PS)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "diet",
          predictor_trait = "% plant/seed",
@@ -258,11 +259,11 @@ MUTI_FN_tidy <-tidy(MUTI_GLS_FN, conf.int = T, conf.level = 0.95) %>%
 
 UN_FN_tidy <- as.data.frame(summary(phyglm_UN_FN)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_FN)[,1],
+         conf.high = confint(phyglm_UN_FN)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "diet",
          predictor_trait = "% fruit/nectar",
@@ -300,7 +301,7 @@ phyglm_UN_long <- readRDS(here("Models/UN", "phyglm_UN_long_fix.rds"))
 # developmental mode
 UAI_GLS_develop <- readRDS(here("Models/UAI", "UAI_GLS_develop.rds"))
 MUTI_GLS_develop <- readRDS(here("Models/MUTI", "MUTI_GLS_develop.rds"))
-phyglm_UN_develop <- readRDS(here("Models/UN", "phyglm_UN_develop_fix.rds"))
+phyglm_UN_develop <- readRDS(here("Models/UN", "phyglm_UN_develop_scale.rds"))
 
 
 #### Create tidy model outputs #####
@@ -328,11 +329,11 @@ MUTI_brood_tidy <-tidy(MUTI_GLS_brood, conf.int = T, conf.level = 0.95) %>%
 
 UN_brood_tidy <- as.data.frame(summary(phyglm_UN_brood)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_brood)[,1],
+         conf.high = confint(phyglm_UN_brood)[,2],,
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "life history",
          predictor_trait = "brood value",
@@ -363,11 +364,11 @@ MUTI_clutch_tidy <-tidy(MUTI_GLS_clutch, conf.int = T, conf.level = 0.95) %>%
 
 UN_clutch_tidy <- as.data.frame(summary(phyglm_UN_clutch)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_clutch)[,1],
+         conf.high = confint(phyglm_UN_clutch)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "life history",
          predictor_trait = "clutch size",
@@ -398,11 +399,11 @@ MUTI_long_tidy <-tidy(MUTI_GLS_long, conf.int = T, conf.level = 0.95) %>%
 
 UN_long_tidy <- as.data.frame(summary(phyglm_UN_long)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_long)[,1],
+         conf.high = confint(phyglm_UN_long)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "life history",
          predictor_trait = "longevity",
@@ -434,10 +435,11 @@ MUTI_develop_tidy <-tidy(MUTI_GLS_develop, conf.int = T, conf.level = 0.95) %>%
 UN_develop_tidy <- as.data.frame(summary(phyglm_UN_develop)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
   select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_develop)[,1],
+         conf.high = confint(phyglm_UN_develop)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "life history",
          predictor_trait = "developmental mode",
@@ -470,12 +472,12 @@ phyglm_UN_hue <- readRDS(here("Models/UN", "phyglm_UN_hue_scale.rds"))
 # SS intensity males
 UAI_GLS_ssm <- readRDS(here("Models/UAI", "UAI_GLS_ssm.rds"))
 MUTI_GLS_ssm <- readRDS(here("Models/MUTI", "MUTI_GLS_ssm.rds"))
-phyglm_UN_ssm <- readRDS(here("Models/UN", "phyglm_UN_ssm_fix.rds"))
+phyglm_UN_ssm <- readRDS(here("Models/UN", "phyglm_UN_ssm_scale.rds"))
 
 # SS intensity females
 UAI_GLS_ssf <- readRDS(here("Models/UAI", "UAI_GLS_ssf.rds"))
 MUTI_GLS_ssf <- readRDS(here("Models/MUTI", "MUTI_GLS_ssf.rds"))
-phyglm_UN_ssf <- readRDS(here("Models/UN", "phyglm_UN_ssf_fix.rds"))
+phyglm_UN_ssf <- readRDS(here("Models/UN", "phyglm_UN_ssf_scale.rds"))
 
 
 #### Create tidy model outputs #####
@@ -504,10 +506,11 @@ MUTI_bright_tidy <-tidy(MUTI_GLS_bright, conf.int = T, conf.level = 0.95) %>%
 UN_bright_tidy <- as.data.frame(summary(phyglm_UN_bright)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
   select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_bright)[,1],
+         conf.high = confint(phyglm_UN_bright)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "sexual selection",
          predictor_trait = "dichromatism: brightness",
@@ -539,10 +542,11 @@ MUTI_hue_tidy <-tidy(MUTI_GLS_hue, conf.int = T, conf.level = 0.95) %>%
 UN_hue_tidy <- as.data.frame(summary(phyglm_UN_hue)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
   select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_hue)[,1],
+         conf.high = confint(phyglm_UN_hue)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "sexual selection",
          predictor_trait = "dichromatism: hue",
@@ -573,11 +577,11 @@ MUTI_ssm_tidy <-tidy(MUTI_GLS_ssm, conf.int = T, conf.level = 0.95) %>%
 
 UN_ssm_tidy <- as.data.frame(summary(phyglm_UN_ssm)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_ssm)[,1],
+         conf.high = confint(phyglm_UN_ssm)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "sexual selection",
          predictor_trait = "sexual selection intensity: males",
@@ -608,11 +612,11 @@ MUTI_ssf_tidy <-tidy(MUTI_GLS_ssf, conf.int = T, conf.level = 0.95) %>%
 
 UN_ssf_tidy <- as.data.frame(summary(phyglm_UN_ssf)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_ssf)[,1],
+         conf.high = confint(phyglm_UN_ssf)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "sexual selection",
          predictor_trait = "sexual selection intensity: females",
@@ -665,11 +669,11 @@ MUTI_territory_tidy <-tidy(MUTI_GLS_territory, conf.int = T, conf.level = 0.95) 
 
 UN_territory_tidy <- as.data.frame(summary(phyglm_UN_territory)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_territory)[,1],
+         conf.high = confint(phyglm_UN_territory)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "social",
          predictor_trait = " territoriality",
@@ -698,20 +702,20 @@ social_tidy <- bind_rows(UAI_territory_tidy, MUTI_territory_tidy, UN_territory_t
 ################## Nest Models ############################
 
 #### Load models ####
-# Site: low
-UAI_GLS_low <- readRDS(here("Models/UAI", "UAI_GLS_nest_low.rds"))
-MUTI_GLS_low <- readRDS(here("Models/MUTI", "MUTI_GLS_nest_low.rds"))
-phyglm_UN_low <- readRDS(here("Models/UN", "phyglm_UN_nest_low_fix.rds"))
+# Site: low plus flexible species vs high
+UAI_GLS_lowplusflex <- readRDS(here("Models/UAI", "UAI_GLS_nest_lowplusflex.rds"))
+MUTI_GLS_lowplusflex <- readRDS(here("Models/MUTI", "MUTI_GLS_nest_lowplusflex.rds"))
+phyglm_UN_lowplusflex <- readRDS(here("Models/UN", "phyglm_UN_nest_lowplusflex_fix.rds"))
 
-# Site: low only                            
-UAI_GLS_low_only <- readRDS(here("Models/UAI", "UAI_GLS_nest_low_only.rds"))
-MUTI_GLS_low_only <- readRDS(here("Models/MUTI", "MUTI_GLS_nest_low_only.rds"))
-phyglm_UN_low_only <- readRDS(here("Models/UN", "phyglm_UN_nest_low_only_scale.rds"))
+# Site: low vs high plus flexible species                            
+UAI_GLS_highplusflex <- readRDS(here("Models/UAI", "UAI_GLS_nest_highplusflex.rds"))
+MUTI_GLS_highplusflex <- readRDS(here("Models/MUTI", "MUTI_GLS_nest_highplusflex.rds"))
+phyglm_UN_highplusflex <- readRDS(here("Models/UN", "phyglm_UN_nest_highplusflex_fix.rds"))
 
-# Site: high
-UAI_GLS_high <- readRDS(here("Models/UAI", "UAI_GLS_nest_high.rds"))
-MUTI_GLS_high <- readRDS(here("Models/MUTI", "MUTI_GLS_nest_high.rds"))
-phyglm_UN_high <- readRDS(here("Models/UN", "phyglm_UN_nest_high_fix.rds"))
+# Site: low vs high (flexible excluded)
+UAI_GLS_lowhigh <- readRDS(here("Models/UAI", "UAI_GLS_nest_lowhigh.rds"))
+MUTI_GLS_lowhigh <- readRDS(here("Models/MUTI", "MUTI_GLS_nest_lowhigh.rds"))
+phyglm_UN_lowhigh <- readRDS(here("Models/UN", "phyglm_UN_nest_lowhigh_scale.rds"))
 
 # Strategy (open/enclosed) - not run for UN
 UAI_GLS_neststr <- readRDS(here("Models/UAI", "UAI_GLS_neststr.rds"))
@@ -724,110 +728,110 @@ phyglm_UN_nest_safety <- readRDS(here("Models/UN", "phyglm_UN_nest_safety_scale.
 
 #### Create tidy model outputs #####
 
-# nest site low models
-UAI_low_tidy <- tidy(UAI_GLS_low, conf.int = T, conf.level = 0.95) %>%
+# nest site low plus flexible vs high models
+UAI_lowplusflex_tidy <- tidy(UAI_GLS_lowplusflex, conf.int = T, conf.level = 0.95) %>%
   mutate(index = "UAI",
          model_type = "gls",
          trait_group = "nest",
-         predictor_trait = "nest site low",
-         sample_size = UAI_GLS_low$dims$N,
-         lambda = as.numeric(UAI_GLS_low$modelStruct$corStruct), 
+         predictor_trait = "nest site low plus flexible",
+         sample_size = UAI_GLS_lowplusflex$dims$N,
+         lambda = as.numeric(UAI_GLS_lowplusflex$modelStruct$corStruct), 
          alpha = as.numeric(NA)) %>%
   select(-p.value)
 
-MUTI_low_tidy <-tidy(MUTI_GLS_low, conf.int = T, conf.level = 0.95) %>%
+MUTI_lowplusflex_tidy <-tidy(MUTI_GLS_lowplusflex, conf.int = T, conf.level = 0.95) %>%
   mutate(index = "MUTI",
          model_type = "gls",
          trait_group = "nest",
-         predictor_trait = "nest site low",
-         sample_size = MUTI_GLS_low$dims$N,
-         lambda = as.numeric(MUTI_GLS_low$modelStruct$corStruct), 
+         predictor_trait = "nest site low plus flexible",
+         sample_size = MUTI_GLS_lowplusflex$dims$N,
+         lambda = as.numeric(MUTI_GLS_lowplusflex$modelStruct$corStruct), 
          alpha = as.numeric(NA)) %>%
   select(-p.value)
 
-UN_low_tidy <- as.data.frame(summary(phyglm_UN_low)$coefficients) %>% 
+UN_lowplusflex_tidy <- as.data.frame(summary(phyglm_UN_lowplusflex)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_lowplusflex)[,1],
+         conf.high = confint(phyglm_UN_lowplusflex)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "nest",
-         predictor_trait = "nest site low",
-         sample_size = phyglm_UN_low$n,
+         predictor_trait = "nest site low plus flexible",
+         sample_size = phyglm_UN_lowplusflex$n,
          lambda = as.numeric(NA),
-         alpha = phyglm_UN_low$alpha)
+         alpha = phyglm_UN_lowplusflex$alpha)
 
-# nest site low ONLY models
-UAI_low_only_tidy <- tidy(UAI_GLS_low_only, conf.int = T, conf.level = 0.95) %>%
+# nest site low vs high (flexible spp excluded) models
+UAI_lowhigh_tidy <- tidy(UAI_GLS_lowhigh, conf.int = T, conf.level = 0.95) %>%
   mutate(index = "UAI",
          model_type = "gls",
          trait_group = "nest",
-         predictor_trait = "nest site low (only)",
-         sample_size = UAI_GLS_low_only$dims$N,
-         lambda = as.numeric(UAI_GLS_low_only$modelStruct$corStruct), 
+         predictor_trait = "nest site low vs high",
+         sample_size = UAI_GLS_lowhigh$dims$N,
+         lambda = as.numeric(UAI_GLS_lowhigh$modelStruct$corStruct), 
          alpha = as.numeric(NA)) %>%
   select(-p.value)
 
-MUTI_low_only_tidy <-tidy(MUTI_GLS_low_only, conf.int = T, conf.level = 0.95) %>%
+MUTI_lowhigh_tidy <-tidy(MUTI_GLS_lowhigh, conf.int = T, conf.level = 0.95) %>%
   mutate(index = "MUTI",
          model_type = "gls",
          trait_group = "nest",
-         predictor_trait = "nest site low (only)",
-         sample_size = MUTI_GLS_low_only$dims$N,
+         predictor_trait = "nest site low vs high",
+         sample_size = MUTI_GLS_lowhigh$dims$N,
          lambda = 0.3, 
          alpha = as.numeric(NA)) %>%
   select(-p.value)
 
-UN_low_only_tidy <- as.data.frame(summary(phyglm_UN_low_only)$coefficients) %>% 
+UN_lowhigh_tidy <- as.data.frame(summary(phyglm_UN_lowhigh)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_lowhigh)[,1],
+         conf.high = confint(phyglm_UN_lowhigh)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "nest",
-         predictor_trait = "nest site low (only)",
-         sample_size = phyglm_UN_low_only$n,
+         predictor_trait = "nest site low vs high",
+         sample_size = phyglm_UN_lowhigh$n,
          lambda = as.numeric(NA),
-         alpha = phyglm_UN_low_only$alpha)
+         alpha = phyglm_UN_lowhigh$alpha)
 
-# nest site high models
-UAI_high_tidy <- tidy(UAI_GLS_high, conf.int = T, conf.level = 0.95) %>%
+# nest site low vs high plus flexible models
+UAI_highplusflex_tidy <- tidy(UAI_GLS_highplusflex, conf.int = T, conf.level = 0.95) %>%
   mutate(index = "UAI",
          model_type = "gls",
          trait_group = "nest",
-         predictor_trait = "nest site high",
-         sample_size = UAI_GLS_high$dims$N,
-         lambda = as.numeric(UAI_GLS_high$modelStruct$corStruct), 
+         predictor_trait = "nest site high plus flexible",
+         sample_size = UAI_GLS_highplusflex$dims$N,
+         lambda = as.numeric(UAI_GLS_highplusflex$modelStruct$corStruct), 
          alpha = as.numeric(NA)) %>%
   select(-p.value)
 
-MUTI_high_tidy <-tidy(MUTI_GLS_high, conf.int = T, conf.level = 0.95) %>%
+MUTI_highplusflex_tidy <-tidy(MUTI_GLS_highplusflex, conf.int = T, conf.level = 0.95) %>%
   mutate(index = "MUTI",
          model_type = "gls",
          trait_group = "nest",
-         predictor_trait = "nest site high",
-         sample_size = MUTI_GLS_high$dims$N,
-         lambda = as.numeric(MUTI_GLS_high$modelStruct$corStruct), 
+         predictor_trait = "nest site high plus flexible",
+         sample_size = MUTI_GLS_highplusflex$dims$N,
+         lambda = as.numeric(MUTI_GLS_highplusflex$modelStruct$corStruct), 
          alpha = as.numeric(NA)) %>%
   select(-p.value)
 
-UN_high_tidy <- as.data.frame(summary(phyglm_UN_high)$coefficients) %>% 
+UN_highplusflex_tidy <- as.data.frame(summary(phyglm_UN_highplusflex)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_highplusflex)[,1],
+         conf.high = confint(phyglm_UN_highplusflex)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "nest",
-         predictor_trait = "nest site high",
-         sample_size = phyglm_UN_high$n,
+         predictor_trait = "nest site high plus flexible",
+         sample_size = phyglm_UN_highplusflex$n,
          lambda = as.numeric(NA),
-         alpha = phyglm_UN_high$alpha)
+         alpha = phyglm_UN_highplusflex$alpha)
 
 # nest safety models
 UAI_nest_safety_tidy <- tidy(UAI_GLS_nest_safety, conf.int = T, conf.level = 0.95) %>%
@@ -852,11 +856,11 @@ MUTI_nest_safety_tidy <-tidy(MUTI_GLS_nest_safety, conf.int = T, conf.level = 0.
 
 UN_nest_safety_tidy <- as.data.frame(summary(phyglm_UN_nest_safety)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
-  select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_nest_safety)[,1],
+         conf.high = confint(phyglm_UN_nest_safety)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "nest",
          predictor_trait = "nest safety",
@@ -887,9 +891,9 @@ MUTI_neststr_tidy <-tidy(MUTI_GLS_neststr, conf.int = T, conf.level = 0.95) %>%
 
 #### Combine outputs #####
 # combine, re-order columns, round to 4 decimal places
-nest_tidy <- bind_rows(UAI_low_tidy, MUTI_low_tidy, UN_low_tidy,
-                       UAI_low_only_tidy, MUTI_low_only_tidy, UN_low_only_tidy,
-                       UAI_high_tidy, MUTI_high_tidy, UN_high_tidy,
+nest_tidy <- bind_rows(UAI_lowplusflex_tidy, MUTI_lowplusflex_tidy, UN_lowplusflex_tidy,
+                       UAI_lowhigh_tidy, MUTI_lowhigh_tidy, UN_lowhigh_tidy,
+                       UAI_highplusflex_tidy, MUTI_highplusflex_tidy, UN_highplusflex_tidy,
                        UAI_nest_safety_tidy, MUTI_nest_safety_tidy, UN_nest_safety_tidy,
                        UAI_neststr_tidy, MUTI_neststr_tidy) %>%
   mutate_if(is.numeric, round, 3) %>% # round numeric columns to 3 decimal places
@@ -929,10 +933,11 @@ MUTI_mass_tidy <-tidy(MUTI_GLS_mass, conf.int = T, conf.level = 0.95) %>%
 UN_mass_tidy <- as.data.frame(summary(phyglm_UN_mass)$coefficients) %>% 
   rownames_to_column(., var ="term") %>%
   select(-p.value) %>%
-  rename(estimate = Estimate, std.error = StdErr, # rename columns to match UAI and MUTI outputs
-         statistic = z.value, conf.low = lowerbootCI, 
-         conf.high = upperbootCI) %>%
-  mutate(index = "UN",
+  select(term, Estimate, StdErr, z.value) %>%
+  rename(estimate = Estimate, std.error = StdErr, statistic = z.value) %>% # rename columns to match UAI and MUTI outputs
+  mutate(conf.low = confint(phyglm_UN_mass)[,1],
+         conf.high = confint(phyglm_UN_mass)[,2],
+         index = "UN",
          model_type = "phyloglm",
          trait_group = "body mass",
          predictor_trait = "log(body mass)",

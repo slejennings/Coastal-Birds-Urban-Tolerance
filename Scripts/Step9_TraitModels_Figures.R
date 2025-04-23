@@ -208,20 +208,16 @@ UN_Develop_dat$developmental_mode <- as.factor(UN_Develop_dat$developmental_mode
 glm_UN_develop <- logistf(Urban ~ developmental_mode + scale(Mass_log), 
                           data = UN_Develop)
 
-summary(glm_UN_develop)
-phyglm_UN_develop_fix <- readRDS(here("Models/UN", "phyglm_UN_develop_fix.rds")) # import phyloglm version for comparison
-summary(phyglm_UN_develop_fix)
-
 # get predictions from the logistf version of the model
 avg_predictions(glm_UN_develop, by="developmental_mode")
 # this gives the probability that a species is Urban (Urban = 1) when their developmental mode is either Precocial (0) or Altricial (1)
-# the probability that a species is classified as Urban is 29.2% when they are precocial, and therefore 70.8% for Non-urban and precocial
+# the probability that a species is classified as Urban is 29.2% when they are precocial, and therefore 70.5% for Non-urban and precocial
 # the probability that a species is classified as Urban is 41% when they are altricial, and therefore 59% for Non-urban and altricial
 
 # put these values into a data frame for plotting
 develop_UN_summary <- data.frame(UN = as.factor(c("Urban", "Non-Urban", "Urban", "Non-Urban")),
                          Developmental_Mode = as.factor(c("Precocial", "Precocial", "Altricial", "Altricial")),
-                         Percentage = as.numeric(c("29.2", "70.8", "41", "59"))) %>%
+                         Percentage = as.numeric(c("29.5", "70.5", "41", "59"))) %>%
   mutate(Group = paste(UN, Developmental_Mode, sep="_"))
 
 ####### make the plot for UN and Developmental Mode #########
@@ -269,12 +265,12 @@ ggsave(here("Results", "LifeHistoryTraits_Plot.png"), width = 17, height = 11, u
 ################## NEST TRAIT FIGURES ############################ 
 ##################################################################
 
-# Using nest site high models to plot the results
-# For these models: 0 = Low, 1 = High plus flexible
+# Using nest site models with only low and high nesting species (flexible species excluded) to plot the results
+# For these models:
 #  0 = all species that exclusively use low nesting sites
-# 1 = all species that use high nesting sites either exclusively or because they exhibit flexible in nest site height
+# 1 = all species that use exclusively high nesting sites
 
-################# UAI and Nest Site High #######################
+################# UAI and Nest Site Height #######################
 
 # load the data used for the model (this requires several steps. Target df is UAI_NestHigh_dat)
 # load in "Coastal_Species_Nest.rds"
@@ -283,33 +279,38 @@ C_Nest_dat2 <- C_Nest_dat %>%
   mutate(Species_Jetz  = str_replace(Species_Jetz, " ", "_"))
 C_Nest_dat2$Urban <- ifelse(C_Nest_dat2$Urban == "U", 1, 0)
 
-# create a new data frame that contains only species with both UAI and nest site high
-UAI_NestHigh <- C_Nest_dat2 %>% filter(!is.na(aveUAI)) %>% 
-  filter(!is.na(NestSite_High)) %>% as.data.frame()
+UAI_NestLowHigh <- C_Nest_dat2 %>% filter(!is.na(aveUAI)) %>% 
+  filter(!is.na(NestSite_LowHigh)) 
+nrow(UAI_NestLowHigh)
+# 565 species 
+
+###### add and pair tree
 
 # add rownames to data
-row.names(UAI_NestHigh) <- UAI_NestHigh$Species_Jetz
-
-# add and pair tree
+row.names(UAI_NestLowHigh) <- UAI_NestLowHigh$Species_Jetz
 tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
-UAI_NestHigh_phydat <- treedata(tree_out, UAI_NestHigh, sort=T)
-UAI_NestHigh_phy <- UAI_NestHigh_phydat$phy
-UAI_NestHigh_dat <- as.data.frame(UAI_NestHigh_phydat$data)
+UAI_NestLowHigh_phydat <- geiger::treedata(tree_out, UAI_NestLowHigh, sort=T)
+UAI_NestLowHigh_phy <- UAI_NestLowHigh_phydat$phy
+UAI_NestLowHigh_dat <- as.data.frame(UAI_NestLowHigh_phydat$data)
 
-# convert traits of interest to numeric or factor
-UAI_NestHigh_dat$aveUAI <- as.numeric(UAI_NestHigh_dat$aveUAI)
-UAI_NestHigh_dat$Mass_log <- as.numeric(UAI_NestHigh_dat$Mass_log)
-UAI_NestHigh_dat$NestSite_High <- as.factor(UAI_NestHigh_dat$NestSite_High)
+# convert traits of interest to numeric
+UAI_NestLowHigh_dat$aveUAI <- as.numeric(UAI_NestLowHigh_dat$aveUAI)
+UAI_NestLowHigh_dat$Mass_log <- as.numeric(UAI_NestLowHigh_dat$Mass_log)
+UAI_NestLowHigh_dat$NestSite_LowHigh <- as.numeric(UAI_NestLowHigh_dat$NestSite_LowHigh)
 
-# run phylogenetic linear model with nest site height as a factor
-UAI_GLS_nest_high <- gls(aveUAI~ NestSite_High + Mass_log, data = UAI_NestHigh_dat, 
-                         correlation = corPagel(0.5, phy = UAI_NestHigh_phy, fixed = F, form = ~Species_Jetz), 
-                         method = "ML")
+# run a phylogenetic linear model
+UAI_GLS_nest_lowhigh <- gls(aveUAI~ NestSite_LowHigh + Mass_log, data = UAI_NestLowHigh_dat, 
+                            correlation = corPagel(0.5, phy = UAI_NestLowHigh_phy, fixed = F, form = ~Species_Jetz), 
+                            method = "ML") 
 
+
+# model summary and results
+summary(UAI_GLS_nest_lowhigh) 
+confint(UAI_GLS_nest_lowhigh, level = 0.95)
 
 # get predicted means and 95% CI
-predUAINest <- avg_predictions(UAI_GLS_nest_high, by="NestSite_High") %>%
-  mutate(NestSiteHeight = as.factor(ifelse(NestSite_High == 0, "Low", "High & Flexible")),
+predUAINest <- avg_predictions(UAI_GLS_nest_lowhigh, by="NestSite_LowHigh") %>%
+  mutate(NestSiteHeight = as.factor(ifelse(NestSite_LowHigh == 0, "Low", "High")),
          NestSiteHeight = fct_relevel(NestSiteHeight, "Low")) 
 colnames(predUAINest)
 
@@ -319,8 +320,8 @@ colnames(predUAINest)
 # scale the halfeye slab thickness by n (the number of observations in each group) so that the area of each slab represents sample size (and looks similar to the total area of its corresponding dotplot)
 # this is achieved with the thickness argument
 
-nestsite_UAI_plot <- UAI_NestHigh_dat %>%
-  mutate(NestSiteHeight = as.factor(ifelse(NestSite_High == 0, "Low", "High & Flexible")),
+nestsite_UAI_plot <- UAI_NestLowHigh_dat %>%
+  mutate(NestSiteHeight = as.factor(ifelse(NestSite_LowHigh == 0, "Low", "High")),
          NestSiteHeight = fct_relevel(NestSiteHeight, "Low")) %>%
   ggplot(aes(y = aveUAI, x = NestSiteHeight, fill = NestSiteHeight)) +
   stat_slab(aes(thickness = after_stat(pdf*n)), scale = 0.6, side = "right", alpha = 0.7, , show.legend = F) +
@@ -339,34 +340,38 @@ nestsite_UAI_plot <- UAI_NestHigh_dat %>%
 nestsite_UAI_plot
 
 #################################################################
-################# MUTI and Nest Site High #######################
+################# MUTI and Nest Site Height #######################
 
-# create a new data frame that contains only species with both MUTI and nest site high
-MUTI_NestHigh <- C_Nest_dat2 %>% filter(!is.na(MUTIscore)) %>% 
-  filter(!is.na(NestSite_High)) %>% as.data.frame()
+MUTI_NestLowHigh <- C_Nest_dat2 %>% filter(!is.na(MUTIscore)) %>% 
+  filter(!is.na(NestSite_LowHigh)) 
 
+###### add and pair tree
 # add rownames to data
-row.names(MUTI_NestHigh) <- MUTI_NestHigh$Species_Jetz
-
-# add and pair tree
+row.names(MUTI_NestLowHigh) <- MUTI_NestLowHigh$Species_Jetz
 tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
-MUTI_NestHigh_phydat <- treedata(tree_out, MUTI_NestHigh, sort=T)
-MUTI_NestHigh_phy <- MUTI_NestHigh_phydat$phy
-MUTI_NestHigh_dat <- as.data.frame(MUTI_NestHigh_phydat$data)
+MUTI_NestLowHigh_phydat <- geiger::treedata(tree_out, MUTI_NestLowHigh, sort=T)
+MUTI_NestLowHigh_phy <- MUTI_NestLowHigh_phydat$phy
+MUTI_NestLowHigh_dat <- as.data.frame(MUTI_NestLowHigh_phydat$data)
 
-# convert traits of interest to numeric or factor
-MUTI_NestHigh_dat$MUTIscore <- as.numeric(MUTI_NestHigh_dat$MUTIscore)
-MUTI_NestHigh_dat$Mass_log <- as.numeric(MUTI_NestHigh_dat$Mass_log)
-MUTI_NestHigh_dat$NestSite_High <- as.factor(MUTI_NestHigh_dat$NestSite_High)
+str(MUTI_NestLowHigh_dat)
+length(MUTI_NestLowHigh_dat$NestSite_LowHigh)
 
-# run phylogenetic linear model
-MUTI_GLS_nest_high <- gls(MUTIscore~ NestSite_High + Mass_log, data = MUTI_NestHigh_dat, 
-                          correlation = corPagel(0.5, phy = MUTI_NestHigh_phy, fixed = F, form = ~Species_Jetz), 
-                          method = "ML") 
+# convert traits of interest to numeric
+MUTI_NestLowHigh_dat$MUTIscore <- as.numeric(MUTI_NestLowHigh_dat$MUTIscore)
+MUTI_NestLowHigh_dat$Mass_log <- as.numeric(MUTI_NestLowHigh_dat$Mass_log)
+MUTI_NestLowHigh_dat$NestSite_LowHigh <- as.numeric(MUTI_NestLowHigh_dat$NestSite_LowHigh)
+
+# run a phylogenetic linear model with corPagel fixed at 0.3
+MUTI_GLS_nest_lowhigh <- gls(MUTIscore ~ NestSite_LowHigh + Mass_log, data = MUTI_NestLowHigh_dat, 
+                             correlation = corPagel(0.3, phy = MUTI_NestLowHigh_phy, fixed = T, form = ~Species_Jetz), 
+                             method = "ML") 
+
+# model summary and results
+summary(MUTI_GLS_nest_lowhigh) 
 
 # get predicted means and 95% CI
-predMUTINest <- avg_predictions(MUTI_GLS_nest_high, by="NestSite_High") %>%
-  mutate(NestSiteHeight = as.factor(ifelse(NestSite_High == 0, "Low", "High & Flexible")),
+predMUTINest <- avg_predictions(MUTI_GLS_nest_lowhigh, by="NestSite_LowHigh") %>%
+  mutate(NestSiteHeight = as.factor(ifelse(NestSite_LowHigh == 0, "Low", "High")),
          NestSiteHeight = fct_relevel(NestSiteHeight, "Low")) 
 colnames(predMUTINest)
 
@@ -376,8 +381,8 @@ colnames(predMUTINest)
 # scale the halfeye slab thickness by n (the number of observations in each group) so that the area of each slab represents sample size (and looks similar to the total area of its corresponding dotplot)
 # this is achieved with the thickness argument
 
-nestsite_MUTI_plot <- MUTI_NestHigh_dat %>%
-  mutate(NestSiteHeight = as.factor(ifelse(NestSite_High == 0, "Low", "High & Flexible")),
+nestsite_MUTI_plot <- MUTI_NestLowHigh_dat %>%
+  mutate(NestSiteHeight = as.factor(ifelse(NestSite_LowHigh == 0, "Low", "High")),
          NestSiteHeight = fct_relevel(NestSiteHeight, "Low")) %>%
   ggplot(aes(y = MUTIscore, x = NestSiteHeight, fill = NestSiteHeight)) +
   stat_slab(aes(thickness = after_stat(pdf*n)), scale = 0.5, side = "right", alpha = 0.7, , show.legend = F) +
@@ -396,43 +401,43 @@ nestsite_MUTI_plot <- MUTI_NestHigh_dat %>%
 nestsite_MUTI_plot
 
 ###############################################################
-################# UN and Nest Site High #######################
-# load the data used for the model (this requires several steps. Target df is UN_Develop_dat)
-# Note: need to have created C_LifeHist_dat2 in previous section
-UN_NestHigh <- C_Nest_dat2 %>% filter(!is.na(Urban)) %>% 
-  filter(!is.na(NestSite_High)) %>% as.data.frame()
+################# UN and Nest Site Height #######################
 
-# add and pair tree
-tree_out<- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
-UN_NestHigh_phydat <- treedata(tree_out, UN_NestHigh, sort=T)
-UN_NestHigh_phy <- UN_NestHigh_phydat$phy
-UN_NestHigh_dat <- as.data.frame(UN_NestHigh_phydat$data)
+UN_NestLowHigh<- C_Nest_dat2 %>% 
+  filter(!is.na(Urban)) %>%
+  filter(!is.na(NestSite_LowHigh)) %>% 
+  column_to_rownames(., var = "Species_Jetz")
+length(UN_NestLowHigh$NestSite_LowHigh)
+
+###### add and pair tree
+tree_out <- read.tree(here("Data", "Jetz_ConsensusPhy.tre"))
+UN_NestLowHigh_phydat <- geiger::treedata(tree_out, UN_NestLowHigh, sort=T)
+UN_NestLowHigh_phy <- UN_NestLowHigh_phydat$phy
+UN_NestLowHigh_dat <- as.data.frame(UN_NestLowHigh_phydat$data)
 
 # convert traits of interest to numeric
-UN_NestHigh_dat$Urban <- as.numeric(UN_NestHigh_dat$Urban)
-UN_NestHigh_dat$Mass_log <- as.numeric(UN_NestHigh_dat$Mass_log)
-UN_NestHigh_dat$NestSite_High <- as.factor(UN_NestHigh_dat$NestSite_High)
+UN_NestLowHigh_dat$Urban <- as.numeric(UN_NestLowHigh_dat$Urban)
+UN_NestLowHigh_dat$Mass_log <- as.numeric(UN_NestLowHigh_dat$Mass_log)
+UN_NestLowHigh_dat$NestSite_LowHigh <- as.numeric(UN_NestLowHigh_dat$NestSite_LowHigh)
 
 # at the time of this analysis, there was no way to extract predictions from a phyloglm model
 # however, there was little/no support to suggest a phylogenetic signal and we reached very similar findings with a non-phylogenetic model
 # we can extract predictions and plot marginal effects using this model
-glm_UN_nest_high <- logistf(Urban ~ NestSite_High + scale(Mass_log), 
-                            data = UN_NestHigh)
-
-summary(glm_UN_nest_high) 
-phyglm_UN_nest_high_fix <- readRDS(here("Models/UN", "phyglm_UN_nest_high_fix.rds")) # import phyloglm version for comparison
-summary(phyglm_UN_nest_high_fix)
+glm_UN_nest_lowhigh <- logistf(Urban ~ NestSite_LowHigh + scale(Mass_log), 
+                               data = UN_NestLowHigh)
 
 # get predictions from the logistf version of the model
-avg_predictions(glm_UN_nest_high, by="NestSite_High")
+avg_predictions(glm_UN_nest_lowhigh, by="NestSite_LowHigh")
 # this gives the probability that a species is Urban (Urban = 1) when their nest site is either Low (0) or High and Flexible (1)
 # the probability that a species is classified as Urban is 25.8% when they use Low nest sites, and therefore 74.2% for Non-urban and Low nest sites
-# the probability that a species is classified as Urban is 42.2% when they use High nest sites or are flexible, and therefore 57.8% for Non-urban
+# the probability that a species is classified as Urban is 38.1% when they use High nest sites and therefore 61.9% for Non-urban
+100 - 25.8
+100 - 38.1
 
 # put these values into a data frame for plotting
 NestSite_UN_summary <- data.frame(UN = as.factor(c("Urban", "Non-Urban", "Urban", "Non-Urban")),
-                                 NestSiteHeight = as.factor(c("Low", "Low", "High & Flexible", "High & Flexible")),
-                                 Percentage = as.numeric(c("25.8", "74.2", "42.2", "57.8"))) %>%
+                                  NestSiteHeight = as.factor(c("Low", "Low", "High", "High")),
+                                  Percentage = as.numeric(c("25.8", "74.2", "38.1", "61.9"))) %>%
   mutate(Group = paste(UN, NestSiteHeight, sep="_"),
          NestSiteHeight = fct_relevel(NestSiteHeight, "Low"))
 
@@ -447,8 +452,8 @@ nestsite_UN_plot <- ggplot(NestSite_UN_summary, aes(x = NestSiteHeight, y = Perc
     values = c(
       "Non-Urban_Low" = "#C1DBEC",   
       "Urban_Low" = "#5C90C6",        
-      "Non-Urban_High & Flexible" = "#C1DBEC",  
-      "Urban_High & Flexible" = "#5C90C6"        
+      "Non-Urban_High" = "#C1DBEC",  
+      "Urban_High" = "#5C90C6"        
     )) + 
   labs(y = "UN") + 
   theme_classic() + 
@@ -475,3 +480,6 @@ all_nestsite_plots <- nestsite_UAI_plot + nestsite_MUTI_plot + nestsite_UN_plot 
 print(all_nestsite_plots)
 
 ggsave(here("Results", "NestSite_Plot.png"), width = 25, height = 9, units="cm", dpi=300)
+
+
+
